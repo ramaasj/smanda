@@ -52,31 +52,31 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li class="dropdown"><a href="profil/sejarah-visi-misi.html"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="/profil"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="profil/sejarah-visi-misi.html#sejarah">Sejarah Singkat</a></li>
-              <li><a href="profil/sejarah-visi-misi.html#visi">Visi Misi</a></li>
-              <li><a href="#">Kepala Sekolah</a></li>
-              <li><a href="#">Pendidik & Tenaga Kependidikan</a></li>
-              <li><a href="#">Struktur Organisasi Sekolah</a></li>
-              <li><a href="#">Komite Sekolah</a></li>
+              <li><a href="/profil#sejarah">Sejarah Singkat</a></li>
+              <li><a href="/profil#visi-misi">Visi Misi</a></li>
+              <li><a href="/profil#kepala-sekolah">Kepala Sekolah</a></li>
+              <li><a href="/profil#pendidik">Pendidik & Tenaga Kependidikan</a></li>
+              <li><a href="/profil#organisasi-sekolah">Struktur Organisasi Sekolah</a></li>
+              <li><a href="/profil#komite-sekolah">Komite Sekolah</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="/"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="siswaaktif.html">Daftar Siswa Aktif</a></li>
-              <li><a href="ekstrakurikuler.html">Kegiatan Ekstrakurikuler</a></li>
+              <li><a href="/siswa">Daftar Siswa Aktif</a></li>
+              <li><a href="/ekstrakurikuler">Kegiatan Ekstrakurikuler</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="berita.html">Berita</a></li>
-          <li class="dropdown"><a href="#"><span>Lainnya</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="/berita">Berita</a></li>
+          <li class="dropdown"><a href="/"><span>Lainnya</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Alumni</a></li>
-              <li><a href="#">PPDB</a></li>
+              <li><a href="/alumni">Alumni</a></li>
+              <li><a href="/">PPDB</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="https://sman2sidoarjo.sch.id/" target="_blank" rel="noopener noreferrer">MYSMANDA</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          <li><a class="nav-link scrollto" href="/#contact">Kontak</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

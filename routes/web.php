@@ -19,4 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home');
 
+Route::view('/profil', 'profil');
+
+Route::view('/siswa', 'siswa');
+
+Route::view('/ekstrakurikuler','ekstrakurikuler');
+
+Route::view('/berita','berita');
+
+Route::view('/alumni','alumni');
 
