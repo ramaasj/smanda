@@ -116,12 +116,12 @@
           </div>
 
           <div class="col-sm footer-links">
-            <h4>Menu (TBD)</h4>
+            <h4>Menu Pintasan</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Staff</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Berita</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Daftar Menjadi Calon Siswa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">PPDB</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">MYSMANDA</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Admin</a></li>
             </ul>
