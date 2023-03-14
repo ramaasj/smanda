@@ -16,7 +16,7 @@
           <h2>Alumni</h2>
           <ol>
             <li><a href="/siswa">SNMPTN</a></li>
-            <li><a href="/siswa">SbMPTN</a></li>
+            <li><a href="/siswa">SBMPTN</a></li>
             <li><a href="/siswa">Mandiri</a></li>
           </ol>
         </div>

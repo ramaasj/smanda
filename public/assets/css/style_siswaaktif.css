@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #444444;
   text-decoration: none;
 }
 
@@ -1164,7 +1164,7 @@ section {
 # F.A.Q
 --------------------------------------------------------------*/
 .faq{
-  margin-top: 30px;
+  margin-top: -50px;
 }
 
 .tablesiswa{
