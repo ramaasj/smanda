@@ -30,3 +30,6 @@ Route::view('/berita','berita');
 
 Route::view('/alumni','alumni');
 
+Route::view('/adminsiswa', 'adminPages/adminsiswa');
+
+Route::view('/updatesiswa', 'adminPages/updatesiswa');
