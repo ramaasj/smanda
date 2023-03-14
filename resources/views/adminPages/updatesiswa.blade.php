@@ -1,4 +1,4 @@
-@extends('layouts.mainlayout')
+@extends('layouts.adminlayout')
 
 @section('title', 'Siswa Aktif')
 
