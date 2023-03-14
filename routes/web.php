@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::view('/', 'home');
 
 Route::view('/profil', 'profil');
 
-Route::view('/siswa', 'siswa');
+Route::get('/siswa', [SiswaController::class, 'index']);
 
 Route::view('/ekstrakurikuler','ekstrakurikuler');
 
