@@ -76,6 +76,7 @@
                   </tr>
                 </tbody>
               </table>
+              
         </div>
       </div>
     </section><!-- End F.A.Q Section -->

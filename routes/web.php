@@ -33,3 +33,6 @@ Route::view('/alumni','alumni');
 Route::view('/adminsiswa', 'adminPages/adminsiswa');
 
 Route::view('/updatesiswa', 'adminPages/updatesiswa');
+
+Route::view('/addsiswa', 'adminPages/addsiswa');
+
