@@ -14,10 +14,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Tambah Siswa</h2>
+          <h2>Tambah Ekstrakurikuler</h2>
           <ol>
             <li><a href="/">Beranda</a></li>
-            <li><a href="/siswa">Daftar Siswa Aktif</a></li>
+            <li><a href="/siswa">Ekstrakurikuler</a></li>
             <li><a href="/ekstra">Add</a></li>
           </ol>
         </div>
@@ -30,25 +30,18 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Tambah Daftar Siswa Kelas XXX</h2>
-          <p>Daftar siswa tahun ajaran 2022/2023</p>
+          <h2>Tambah Ekstrakurikuler</h2>
+          <p>Ekstrakurikuler SMAN 2 Sidoarjo</p>
         </div>
-        <form action="">
+        <form action="" class="">
             <div class="form-group">
-                <label for="kelas">Kelas</label>
-                <input type="text" class="form-control" id="kelas" placeholder="XII MIPA 4">
+                <label for="kelas">Nama Ekstrakurikuler</label>
+                <input type="text" class="form-control" id="ekstrakurikuler" placeholder="Nama Ekstrakurikuler">
             </div>
-            <div class="form-group">
-                <label for="lakilaki">Laki-Laki</label>
-                <input type="text" class="form-control" id="lakilaki" placeholder="20">
-            </div>
-            <div class="form-group">
-                <label for="perempuan">Perempuan</label>
-                <input type="text" class="form-control" id="perempuan" placeholder="15">
-            </div>
-            <div>
-                <label for="jumlah">Jumlah</label>
-                <input type="text" readonly class="form-control" id="jumlah" value=35>
+            <hr>
+            <div class="custom-file">
+            <input type="file" class="custom-file-input" id="logoekstra">
+            <label class="custom-file-label" for="logoekstra">Masukkan logo/gambar ekstrakurikuler</label>
             </div>
             <hr>
             <div>
