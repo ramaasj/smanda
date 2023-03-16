@@ -10,75 +10,42 @@
 @section('content')
 <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
       <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Siswa</h2>
-          <ol>
-            <li><a href="/">Beranda</a></li>
-            <li><a href="/siswa">Daftar Siswa Aktif</a></li>
-            <li><a href="/ekstra">Ekstrakurikuler</a></li>
-          </ol>
+        <div class="row">
+          <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+            <img src="assets/img/greet.jpeg" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
+            <h3 data-aos="fade-up">Menunggu Kedatanganmu!</h3>
+            <p data-aos="fade-up">
+              Kami sangat menanti kedatanganmu di SMA Negeri 2 Sidoarjo, tunggu apalagi? Ayo bergabung menjadi bagian dari SMANDA!
+            </p>
+            <div class="icon-box" data-aos="fade-up">
+              <i class="bi bi-hourglass-split"></i>
+              <h4>37 Tahun</h4>
+              <p>SMA Negeri 2 Sidoarjo didirikan pada tahun 1986, tidak terasa sudah 37 tahun berlalu.</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-person-bounding-box"></i>
+              <h4>1289 Siswa Aktif</h4>
+              <p>Terdiri dari 1289 siswa aktif yang tersebar dalam Kelas X-XI-XII.</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-person-badge"></i>
+              <h4>64 Tenaga Kependidikan</h4>
+              <p>Pendidikan adalah hal yang terpenting, oleh karena itu kami mempunyai Tenaga Kependidikan yang luar biasa.</p>
+            </div>
+
+          </div>
         </div>
 
       </div>
-    </section><!-- Breadcrumbs Section -->
+    </section><!-- End About Section -->
 
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="siswa" class="faq section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Daftar Siswa</h2>
-          <p>Daftar siswa tahun ajaran 2022/2023</p>
-        </div>
-        <div class="tablesiswa">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Kelas</th>
-                    <th scope="col">L</th>
-                    <th scope="col">P</th>
-                    <th scope="col">Jumlah</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>XII MIPA 1</th>
-                    <td>10</td>
-                    <td>25</td>
-                    <td>35</td>
-                    <td><a href=""><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
-                  </tr>
-                  <tr>
-                    <th>XII MIPA 2</th>
-                    <td>13</td>
-                    <td>21</td>
-                    <td>24</td>
-                    <td><a href=""><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
-                  </tr>
-                  <tr>
-                    <th>XII MIPA 3</th>
-                    <td>16</td>
-                    <td>19</td>
-                    <td>35</td>
-                    <td><a href=""><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
-                  </tr>
-                  <tr>
-                    <th>TOTAL</th>
-                    <td>39</td>
-                    <td>65</td>
-                    <td>104</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-      </div>
-    </section><!-- End F.A.Q Section -->
-
-  </main><!-- End #main -->
+</main><!-- End #main -->
 @endsection
