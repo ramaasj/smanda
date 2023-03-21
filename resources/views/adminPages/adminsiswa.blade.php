@@ -51,7 +51,7 @@
                     <td>10</td>
                     <td>25</td>
                     <td>35</td>
-                    <td><a href=""><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
+                    <td><a href="/updatesiswa"><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
                   </tr>
                   <tr>
                     <th>XII MIPA 2</th>

@@ -43,3 +43,7 @@ Route::view('/adminekstrakurikuler', 'adminPages/adminekstrakurikuler');
 Route::view('/addekstrakurikuler', 'adminPages/addekstrakurikuler');
 
 Route::view('/updateekstrakurikuler', 'adminPages/updateekstrakurikuler');
+
+Route::view('/adminberita', 'adminPages/adminberita');
+
+Route::view('/addberita', 'adminPages/addberita');
