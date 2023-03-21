@@ -41,3 +41,5 @@ Route::view('/addsiswa', 'adminPages/addsiswa');
 Route::view('/adminekstrakurikuler', 'adminPages/adminekstrakurikuler');
 
 Route::view('/addekstrakurikuler', 'adminPages/addekstrakurikuler');
+
+Route::view('/updateekstrakurikuler', 'adminPages/updateekstrakurikuler');
