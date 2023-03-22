@@ -47,3 +47,9 @@ Route::view('/updateekstrakurikuler', 'adminPages/updateekstrakurikuler');
 Route::view('/adminberita', 'adminPages/adminberita');
 
 Route::view('/addberita', 'adminPages/addberita');
+
+Route::view('/updateberita', 'adminPages/updateberita');
+
+Route::view('/adminalumni', 'adminPages/adminalumni');
+
+Route::view('/updatealumni', 'adminPages/updatealumni');

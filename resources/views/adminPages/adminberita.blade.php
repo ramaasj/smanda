@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Berita')
+@section('title', 'Admin Berita')
 
 @section('style')
 <link href="assets/css/style_adminberita.css" rel="stylesheet">
@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Berita</h2>
           <ol>
-            <li><a href="/berita">Berita</a></li>
+            <li><a href="#">Berita</a></li>
           </ol>
         </div>
 

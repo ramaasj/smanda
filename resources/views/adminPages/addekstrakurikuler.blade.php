@@ -1,9 +1,9 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Tambah Siswa Aktif')
+@section('title', 'Tambah Ekstrakurikuler')
 
 @section('style')
-<link href="assets/css/style_updatesiswaaktif.css" rel="stylesheet">
+<link href="assets/css/style_addekstrakurikuler.css" rel="stylesheet">
 @endsection
 
 @section('content')
