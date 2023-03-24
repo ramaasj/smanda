@@ -1,9 +1,9 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Update Alumni')
+@section('title', 'Tambah Alumni')
 
 @section('style')
-<link href="assets/css/style_updatealumni.css" rel="stylesheet">
+<link href="assets/css/style_addalumni.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -14,11 +14,11 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Update Alumni</h2>
+          <h2>Tambah Alumni</h2>
           <ol>
             <li><a href="/">Beranda</a></li>
             <li><a href="/adminalumni">Daftar Alumni</a></li>
-            <li><a href="#">Update</a></li>
+            <li><a href="#">Tambah</a></li>
           </ol>
         </div>
 
@@ -30,7 +30,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Update Data Alumni</h2>
+          <h2>Tambah Data Alumni</h2>
         </div>
         <form action="">
             <div class="form-group">

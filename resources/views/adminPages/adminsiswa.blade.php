@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Siswa Aktif')
+@section('title', 'Admin Siswa Aktif')
 
 @section('style')
 <link href="assets/css/style_adminsiswaaktif.css" rel="stylesheet">

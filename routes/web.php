@@ -52,4 +52,6 @@ Route::view('/updateberita', 'adminPages/updateberita');
 
 Route::view('/adminalumni', 'adminPages/adminalumni');
 
+Route::view('/addalumni', 'adminPages/addalumni');
+
 Route::view('/updatealumni', 'adminPages/updatealumni');

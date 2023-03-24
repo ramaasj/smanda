@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Ekstrakurikuler')
+@section('title', 'Admin Ekstrakurikuler')
 
 @section('style')
 <link href="assets/css/style_ekstrakurikuler.css" rel="stylesheet">
