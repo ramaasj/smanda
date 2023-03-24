@@ -45,29 +45,19 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($listSiswa as $siswa)
                   <tr>
-                    <th>XII MIPA 1</th>
-                    <td>10</td>
-                    <td>25</td>
-                    <td>35</td>
+                    <th> {{$siswa->class}} </th>
+                    <td> {{$siswa->laki}} </td>
+                    <td> {{$siswa->perempuan}} </td>
+                    <td> {{$siswa->jumlah}} </td>
                   </tr>
-                  <tr>
-                    <th>XII MIPA 2</th>
-                    <td>13</td>
-                    <td>21</td>
-                    <td>24</td>
-                  </tr>
-                  <tr>
-                    <th>XII MIPA 3</th>
-                    <td>16</td>
-                    <td>19</td>
-                    <td>35</td>
-                  </tr>
+                  @endforeach
                   <tr>
                     <th>TOTAL</th>
-                    <td>39</td>
-                    <td>65</td>
-                    <td>104</td>
+                    <td>xx</td>
+                    <td>yy</td>
+                    <td>zz</td>
                   </tr>
                 </tbody>
               </table>

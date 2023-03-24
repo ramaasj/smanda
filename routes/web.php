@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 
@@ -26,7 +27,7 @@ Route::get('/siswa', [SiswaController::class, 'index']);
 
 Route::view('/ekstrakurikuler','ekstrakurikuler');
 
-Route::view('/berita','berita');
+Route::get('/berita', [BeritaController::class, 'index']);
 
 Route::view('/alumni','alumni');
 
