@@ -33,11 +33,17 @@ Route::view('/alumni','alumni');
 
 Route::view('/adminhome', 'adminPages/adminhome');
 
-Route::view('/adminsiswa', 'adminPages/adminsiswa');
+Route::get('/adminsiswa', [SiswaController::class, 'admin']);
 
-Route::view('/updatesiswa', 'adminPages/updatesiswa');
+Route::get('/updatesiswa/{id}', [SiswaController::class, 'update']);
 
-Route::view('/addsiswa', 'adminPages/addsiswa');
+Route::put('/updatesiswa/{id}/store', [SiswaController::class, 'updateStore']);
+
+Route::get('/addsiswa', [SiswaController::class, 'create']);
+
+Route::delete('/deletesiswa/{id}', [SiswaController::class, 'delete']);
+
+Route::post('/addsiswa/store', [SiswaController::class, 'store']);
 
 Route::view('/adminekstrakurikuler', 'adminPages/adminekstrakurikuler');
 

@@ -33,28 +33,32 @@
           <h2>Update Daftar Siswa Kelas XXX</h2>
           <p>Daftar siswa tahun ajaran 2022/2023</p>
         </div>
-        <form action="">
+        <div class="row justify-content-center">
+          <form action="/updatesiswa/{{$siswa -> id}}/store" method="POST" class="col-8">
+            @method('put')
+            @csrf
             <div class="form-group">
-                <label for="kelas">Kelas</label>
-                <input type="text" class="form-control" id="kelas" placeholder="XII MIPA 4">
+                <label for="class">kelas</label>
+                <input type="text" name="class" class="form-control" id="class" value="{{$siswa -> class}}">
             </div>
             <div class="form-group">
-                <label for="lakilaki">Laki-Laki</label>
-                <input type="text" class="form-control" id="lakilaki" placeholder="20">
+                <label for="laki">Laki-Laki</label>
+                <input type="text" name="laki" class="form-control" id="laki" value="{{$siswa -> laki}}">
             </div>
             <div class="form-group">
                 <label for="perempuan">Perempuan</label>
-                <input type="text" class="form-control" id="perempuan" placeholder="15">
+                <input type="text" name="perempuan" class="form-control" id="perempuan" value="{{$siswa -> perempuan}}">
             </div>
             <div>
                 <label for="jumlah">Jumlah</label>
-                <input type="text" readonly class="form-control" id="jumlah" value=35>
+                <input type="text" name="jumlah" class="form-control" id="jumlah" value="{{$siswa -> jumlah}}">
             </div>
             <hr>
             <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
             </div>
-        </form>
+          </form>
+        </div>
       </div>
     </section><!-- End F.A.Q Section -->
 
