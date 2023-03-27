@@ -62,9 +62,12 @@
           <li class="dropdown"><a href="/profil"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/profil#sejarah">Sejarah Singkat</a></li>
-              <li><a href="/profil#visi-misi">Visi Misi</a></li>
+              <li><a href="/profil#visi-misi">Motto</a></li>
+              <li><a href="/profil#visi-misi">Visi</a></li>
+              <li><a href="/profil#visi-misi">Misi</a></li>
               <li><a href="/profil#kepala-sekolah">Kepala Sekolah</a></li>
-              <li><a href="/profil#pendidik">Pendidik & Tenaga Kependidikan</a></li>
+              <li><a href="/profil#pendidik">Pendidik</a></li>
+              <li><a href="/profil#pendidik">Tenaga Kependidikan</a></li>
               <li><a href="/profil#organisasi-sekolah">Struktur Organisasi Sekolah</a></li>
               <li><a href="/profil#komite-sekolah">Komite Sekolah</a></li>
             </ul>

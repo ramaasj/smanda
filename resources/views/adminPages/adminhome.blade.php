@@ -15,34 +15,229 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-xl-6 col-lg-7" data-aos="fade-right">
-            <img src="assets/img/greet.jpeg" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/home1.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
           </div>
-          <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up">Menunggu Kedatanganmu!</h3>
-            <p data-aos="fade-up">
-              Kami sangat menanti kedatanganmu di SMA Negeri 2 Sidoarjo, tunggu apalagi? Ayo bergabung menjadi bagian dari SMANDA!
-            </p>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>HOME</strong> || Sapaan</h3>
             <div class="icon-box" data-aos="fade-up">
-              <i class="bi bi-hourglass-split"></i>
-              <h4>37 Tahun</h4>
-              <p>SMA Negeri 2 Sidoarjo didirikan pada tahun 1986, tidak terasa sudah 37 tahun berlalu.</p>
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
             </div>
-
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <i class="bi bi-person-bounding-box"></i>
-              <h4>1289 Siswa Aktif</h4>
-              <p>Terdiri dari 1289 siswa aktif yang tersebar dalam Kelas X-XI-XII.</p>
-            </div>
-
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-person-badge"></i>
-              <h4>64 Tenaga Kependidikan</h4>
-              <p>Pendidikan adalah hal yang terpenting, oleh karena itu kami mempunyai Tenaga Kependidikan yang luar biasa.</p>
-            </div>
-
           </div>
         </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/home2.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>HOME</strong> || Poin-poin</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/home3.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>HOME</strong> || Persentase PTN</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil1.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Sejarah</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil2.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Motto</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil2.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Visi</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil2.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Misi</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil3.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Kepala Sekolah</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil4.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Pendidik</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil5.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Tenaga Kependidikan</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil6.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Struktur Org. Sekolah</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/profil7.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>PROFIL</strong> || Struktur Komite</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/siswa.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>SISWA</strong> || Daftar Siswa Aktif</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/ekstra.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>EKSTRA</strong> || Ekstrakurikuler</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/berita.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>BERITA</strong> || Berita</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm" data-aos="fade-right">
+            <img src="assets/img/homeadmin/alumni.png" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
+          <div class="col-sm">
+            <h3 data-aos="fade-up"> <strong>Alumni</strong> || Alumni</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <a href="">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
 
       </div>
     </section><!-- End About Section -->
