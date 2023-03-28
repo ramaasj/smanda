@@ -3,7 +3,7 @@
 @section('title', 'Update Siswa Aktif')
 
 @section('style')
-<link href="assets/css/style_updatesiswaaktif.css" rel="stylesheet">
+<link href="{{ asset('assets/css/style_updatesiswaaktif.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
