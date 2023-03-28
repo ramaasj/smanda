@@ -41,6 +41,10 @@
                 <p><i class="bi bi-airplane"></i> Maju Bersama, Hebat Semua.</p>
                 <p><i class="bi bi-airplane"></i> Tunjukkan Karyamu, Raih Prestasimu.</p>
               </div>
+
+              <div class="edit-button d-flex justify-content-center">
+                <div class="btn btn-primary btn-lg" data-aos="fade-up"data-aos-delay="300">EDIT</div>
+              </div>
             </div>
 
             <div class="content-item">
@@ -51,6 +55,10 @@
               <div class="paragraph">
                 <p><i class="bi bi-search"></i> Unggul dalam mutu, mulia dalam perilaku serta berbudaya lingkungan terpadu</p>
               </div>
+
+                <div class="edit-button d-flex justify-content-center">
+                    <div class="btn btn-primary btn-lg" data-aos="fade-up"data-aos-delay="300">EDIT</div>
+                </div>
             </div>
           </div>
 
@@ -89,13 +97,15 @@
                 Membiasakan memilah dan membuang sampah pada tempatnya, program penghijauan dan lomba kebersihan kelas 3 bulan sekali
               </li>
             </ul>
+
+            <div class="edit-button d-flex justify-content-center">
+                <div class="btn btn-primary btn-lg" data-aos="fade-up"data-aos-delay="300">EDIT</div>
+            </div>
           </div>
 
         </div>
 
-        <div class="edit-button d-flex justify-content-center">
-            <div class="btn btn-primary btn-lg" data-aos="fade-up"data-aos-delay="300">EDIT</div>
-        </div>
+        
 
       </div>
     </section><!-- End Steps Section -->
