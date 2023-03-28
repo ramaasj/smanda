@@ -45,33 +45,15 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1><a href="/"><img src="assets/img/smanda.png" alt=""><span>ADMIN SMANDA</span></a></h1>
+        <h1><a href="/adminhome"><img src="assets/img/smanda.png" alt=""><span>ADMIN SMANDA</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li class="dropdown"><a href="/profil"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/profil#sejarah">Sapaan Awal</a></li>
-              <li><a href="/profil#visi-misi">Poin-poin</a></li>
-              <li><a href="/profil#kepala-sekolah">Diterima PTN</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="/profil"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/profil#sejarah">Sejarah Singkat</a></li>
-              <li><a href="/profil#visi-misi">Motto</a></li>
-              <li><a href="/profil#visi-misi">Visi</a></li>
-              <li><a href="/profil#visi-misi">Misi</a></li>
-              <li><a href="/profil#kepala-sekolah">Kepala Sekolah</a></li>
-              <li><a href="/profil#pendidik">Pendidik</a></li>
-              <li><a href="/profil#pendidik">Tenaga Kependidikan</a></li>
-              <li><a href="/profil#organisasi-sekolah">Struktur Organisasi Sekolah</a></li>
-              <li><a href="/profil#komite-sekolah">Komite Sekolah</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto" href="/adminhome">Home</a></li>
+          <li><a class="nav-link scrollto" href="/adminprofil">Profil</a></li>
           <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/adminsiswa">Daftar Siswa Aktif</a></li>

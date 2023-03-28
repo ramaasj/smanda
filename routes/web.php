@@ -33,6 +33,8 @@ Route::view('/alumni','alumni');
 
 Route::view('/adminhome', 'adminPages/adminhome');
 
+Route::view('/adminprofil', 'adminPages/adminprofil');
+
 Route::get('/adminsiswa', [SiswaController::class, 'admin']);
 
 Route::get('/updatesiswa/{id}', [SiswaController::class, 'update']);

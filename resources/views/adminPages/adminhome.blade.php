@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Dashboard')
+@section('title', 'Home')
 
 @section('style')
 <link href="assets/css/style_adminhome.css" rel="stylesheet">
