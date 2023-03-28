@@ -3,7 +3,7 @@
 @section('title', 'Update Alumni')
 
 @section('style')
-<link href="assets/css/style_updatealumni.css" rel="stylesheet">
+<link href="{{ asset('/assets/css/style_updatealumni.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -32,28 +32,32 @@
         <div class="section-title">
           <h2>Update Data Alumni</h2>
         </div>
-        <form action="">
+        <div class="row justify-content-center">
+          <form action="/updatealumni/{{$alumni -> id}}/store" method="POST" class="col-8">
+            @method('put')
+            @csrf
             <div class="form-group">
-                <label for="universitas">Universitas</label>
-                <input type="text" class="form-control" id="universitas" placeholder='UPN " Veteran" Jawa TImur'>
+                <label for="class">Universitas</label>
+                <input type="text" class="form-control" name="class" id="class" value="{{$alumni->class}}">
             </div>
             <div class="form-group">
-                <label for="snm">SNMPTN</label>
-                <input type="text" class="form-control" id="snm" placeholder="20">
+                <label for="snmptn">SNMPTN</label>
+                <input type="text" class="form-control" name="snmptn" id="snmptn" value="{{$alumni->snmptn}}">
             </div>
             <div class="form-group">
-                <label for="sbm">SBMPTN</label>
-                <input type="text" class="form-control" id="sbm" placeholder="15">
+                <label for="sbmptn">SBMPTN</label>
+                <input type="text" class="form-control" name="sbmptn" id="sbmptn" value="{{$alumni->sbmptn}}">
             </div>
             <div>
                 <label for="mandiri">Mandiri</label>
-                <input type="text" readonly class="form-control" id="mandiri" value=35>
+                <input type="text" name="mandiri" class="form-control" id="mandiri" value="{{$alumni->mandiri}}">
             </div>
             <hr>
             <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
+        </div>
       </div>
     </section><!-- End F.A.Q Section -->
 

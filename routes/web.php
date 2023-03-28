@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
@@ -29,7 +30,7 @@ Route::view('/ekstrakurikuler','ekstrakurikuler');
 
 Route::get('/berita', [BeritaController::class, 'index']);
 
-Route::view('/alumni','alumni');
+Route::get('/alumni', [AlumniController::class, 'index']);
 
 Route::view('/adminhome', 'adminPages/adminhome');
 
@@ -59,8 +60,14 @@ Route::view('/addberita', 'adminPages/addberita');
 
 Route::view('/updateberita', 'adminPages/updateberita');
 
-Route::view('/adminalumni', 'adminPages/adminalumni');
+Route::get('/adminalumni', [AlumniController::class, 'admin']);
 
-Route::view('/addalumni', 'adminPages/addalumni');
+Route::get('/addalumni', [AlumniController::class, 'create']);
 
-Route::view('/updatealumni', 'adminPages/updatealumni');
+Route::post('/addalumni/store', [AlumniController::class, 'store']);
+
+Route::get('/updatealumni/{id}', [AlumniController::class, 'update']);
+
+Route::put('/updatealumni/{id}/store', [AlumniController::class, 'updateStore']);
+
+Route::delete('/deletealumni/{id}', [AlumniController::class, 'delete']);

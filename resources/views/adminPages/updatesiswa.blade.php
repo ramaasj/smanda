@@ -3,7 +3,7 @@
 @section('title', 'Update Siswa Aktif')
 
 @section('style')
-<link href="{{ asset('assets/css/style_updatesiswaaktif.css') }}" rel="stylesheet">
+<link href="{{ asset('/assets/css/style_updatesiswaaktif.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Update Daftar Siswa Kelas XXX</h2>
+          <h2>Update Daftar Siswa Kelas {{$siswa -> class}}</h2>
           <p>Daftar siswa tahun ajaran 2022/2023</p>
         </div>
         <div class="row justify-content-center">

@@ -34,49 +34,48 @@
                     <span style="font-weight: bolder;">-</span>
                     <span style="font-weight: bolder;">23-03-2023</span></p>
             </div>
-            <div class="tablesiswa">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Universitas</th>
-                            <th scope="col">SNMPTN</th>
-                            <th scope="col">SBMPTN</th>
-                            <th scope="col">MANDIRI</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>XII MIPA 1</td>
-                            <td>10</td>
-                            <td>25</td>
-                            <td>35</td>
-                            <td><a href="/updatealumni"><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>XII MIPA 2</td>
-                            <td>13</td>
-                            <td>21</td>
-                            <td>24</td>
-                            <td><a href="/updatealumni"><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>XII MIPA 3</td>
-                            <td>16</td>
-                            <td>19</td>
-                            <td>35</td>
-                            <td><a href="/updatealumni"><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3"></i></a></td>
-                        </tr>
-                        <tr>
-                            <th>TOTAL</th>
-                            <td>39</td>
-                            <td>65</td>
-                            <td>104</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class= "row justify-content-center">
+                <div class="col-7">
+                    <a href="/addalumni"><button type="button" class="btn btn-success">Tambah +</button></a>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Universitas</th>
+                                <th scope="col">SNMPTN</th>
+                                <th scope="col">SBMPTN</th>
+                                <th scope="col">MANDIRI</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($listAlumni as $alumni)
+                            <tr>
+                                <td>{{$alumni->class}}</td>
+                                <td>{{$alumni->snmptn}}</td>
+                                <td>{{$alumni->sbmptn}}</td>
+                                <td>{{$alumni->mandiri}}</td>
+                                <td>
+                                    <a href="/updatealumni/{{$alumni->id}}"><i class="bi bi-pencil-square"></i></a>
+                                    <form action="/deletealumni/{{$alumni->id}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="submit" value="delete">
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                            <tr>
+                                <th>TOTAL</th>
+                                <td>39</td>
+                                <td>65</td>
+                                <td>104</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+            
         </div>
     </section><!-- End F.A.Q Section -->
 

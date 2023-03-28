@@ -32,28 +32,31 @@
         <div class="section-title">
           <h2>Tambah Data Alumni</h2>
         </div>
-        <form action="">
+        <div class="row justify-content-center">
+          <form action="/addalumni/store" method="POST" class="col-8">
+            @csrf
             <div class="form-group">
-                <label for="universitas">Universitas</label>
-                <input type="text" class="form-control" id="universitas" placeholder='UPN " Veteran" Jawa TImur'>
+                <label for="class">Universitas</label>
+                <input type="text" name="class" class="form-control" id="class" placeholder='Nama Universitas'>
             </div>
             <div class="form-group">
-                <label for="snm">SNMPTN</label>
-                <input type="text" class="form-control" id="snm" placeholder="20">
+                <label for="snmptn">SNMPTN</label>
+                <input type="text" name="snmptn" class="form-control" id="snmptn" placeholder="Jumlah diterima jalur SNMPTN">
             </div>
             <div class="form-group">
-                <label for="sbm">SBMPTN</label>
-                <input type="text" class="form-control" id="sbm" placeholder="15">
+                <label for="sbmptn">SBMPTN</label>
+                <input type="text" name="sbmptn" class="form-control" id="sbmptn" placeholder="Jumlah diterima jalur SBMPTN">
             </div>
             <div>
                 <label for="mandiri">Mandiri</label>
-                <input type="text" readonly class="form-control" id="mandiri" value=35>
+                <input type="text" name="mandiri" class="form-control" id="mandiri" placeholder="Jumlah diterima jalur Mandiri">
             </div>
             <hr>
             <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
+        </div>
       </div>
     </section><!-- End F.A.Q Section -->
 

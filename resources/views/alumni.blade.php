@@ -46,24 +46,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($listAlumni as $alumni)
                         <tr>
-                            <td>XII MIPA 1</td>
-                            <td>10</td>
-                            <td>25</td>
-                            <td>35</td>
+                            <td>{{$alumni->class}}</td>
+                            <td>{{$alumni->snmptn}}</td>
+                            <td>{{$alumni->sbmptn}}</td>
+                            <td>{{$alumni->mandiri}}</td>
                         </tr>
-                        <tr>
-                            <td>XII MIPA 2</td>
-                            <td>13</td>
-                            <td>21</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td>XII MIPA 3</td>
-                            <td>16</td>
-                            <td>19</td>
-                            <td>35</td>
-                        </tr>
+                        @endforeach
                         <tr>
                             <th>TOTAL</th>
                             <td>39</td>
