@@ -10,13 +10,19 @@ class SiswaController extends Controller
     public function index()
     {
         $siswa = Siswa::all();
-        return view('siswa', ['listSiswa' => $siswa]);
+        $totalLaki = Siswa::all()->sum('laki');
+        $totalPerempuan = Siswa::all()->sum('perempuan');
+        $totalJumlah = Siswa::all()->sum('jumlah');
+        return view('siswa', ['listSiswa' => $siswa], compact('totalLaki', 'totalPerempuan', 'totalJumlah'));
     }
 
     public function admin()
     {
         $siswa = Siswa::all();
-        return view('adminPages.adminsiswa', ['listSiswa' => $siswa]);
+        $totalLaki = Siswa::all()->sum('laki');
+        $totalPerempuan = Siswa::all()->sum('perempuan');
+        $totalJumlah = Siswa::all()->sum('jumlah');
+        return view('adminPages.adminsiswa', ['listSiswa' => $siswa], compact('totalLaki', 'totalPerempuan', 'totalJumlah'));
     }
 
     public function create()

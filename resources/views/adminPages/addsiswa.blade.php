@@ -38,19 +38,19 @@
             @csrf
             <div class="form-group">
                 <label for="class">Kelas</label>
-                <input type="text" name="class" class="form-control" id="class" placeholder="XII MIPA 4">
+                <input type="text" name="class" class="form-control" id="class" placeholder="Nama Kelas">
             </div>
             <div class="form-group">
                 <label for="laki">Laki-Laki</label>
-                <input type="text" name="laki" class="form-control" id="laki" placeholder="20">
+                <input type="text" name="laki" class="form-control" id="laki" placeholder="Jumlah siswa laki-laki">
             </div>
             <div class="form-group">
                 <label for="perempuan">Perempuan</label>
-                <input type="text" name="perempuan" class="form-control" id="perempuan" placeholder="15">
+                <input type="text" name="perempuan" class="form-control" id="perempuan" placeholder="Jumlah siswa perempuan">
             </div>
             <div>
                 <label for="jumlah">Jumlah</label>
-                <input type="text" name="jumlah" class="form-control" id="jumlah" value=35>
+                <input type="text" name="jumlah" class="form-control" id="jumlah" placeholder="Jumlah siswa laki-laki dan perempuan">
             </div>
             <hr>
             <div>
