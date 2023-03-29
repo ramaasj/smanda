@@ -54,8 +54,8 @@
                 <h4>Adiwiyata 1</h4>
                 <p>Adiwiyata</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Adiwiyata 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="LOREM IPSUM ASFJSAHFKJASHKFHAKSFJ SAJFKJASKJFKAJSKJKF JKNAJKSJFKJASLFJASJFLKASJLFJKLA JJ KLASJFLKJASKLFJLKASJLFKJASKLJFLASJKLJ LJKALSJKLFJ KALSJKLFJASKLJFKLASJLFJKL AJLK JAKLSJKFLJASKLJFKLAJSFKLJASKLFJ KLA"><i class="bx bx-plus"></i></a>
+                  <a href="/detail-berita" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
