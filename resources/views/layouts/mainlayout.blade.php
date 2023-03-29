@@ -52,6 +52,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
+        <li><a class="nav-link scrollto" href="/">Home</a></li>
           <li class="dropdown"><a href="/profil"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/profil#sejarah">Sejarah Singkat</a></li>
