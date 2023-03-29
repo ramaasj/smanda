@@ -66,9 +66,9 @@
                             @endforeach
                             <tr>
                                 <th>TOTAL</th>
-                                <td>39</td>
-                                <td>65</td>
-                                <td>104</td>
+                                <td>{{$totalLaki}}</td>
+                                <td>{{$totalPerempuan}}</td>
+                                <td>{{$totalJumlah}}</td>
                                 <td></td>
                             </tr>
                         </tbody>

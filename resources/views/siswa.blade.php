@@ -55,9 +55,9 @@
                   @endforeach
                   <tr>
                     <th>TOTAL</th>
-                    <td>xx</td>
-                    <td>yy</td>
-                    <td>zz</td>
+                    <td> {{$totalLaki}} </td>
+                    <td> {{$totalPerempuan}} </td>
+                    <td> {{$totalJumlah}} </td>
                   </tr>
                 </tbody>
               </table>

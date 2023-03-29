@@ -56,9 +56,9 @@
                         @endforeach
                         <tr>
                             <th>TOTAL</th>
-                            <td>39</td>
-                            <td>65</td>
-                            <td>104</td>
+                            <td>{{$totalSnm}}</td>
+                            <td>{{$totalSbm}}</td>
+                            <td>{{$totalMandiri}}</td>
                         </tr>
                     </tbody>
                 </table>
