@@ -30,6 +30,8 @@ Route::view('/ekstrakurikuler','ekstrakurikuler');
 
 Route::get('/berita', [BeritaController::class, 'index']);
 
+Route::view('/detail-berita', 'detail-berita');
+
 Route::get('/alumni', [AlumniController::class, 'index']);
 
 Route::view('/adminhome', 'adminPages/adminhome');
