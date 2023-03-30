@@ -4,6 +4,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KomiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +74,18 @@ Route::get('/updatealumni/{id}', [AlumniController::class, 'update']);
 Route::put('/updatealumni/{id}/store', [AlumniController::class, 'updateStore']);
 
 Route::delete('/deletealumni/{id}', [AlumniController::class, 'delete']);
+
+// Profil Komite//
+Route::get('/profil', [KomiteController::class, 'index']);
+
+Route::get('/adminprofil', [KomiteController::class, 'admin']);
+
+Route::get('/updatekomite/{id}', [KomiteController::class, 'update']);
+
+Route::put('/updatekomite/{id}/store', [KomiteController::class, 'updateStore']);
+
+Route::get('/addkomite', [KomiteController::class, 'create']);
+
+Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete']);
+
+Route::post('/addkomite/store', [KomiteController::class, 'store']);
