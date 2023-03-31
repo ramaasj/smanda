@@ -55,12 +55,14 @@
                                 <td> {{$siswa->perempuan}} </td>
                                 <td> {{$siswa->jumlah}} </td>
                                 <td>
-                                    <a href="/updatesiswa/{{$siswa->id}}"><i class="bi bi-pencil-square"></i></a>
-                                    <form action="/deletesiswa/{{$siswa->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <input type="submit" value="delete">
-                                    </form>
+                                    <div class="fungsi">
+                                        <button href="/updatesiswa/{{$siswa->id}}" class="btn btn-primary">EDIT</button>
+                                        <form action="/deletesiswa/{{$siswa->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger" type="submit">DELETE</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

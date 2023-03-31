@@ -55,12 +55,14 @@
                                 <td>{{$alumni->sbmptn}}</td>
                                 <td>{{$alumni->mandiri}}</td>
                                 <td>
-                                    <a href="/updatealumni/{{$alumni->id}}"><i class="bi bi-pencil-square"></i></a>
-                                    <form action="/deletealumni/{{$alumni->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <input type="submit" value="delete">
-                                    </form>
+                                    <div class="fungsi">
+                                        <a href="/updatealumni/{{$alumni->id}}"><button class="btn btn-primary">EDIT</button></i></a>
+                                        <form action="/deletealumni/{{$alumni->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

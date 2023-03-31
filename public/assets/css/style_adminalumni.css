@@ -1573,3 +1573,10 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+.fungsi{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 150px;
+}

@@ -15,13 +15,15 @@ class AdminProfilController extends Controller
         $motoController = new MotoController();
         $visiController = new VisiController();
         $misiController = new MisiController();
+        $kepsekController = new KepsekController();
 
         $listKomite = KomiteController::getAllKomite();
         $listStruktur = StrukturController::getAllStruktur();
         $listMoto = MotoController::getAllMoto();
         $listVisi = VisiController::getAllVisi();
         $listMisi = MisiController::getAllMisi();
+        $listKepsek = KepsekController::getAllKepsek();
 
-        return view('adminPages.adminprofil', compact('listKomite', 'listStruktur', 'listMoto', 'listVisi', "listMisi"));
+        return view('adminPages.adminprofil', compact('listKomite', 'listStruktur', 'listMoto', 'listVisi', 'listMisi', 'listKepsek'));
     }
 }

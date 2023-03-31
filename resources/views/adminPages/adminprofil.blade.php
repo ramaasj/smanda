@@ -39,7 +39,15 @@
 
             <div class="paragraph">
               @foreach ($listMoto as $moto)
-              <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p>
+              <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p> 
+              <div class="fungsimoto">
+                <a href="/updatemoto/{{$moto->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up"data-aos-delay="300">Edit</button></a>
+                <form action="/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up"data-aos-delay="300">
+                  @csrf
+                  @method('delete')
+                  <button type="submit" class="btn btn-danger button">Delete</button>
+                </form>
+              </div>
               @endforeach
             </div>
 
@@ -56,6 +64,14 @@
             <div class="paragraph">
               @foreach ($listVisi as $visi)
               <p><i class="bi bi-search"></i> {{$visi->visi_points}} </p>
+              <div class="fungsivisi">
+                <a href="/updatevisi/{{$visi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up"data-aos-delay="300">Edit</button></a>
+                <form action="/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up"data-aos-delay="300">
+                  @csrf
+                  @method('delete')
+                  <button type="submit" class="btn btn-danger button">Delete</button>
+                </form>
+              </div>
               @endforeach
             </div>
 
@@ -76,6 +92,14 @@
               <i class="bi bi-bullseye pe-2 align-selft-start"></i>
               {{$misi->misi_points}}
             </li>
+            <div class="fungsimisi">
+              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up"data-aos-delay="300">Edit</button></a>
+              <form action="/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up"data-aos-delay="300">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn btn-danger button">Delete</button>
+              </form>
+            </div>
             @endforeach
           </ul>
 
@@ -101,33 +125,35 @@
 
         <table class="table table-striped table-hover" data-aos="fade-up">
           <tbody>
+            @foreach ($listKepsek as $kepsek)
             <tr>
               <td>Nama</td>
-              <td>Drs. Digdo Santoso, M.Pd</td>
+              <td> {{$kepsek->nama}} </td>
             </tr>
             <tr>
               <td>NIP</td>
-              <td>19640109 1990003 1 005</td>
+              <td> {{$kepsek->nip}} </td>
             </tr>
             <tr>
               <td>Pangkat / Gol. Ruang</td>
-              <td>Pembina Utama Muda / IV C</td>
+              <td> {{$kepsek->pangkat}} </td>
             </tr>
             <tr>
               <td>Pendidikan</td>
-              <td>S2 Teknologi Pembelajaran</td>
+              <td> {{$kepsek->pendidikan}} </td>
             </tr>
             <tr>
               <td>Masa Kerja</td>
-              <td>32 Tahun</td>
+              <td> {{$kepsek->masa_kerja}} </td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="edit-button d-flex justify-content-center">
-        <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
-      </div>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="edit-button d-flex justify-content-center">
+          <div class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+        </div>
+      @endforeach
 
     </div>
   </section><!-- End Features Section -->
