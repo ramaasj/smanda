@@ -7,6 +7,10 @@ use App\Models\Komite;
 
 class KomiteController extends Controller
 {
+    public static function getAllKomite()
+    {
+        return Komite::all();
+    }
     public function index()
     {
         $komite = Komite::all();

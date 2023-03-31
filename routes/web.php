@@ -5,6 +5,9 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KomiteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\AdminProfilController;
+use App\Models\Struktur;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +28,7 @@ Route::view('/', 'home');
 
 Route::get('/siswa', [SiswaController::class, 'index']);
 
-Route::view('/ekstrakurikuler','ekstrakurikuler');
+Route::view('/ekstrakurikuler', 'ekstrakurikuler');
 
 Route::get('/berita', [BeritaController::class, 'index']);
 
@@ -74,7 +77,6 @@ Route::delete('/deletealumni/{id}', [AlumniController::class, 'delete']);
 // Profil Komite//
 Route::get('/profil', [KomiteController::class, 'index']);
 
-Route::get('/adminprofil', [KomiteController::class, 'admin']);
 
 Route::get('/updatekomite/{id}', [KomiteController::class, 'update']);
 
@@ -85,3 +87,17 @@ Route::get('/addkomite', [KomiteController::class, 'create']);
 Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete']);
 
 Route::post('/addkomite/store', [KomiteController::class, 'store']);
+
+
+Route::get('/profil', [StrukturController::class, 'index']);
+
+
+Route::get('/adminprofil/addstruktur', [StrukturController::class, 'create']);
+
+Route::post('/addstruktur/store', [StrukturController::class, 'store']);
+
+Route::get('/adminprofil', [AdminProfilController::class, 'admin']);
+
+Route::put('/updatestruktur/{id}', [StrukturController::class, 'update']);
+
+Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit']);

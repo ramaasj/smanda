@@ -317,23 +317,18 @@
   <!-- ======= F.A.Q Section ======= -->
   <section id="organisasi-sekolah" class="faq section-bg">
     <div class="container">
-
+      @foreach ($listStruktur as $struktur)
       <div class="section-title">
         <h2 style="font-weight: bolder;">STRUKTUR ORGANISASI SEKOLAH</h2>
-        <p>Struktur Organisasi Sekolah Tahun Pelajaran <span style="font-weight: bolder;">2020</span>
-          <span style="font-weight: bolder;">-</span>
-          <span style="font-weight: bolder;">2021</span>
+        <p>Struktur Organisasi Sekolah Tahun Pelajaran <span style="font-weight: bolder;">{{$struktur->desc}}</span>
         </p>
       </div>
-      <figure>
-        <img style="max-width: 100%; 
+      <img style="max-width: 100%; 
               display:block; 
-              height: auto;" class="img-struktur" src="/assets/img/STRUKTUR-ORGANISASI-SEKOLAH-2020-2021-1536x1004.jpg" alt="">
-        <figcaption>Struktur Organisasi Sekolah 2020-2021</figcaption>
-      </figure>
-
+              height: auto;" class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
+      @endforeach
       <div class="edit-button d-flex justify-content-center">
-        <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+        <a href="/updatestruktur/{{ $struktur->id }}/edit" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</a>
       </div>
 
     </div>
@@ -352,7 +347,7 @@
       </div>
       <div class="tablesiswa">
         <a href="/addkomite"><button type="button" class="btn btn-success">Tambah +</button></a>
-        <table  class="table ">
+        <table class="table ">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -362,9 +357,9 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($listKomite as $komite)
+            @foreach ($listKomite as $index => $komite)
             <tr>
-              <th> {{$komite->desc}} </th>
+              <th> {{$index + 1}} </th>
               <td> {{$komite->nama}} </td>
               <td> {{$komite->jabatan}} </td>
               <td>
