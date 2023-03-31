@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeritaController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KomiteController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +23,6 @@ use App\Http\Controllers\KomiteController;
 
 Route::view('/', 'home');
 
-Route::view('/profil', 'profil');
-
 Route::get('/siswa', [SiswaController::class, 'index']);
 
 Route::view('/ekstrakurikuler','ekstrakurikuler');
@@ -36,8 +34,6 @@ Route::view('/detail-berita', 'detail-berita');
 Route::get('/alumni', [AlumniController::class, 'index']);
 
 Route::view('/adminhome', 'adminPages/adminhome');
-
-Route::view('/adminprofil', 'adminPages/adminprofil');
 
 Route::get('/adminsiswa', [SiswaController::class, 'admin']);
 

@@ -43,7 +43,7 @@
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+                <div class="btn btn-success btn-l" data-aos="fade-up"data-aos-delay="300">ADD</div>
             </div>
           </div>
 
@@ -57,7 +57,7 @@
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+              <div class="btn btn-success btn-l" data-aos="fade-up"data-aos-delay="300">ADD</div>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@
           </ul>
 
           <div class="edit-button d-flex justify-content-center">
-            <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+            <div class="btn btn-success btn-l" data-aos="fade-up"data-aos-delay="300">ADD</div>
           </div>
         </div>
 
