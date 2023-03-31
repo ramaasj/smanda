@@ -74,9 +74,8 @@ Route::put('/updatealumni/{id}/store', [AlumniController::class, 'updateStore'])
 
 Route::delete('/deletealumni/{id}', [AlumniController::class, 'delete']);
 
-// Profil Komite//
+// Profil //
 Route::get('/profil', [KomiteController::class, 'index']);
-
 
 Route::get('/updatekomite/{id}', [KomiteController::class, 'update']);
 
@@ -88,9 +87,7 @@ Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete']);
 
 Route::post('/addkomite/store', [KomiteController::class, 'store']);
 
-
 Route::get('/profil', [StrukturController::class, 'index']);
-
 
 Route::get('/adminprofil/addstruktur', [StrukturController::class, 'create']);
 

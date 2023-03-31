@@ -38,8 +38,9 @@
             </div>
 
             <div class="paragraph">
-              <p><i class="bi bi-airplane"></i> Maju Bersama, Hebat Semua.</p>
-              <p><i class="bi bi-airplane"></i> Tunjukkan Karyamu, Raih Prestasimu.</p>
+              @foreach ($listMoto as $moto)
+              <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p>
+              @endforeach
             </div>
 
             <div class="edit-button d-flex justify-content-center">
@@ -53,7 +54,9 @@
             </div>
 
             <div class="paragraph">
-              <p><i class="bi bi-search"></i> Unggul dalam mutu, mulia dalam perilaku serta berbudaya lingkungan terpadu</p>
+              @foreach ($listVisi as $visi)
+              <p><i class="bi bi-search"></i> {{$visi->visi_points}} </p>
+              @endforeach
             </div>
 
             <div class="edit-button d-flex justify-content-center">
@@ -68,34 +71,12 @@
           </div>
 
           <ul id="mission" class="list-unstyled">
+            @foreach ($listMisi as $misi)
             <li class="d-flex py-1">
               <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Meningkatkan keimanan dan ketaqwaan kepada Tuhan yang Maha Esa sehingga terbentuk warga sekolah yang berakhlakul karimah melalui do’a sebelum kegiatan belajar mengajar, kegiatan istighosah setiap hari jumat, peringatan hari besar agama dan bersoa setelah kegiatan belajar mengajar
+              {{$misi->misi_points}}
             </li>
-            <li class="d-flex py-1">
-              <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Membiasakan perilaku jujur melalui kegiatan pembelajaran, melaporkan semua barang temuan ke TU
-            </li>
-            <li class="d-flex py-1">
-              <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Membiasakan perilaku disiplin melalui finger print, berpakaian seragam lengkap bagi semua warga sekolah sesuai dengan tata tertib yang berlaku
-            </li>
-            <li class="d-flex py-1">
-              <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Membiasakan kepedulian pada sesama melalui sumbangan sukarela untuk siswa kurang mampu, infaq
-            </li>
-            <li class="d-flex py-1">
-              <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Membudayakan kepedulian sosial pada warga sekolah yang mengalami musibah melalui sumbangan insidental
-            </li>
-            <li class="d-flex py-1">
-              <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Membudayakan terhadap kepedulian lingkungan hidup yang ada disekitarnya
-            </li>
-            <li class="d-flex py-1">
-              <i class="bi bi-bullseye pe-2 align-selft-start"></i>
-              Membiasakan memilah dan membuang sampah pada tempatnya, program penghijauan dan lomba kebersihan kelas 3 bulan sekali
-            </li>
+            @endforeach
           </ul>
 
           <div class="edit-button d-flex justify-content-center">
@@ -326,11 +307,10 @@
       <img style="max-width: 100%; 
               display:block; 
               height: auto;" class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
-      @endforeach
       <div class="edit-button d-flex justify-content-center">
         <a href="/updatestruktur/{{ $struktur->id }}/edit" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</a>
       </div>
-
+      @endforeach
     </div>
   </section><!-- End F.A.Q Section -->
 
