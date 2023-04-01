@@ -80,29 +80,14 @@ Route::put('/updatealumni/{id}/store', [AlumniController::class, 'updateStore'])
 Route::delete('/deletealumni/{id}', [AlumniController::class, 'delete']);
 
 // Profil //
-Route::get('/profil', [KomiteController::class, 'index']);
-
-Route::get('/updatekomite/{id}', [KomiteController::class, 'update']);
-
-Route::put('/updatekomite/{id}/store', [KomiteController::class, 'updateStore']);
-
-Route::get('/addkomite', [KomiteController::class, 'create']);
-
-Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete']);
-
-Route::post('/addkomite/store', [KomiteController::class, 'store']);
-
-Route::get('/profil', [StrukturController::class, 'index']);
-
-Route::get('/adminprofil/addstruktur', [StrukturController::class, 'create']);
-
-Route::post('/addstruktur/store', [StrukturController::class, 'store']);
-
 Route::get('/adminprofil', [AdminProfilController::class, 'admin']);
 
-Route::put('/updatestruktur/{id}', [StrukturController::class, 'update']);
 
-Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit']);
+
+
+
+
+
 
 //Admin Moto
 Route::get('/addmoto', [MotoController::class, 'create']);
@@ -144,7 +129,7 @@ Route::get('/updatekepsek/{id}', [KepsekController::class, 'update']);
 Route::post('/updatekepsek/{id}/store', [KepsekController::class, 'updateStore']);
 
 
-
+//Profil - Pendidik
 Route::get('/profil', [PendidikController::class, 'index']);
 
 Route::get('/adminprofil/addpendidik', [PendidikController::class, 'create']);
@@ -156,3 +141,29 @@ Route::put('/updatependidik/{id}', [PendidikController::class, 'update']);
 Route::get('/updatependidik/{id}/edit', [PendidikController::class, 'edit']);
 
 Route::delete('/deletependidik/{id}', [PendidikController::class, 'destroy']);
+
+
+//Profil - Struktur Organisasi
+Route::get('/profil', [StrukturController::class, 'index']);
+
+Route::get('/adminprofil/addstruktur', [StrukturController::class, 'create']);
+
+Route::post('/addstruktur/store', [StrukturController::class, 'store']);
+
+Route::put('/updatestruktur/{id}', [StrukturController::class, 'update']);
+
+Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit']);
+
+
+//Profil - Komite Sekolah
+Route::get('/profil', [KomiteController::class, 'index']);
+
+Route::get('/updatekomite/{id}', [KomiteController::class, 'update']);
+
+Route::put('/updatekomite/{id}/store', [KomiteController::class, 'updateStore']);
+
+Route::get('/addkomite', [KomiteController::class, 'create']);
+
+Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete']);
+
+Route::post('/addkomite/store', [KomiteController::class, 'store']);
