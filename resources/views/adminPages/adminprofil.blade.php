@@ -45,14 +45,14 @@
                 <form action="/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
-                  <button type="submit" class="btn btn-danger button">Delete</button>
+                  <button type="submit" class="btn btn-danger button" data-aos="fade-up" data-aos-delay="300">Delete</button>
                 </form>
               </div>
               @endforeach
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <a href="/addmoto"><button type="button" class="btn btn-success">Tambah Moto</button></a>
+              <a href="/addmoto"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Moto</button></a>
             </div>
           </div>
 
@@ -69,14 +69,14 @@
                 <form action="/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
-                  <button type="submit" class="btn btn-danger button">Delete</button>
+                  <button type="submit" class="btn btn-danger button" data-aos="fade-up" data-aos-delay="300">Delete</button>
                 </form>
               </div>
               @endforeach
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <a href="/addvisi"><button type="button" class="btn btn-success">Tambah Visi</button></a>
+              <a href="/addvisi"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Visi</button></a>
             </div>
           </div>
         </div>
@@ -93,18 +93,18 @@
               {{$misi->misi_points}}
             </li>
             <div class="fungsimisi">
-              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary">Edit</button></a>
+              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
               <form action="/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger button">Delete</button>
+                <button type="submit" class="btn btn-danger button" data-aos="fade-up" data-aos-delay="300">Delete</button>
               </form>
             </div>
             @endforeach
           </ul>
 
           <div class="edit-button d-flex justify-content-center">
-            <a href="/addmisi"><button type="button" class="btn btn-success">Tambah Misi</button></a>
+            <a href="/addmisi"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Misi</button></a>
           </div>
         </div>
 
@@ -152,7 +152,7 @@
       </div>
 
       <div class="edit-button d-flex justify-content-center">
-        <div class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+        <a href="/updatekepsek/{{$kepsek->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
       </div>
 
 

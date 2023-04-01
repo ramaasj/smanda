@@ -11,4 +11,17 @@ class KepsekController extends Controller
     {
         return Kepsek::all();
     }
+
+    public function update($id)
+    {
+        $kepsek = Kepsek::find($id);
+        return view('adminPages.updatekepsek', compact(['kepsek']));
+    }
+
+    public function updateStore($id, Request $request)
+    {
+        $kepsek = Kepsek::find($id);
+        $kepsek -> update ($request -> except(['_token', 'submit']));
+        return redirect('/adminprofil');
+    }
 }

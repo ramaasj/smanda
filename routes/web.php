@@ -7,6 +7,7 @@ use App\Http\Controllers\KomiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
+use App\Http\Controllers\KepsekController;
 use App\Http\Controllers\PendidikController;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\VisiController;
@@ -135,6 +136,12 @@ Route::get('/updatemisi/{id}', [MisiController::class, 'update']);
 Route::post('/updatemisi/{id}/store', [MisiController::class, 'updateStore']);
 
 Route::delete('/deletemisi/{id}', [MisiController::class, 'delete']);
+
+//Admin Bio Kepsek
+
+Route::get('/updatekepsek/{id}', [KepsekController::class, 'update']);
+
+Route::post('/updatekepsek/{id}/store', [KepsekController::class, 'updateStore']);
 
 
 
