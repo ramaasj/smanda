@@ -39,10 +39,10 @@
 
             <div class="paragraph">
               @foreach ($listMoto as $moto)
-              <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p> 
+              <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p>
               <div class="fungsimoto">
-                <a href="/updatemoto/{{$moto->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up"data-aos-delay="300">Edit</button></a>
-                <form action="/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up"data-aos-delay="300">
+                <a href="/updatemoto/{{$moto->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <form action="/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
                   <button type="submit" class="btn btn-danger button">Delete</button>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-                <div class="btn btn-success btn-l" data-aos="fade-up"data-aos-delay="300">ADD</div>
+              <div class="btn btn-success btn-l" data-aos="fade-up" data-aos-delay="300">ADD</div>
             </div>
           </div>
 
@@ -65,8 +65,8 @@
               @foreach ($listVisi as $visi)
               <p><i class="bi bi-search"></i> {{$visi->visi_points}} </p>
               <div class="fungsivisi">
-                <a href="/updatevisi/{{$visi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up"data-aos-delay="300">Edit</button></a>
-                <form action="/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up"data-aos-delay="300">
+                <a href="/updatevisi/{{$visi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <form action="/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
                   <button type="submit" class="btn btn-danger button">Delete</button>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <div class="btn btn-success btn-l" data-aos="fade-up"data-aos-delay="300">ADD</div>
+              <div class="btn btn-success btn-l" data-aos="fade-up" data-aos-delay="300">ADD</div>
             </div>
           </div>
         </div>
@@ -93,8 +93,8 @@
               {{$misi->misi_points}}
             </li>
             <div class="fungsimisi">
-              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up"data-aos-delay="300">Edit</button></a>
-              <form action="/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up"data-aos-delay="300">
+              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+              <form action="/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger button">Delete</button>
@@ -104,7 +104,7 @@
           </ul>
 
           <div class="edit-button d-flex justify-content-center">
-            <div class="btn btn-success btn-l" data-aos="fade-up"data-aos-delay="300">ADD</div>
+            <div class="btn btn-success btn-l" data-aos="fade-up" data-aos-delay="300">ADD</div>
           </div>
         </div>
 
@@ -146,14 +146,15 @@
               <td>Masa Kerja</td>
               <td> {{$kepsek->masa_kerja}} </td>
             </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div class="edit-button d-flex justify-content-center">
-          <div class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">EDIT</div>
-        </div>
-      @endforeach
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+
+      <div class="edit-button d-flex justify-content-center">
+        <div class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+      </div>
+
 
     </div>
   </section><!-- End Features Section -->
@@ -341,7 +342,7 @@
   </section><!-- End F.A.Q Section -->
 
   <!-- ======= F.A.Q Section ======= -->
-  <section id="komite-sekolah" class="faq section-bg">
+  <section id="komite-sekolah" class="faq">
     <div class="container">
 
       <div class="section-title">
