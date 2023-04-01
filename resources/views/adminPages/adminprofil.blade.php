@@ -168,83 +168,30 @@
       </div>
 
       <div class="row">
-
+        @foreach ($listPendidik as $pendidik)
         <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="/assets/img/team/team-1.jpg" class="img-fluid" alt="">
+            <img src="{{asset($pendidik->foto_pendidik) }}" class="img-fluid" alt="">
             <div class="member-info">
-              <div class="member-info-content">
-                <h4>Drs. Digdo Santoso, M.Pd</h4>
-                <span>Kepala Sekolah</span>
+              <div class="member-info-content d-flex flex-column align-items-center justify-content-center">
+                <h4>{{$pendidik->nama}}</h4>
+                <span>{{$pendidik->jabatan}}</span>
+                <div class="fungsi-pendidik">
+                  <a href="/updatependidik/{{$pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/deletependidik/{{$pendidik->id}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        @endforeach
       </div>
-
       <div class="edit-button d-flex justify-content-center">
-        <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+        <a href="/adminprofil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
 
       <div class="row">
@@ -319,7 +266,7 @@
         <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
       </div>
 
-    </div>
+
   </section><!-- End Team Section -->
 
   <!-- ======= F.A.Q Section ======= -->

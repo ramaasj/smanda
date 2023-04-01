@@ -7,6 +7,7 @@ use App\Http\Controllers\KomiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
+use App\Http\Controllers\PendidikController;
 use App\Models\Struktur;
 
 /*
@@ -98,3 +99,18 @@ Route::get('/adminprofil', [AdminProfilController::class, 'admin']);
 Route::put('/updatestruktur/{id}', [StrukturController::class, 'update']);
 
 Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit']);
+
+
+
+
+Route::get('/profil', [PendidikController::class, 'index']);
+
+Route::get('/adminprofil/addpendidik', [PendidikController::class, 'create']);
+
+Route::post('/addpendidik/store', [PendidikController::class, 'store']);
+
+Route::put('/updatependidik/{id}', [PendidikController::class, 'update']);
+
+Route::get('/updatependidik/{id}/edit', [PendidikController::class, 'edit']);
+
+Route::delete('/deletependidik/{id}', [PendidikController::class, 'destroy']);
