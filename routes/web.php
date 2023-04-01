@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\PendidikController;
+use App\Http\Controllers\MotoController;
+use App\Http\Controllers\VisiController;
+use App\Http\Controllers\MisiController;
 use App\Models\Struktur;
 
 /*
@@ -100,6 +103,38 @@ Route::put('/updatestruktur/{id}', [StrukturController::class, 'update']);
 
 Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit']);
 
+//Admin Moto
+Route::get('/addmoto', [MotoController::class, 'create']);
+
+Route::post('/addmoto/store', [MotoController::class, 'store']);
+
+Route::get('/updatemoto/{id}', [MotoController::class, 'update']);
+
+Route::post('/updatemoto/{id}/store', [MotoController::class, 'updateStore']);
+
+Route::delete('/deletemoto/{id}', [MotoController::class, 'delete']);
+
+//Admin Visi
+Route::get('/addvisi', [VisiController::class, 'create']);
+
+Route::post('/addvisi/store', [VisiController::class, 'store']);
+
+Route::get('/updatevisi/{id}', [VisiController::class, 'update']);
+
+Route::post('/updatevisi/{id}/store', [VisiController::class, 'updateStore']);
+
+Route::delete('/deletevisi/{id}', [VisiController::class, 'delete']);
+
+//Admin Misi
+Route::get('/addmisi', [MisiController::class, 'create']);
+
+Route::post('/addmisi/store', [MisiController::class, 'store']);
+
+Route::get('/updatemisi/{id}', [MisiController::class, 'update']);
+
+Route::post('/updatemisi/{id}/store', [MisiController::class, 'updateStore']);
+
+Route::delete('/deletemisi/{id}', [MisiController::class, 'delete']);
 
 
 

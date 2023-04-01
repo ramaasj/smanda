@@ -11,4 +11,35 @@ class MotoController extends Controller
     {
         return Moto::all();
     }
+
+    public function create()
+    {
+        return view('adminPages.addmoto');
+    }
+
+    public function store(Request $request)
+    {
+        Moto::create($request->except('_token', 'submit'));
+        return redirect('/adminprofil');
+    }
+
+    public function update($id)
+    {
+        $moto = Moto::find($id);
+        return view('adminPages.updatemoto', compact(['moto']));
+    }
+
+    public function updateStore($id, Request $request)
+    {
+        $moto = Moto::find($id);
+        $moto -> update ($request -> except(['_token', 'submit']));
+        return redirect('/adminprofil');
+    }
+
+    public function delete($id)
+    {
+        $moto = Moto::find($id);
+        $moto -> delete();
+        return redirect('/adminprofil');
+    }
 }

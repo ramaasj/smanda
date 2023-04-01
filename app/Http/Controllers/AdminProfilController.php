@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\KomiteController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\PendidikController;
+use App\Http\Controllers\MotoController;
+use App\Http\Controllers\VisiController;
+use App\Http\Controllers\MisiController;
 
 class AdminProfilController extends Controller
 {

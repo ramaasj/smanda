@@ -41,7 +41,7 @@
               @foreach ($listMoto as $moto)
               <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p>
               <div class="fungsimoto">
-                <a href="/updatemoto/{{$moto->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <a href="/updatemoto/{{$moto->id}}"><button class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
                 <form action="/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
@@ -52,7 +52,7 @@
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <div class="btn btn-success btn-l" data-aos="fade-up" data-aos-delay="300">ADD</div>
+              <a href="/addmoto"><button type="button" class="btn btn-success">Tambah Moto</button></a>
             </div>
           </div>
 
@@ -76,7 +76,7 @@
             </div>
 
             <div class="edit-button d-flex justify-content-center">
-              <div class="btn btn-success btn-l" data-aos="fade-up" data-aos-delay="300">ADD</div>
+              <a href="/addvisi"><button type="button" class="btn btn-success">Tambah Visi</button></a>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
               {{$misi->misi_points}}
             </li>
             <div class="fungsimisi">
-              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary">Edit</button></a>
               <form action="/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                 @csrf
                 @method('delete')
@@ -104,7 +104,7 @@
           </ul>
 
           <div class="edit-button d-flex justify-content-center">
-            <div class="btn btn-success btn-l" data-aos="fade-up" data-aos-delay="300">ADD</div>
+            <a href="/addmisi"><button type="button" class="btn btn-success">Tambah Misi</button></a>
           </div>
         </div>
 
