@@ -11,4 +11,9 @@ class Komite extends Model
 
     protected $table = 'komite_sekolah';
     protected $guarded = [];
+
+    protected $fillable = [
+        'nama',
+        'jabatan',
+    ];
 }
