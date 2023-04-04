@@ -9,7 +9,7 @@ class SiswaController extends Controller
 {
     public function index()
     {
-        $siswa = Siswa::all();
+        $siswa = Siswa::orderBy('class', 'asc')->get();
         $totalLaki = Siswa::all()->sum('laki');
         $totalPerempuan = Siswa::all()->sum('perempuan');
         $totalJumlah = Siswa::all()->sum('jumlah');
@@ -18,7 +18,7 @@ class SiswaController extends Controller
 
     public function admin()
     {
-        $siswa = Siswa::all();
+        $siswa = Siswa::orderBy('class', 'asc')->get();
         $totalLaki = Siswa::all()->sum('laki');
         $totalPerempuan = Siswa::all()->sum('perempuan');
         $totalJumlah = Siswa::all()->sum('jumlah');

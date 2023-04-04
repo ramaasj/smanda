@@ -56,7 +56,7 @@
                                 <td> {{$siswa->jumlah}} </td>
                                 <td>
                                     <div class="fungsi">
-                                        <button href="/updatesiswa/{{$siswa->id}}" class="btn btn-primary">EDIT</button>
+                                        <a href="/updatesiswa/{{$siswa->id}}"><button class="btn btn-primary">EDIT</button></i></a>
                                         <form action="/deletesiswa/{{$siswa->id}}" method="POST">
                                             @csrf
                                             @method('delete')
