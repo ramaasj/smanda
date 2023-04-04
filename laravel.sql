@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2023 at 01:09 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Waktu pembuatan: 03 Apr 2023 pada 05.34
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,18 +18,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel-smanda`
+-- Database: `laravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alumni`
+-- Struktur dari tabel `alumni`
 --
 
 CREATE TABLE `alumni` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `class` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `class` varchar(100) NOT NULL,
   `snmptn` int(11) NOT NULL,
   `sbmptn` int(11) NOT NULL,
   `mandiri` int(11) NOT NULL,
@@ -37,18 +37,25 @@ CREATE TABLE `alumni` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `alumni`
+--
+
+INSERT INTO `alumni` (`id`, `class`, `snmptn`, `sbmptn`, `mandiri`, `created_at`, `updated_at`) VALUES
+(1, 'Universitas Indonesia', 5, 8, 5, NULL, '2023-03-28 09:31:43');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `judul` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kategori` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_berita` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(100) NOT NULL,
+  `kategori` varchar(100) NOT NULL,
+  `description` longtext NOT NULL,
+  `foto_berita` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -56,13 +63,13 @@ CREATE TABLE `berita` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ekskul`
+-- Struktur dari tabel `ekskul`
 --
 
 CREATE TABLE `ekskul` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `naama_ekskul` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_ekskul` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `naama_ekskul` varchar(100) NOT NULL,
+  `foto_ekskul` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -70,29 +77,29 @@ CREATE TABLE `ekskul` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `greet_home`
+-- Struktur dari tabel `greet_home`
 --
 
 CREATE TABLE `greet_home` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `stats` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `desc-stats` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stats` varchar(100) NOT NULL,
+  `desc-stats` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -100,50 +107,64 @@ CREATE TABLE `greet_home` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kepsek_profil`
+-- Struktur dari tabel `kepsek_profil`
 --
 
 CREATE TABLE `kepsek_profil` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nip` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pangkat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pendidikan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masa_kerja` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_kepsek` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `nip` varchar(100) NOT NULL,
+  `pangkat` varchar(100) NOT NULL,
+  `pendidikan` varchar(100) NOT NULL,
+  `masa_kerja` varchar(100) NOT NULL,
+  `foto_kepsek` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `kepsek_profil`
+--
+
+INSERT INTO `kepsek_profil` (`id`, `nama`, `nip`, `pangkat`, `pendidikan`, `masa_kerja`, `foto_kepsek`, `created_at`, `updated_at`) VALUES
+(2, 'Drs. Digdo Santoso M.pd', '19640109 1990003 1 005', 'Pembina Utama Muda/ IV C', 'S2 Teknologi Pembelajaran', '32 tahun', '', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komite_sekolah`
+-- Struktur dari tabel `komite_sekolah`
 --
 
 CREATE TABLE `komite_sekolah` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `desc` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jabatan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `desc` varchar(100) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jabatan` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `komite_sekolah`
+--
+
+INSERT INTO `komite_sekolah` (`id`, `desc`, `nama`, `jabatan`, `created_at`, `updated_at`) VALUES
+(1, '', 'Budi', 'OB', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -171,66 +192,87 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `misi_profil`
+-- Struktur dari tabel `misi_profil`
 --
 
 CREATE TABLE `misi_profil` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `misi_points` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `misi_points` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `misi_profil`
+--
+
+INSERT INTO `misi_profil` (`id`, `misi_points`, `created_at`, `updated_at`) VALUES
+(1, 'Meningkatkan keimanan dan ketaqwaan kepada Tuhan yang Maha Esa sehingga terbentuk warga sekolah yang berakhlakul karimah melalui do’a sebelum kegiatan belajar mengajar, kegiatan istighosah setiap hari jumat, peringatan hari besar agama dan bersoa setelah kegiatan belajar mengajar', NULL, NULL),
+(2, 'Membiasakan perilaku jujur melalui kegiatan pembelajaran, melaporkan semua barang temuan ke TU', NULL, NULL),
+(3, 'Membiasakan perilaku disiplin melalui finger print, berpakaian seragam lengkap bagi semua warga sekolah sesuai dengan tata tertib yang berlaku', NULL, NULL),
+(4, 'Membiasakan kepedulian pada sesama melalui sumbangan sukarela untuk siswa kurang mampu, infaq', NULL, NULL),
+(5, 'Membudayakan kepedulian sosial pada warga sekolah yang mengalami musibah melalui sumbangan insidental', NULL, NULL),
+(6, 'Membudayakan terhadap kepedulian lingkungan hidup yang ada disekitarnya', NULL, NULL),
+(7, 'Membiasakan memilah dan membuang sampah pada tempatnya, program penghijauan dan lomba kebersihan kelas 3 bulan sekali', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `moto_profil`
+-- Struktur dari tabel `moto_profil`
 --
 
 CREATE TABLE `moto_profil` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `moto_points` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `moto_points` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `moto_profil`
+--
+
+INSERT INTO `moto_profil` (`id`, `moto_points`, `created_at`, `updated_at`) VALUES
+(1, 'Maju Bersama, Hebat Semua.', NULL, NULL),
+(2, 'Tunjukkan Karyamu, Raih Prestasimu.', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendidik_profil`
+-- Struktur dari tabel `pendidik_profil`
 --
 
 CREATE TABLE `pendidik_profil` (
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jabatan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_pendidik` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `nama` varchar(100) NOT NULL,
+  `jabatan` varchar(100) NOT NULL,
+  `foto_pendidik` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -240,13 +282,13 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `point_home`
+-- Struktur dari tabel `point_home`
 --
 
 CREATE TABLE `point_home` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `desc` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -254,12 +296,12 @@ CREATE TABLE `point_home` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa_aktif`
+-- Struktur dari tabel `siswa_aktif`
 --
 
 CREATE TABLE `siswa_aktif` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `class` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `class` varchar(100) NOT NULL,
   `laki` int(11) NOT NULL,
   `perempuan` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL,
@@ -267,16 +309,23 @@ CREATE TABLE `siswa_aktif` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `siswa_aktif`
+--
+
+INSERT INTO `siswa_aktif` (`id`, `class`, `laki`, `perempuan`, `jumlah`, `created_at`, `updated_at`) VALUES
+(1, 'X MIPA 1', 15, 20, 35, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `struktur_org_sekolah`
+-- Struktur dari tabel `struktur_org_sekolah`
 --
 
 CREATE TABLE `struktur_org_sekolah` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `desc` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_org_sekolah` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `desc` varchar(100) NOT NULL,
+  `foto_org_sekolah` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -284,14 +333,14 @@ CREATE TABLE `struktur_org_sekolah` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tenaga_kependidikan_profil`
+-- Struktur dari tabel `tenaga_kependidikan_profil`
 --
 
 CREATE TABLE `tenaga_kependidikan_profil` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jabatan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_tenaga_kependidikan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jabatan` varchar(100) NOT NULL,
+  `foto_tenaga_kependidikan` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -299,13 +348,13 @@ CREATE TABLE `tenaga_kependidikan_profil` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `univ_home`
+-- Struktur dari tabel `univ_home`
 --
 
 CREATE TABLE `univ_home` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `year` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `percentage` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` varchar(50) NOT NULL,
+  `percentage` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -313,16 +362,16 @@ CREATE TABLE `univ_home` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -330,27 +379,34 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `visi_profil`
+-- Struktur dari tabel `visi_profil`
 --
 
 CREATE TABLE `visi_profil` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `visi_points` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `visi_points` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `visi_profil`
+--
+
+INSERT INTO `visi_profil` (`id`, `visi_points`, `created_at`, `updated_at`) VALUES
+(1, 'Unggul dalam mutu, mulia dalam perilaku serta berbudaya lingkungan terpadu', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wakepsek`
+-- Struktur dari tabel `wakepsek`
 --
 
 CREATE TABLE `wakepsek` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jabatan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto_wakepsek` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jabatan` varchar(100) NOT NULL,
+  `foto_wakepsek` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -360,74 +416,74 @@ CREATE TABLE `wakepsek` (
 --
 
 --
--- Indexes for table `alumni`
+-- Indeks untuk tabel `alumni`
 --
 ALTER TABLE `alumni`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ekskul`
+-- Indeks untuk tabel `ekskul`
 --
 ALTER TABLE `ekskul`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `greet_home`
+-- Indeks untuk tabel `greet_home`
 --
 ALTER TABLE `greet_home`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kepsek_profil`
+-- Indeks untuk tabel `kepsek_profil`
 --
 ALTER TABLE `kepsek_profil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `komite_sekolah`
+-- Indeks untuk tabel `komite_sekolah`
 --
 ALTER TABLE `komite_sekolah`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `misi_profil`
+-- Indeks untuk tabel `misi_profil`
 --
 ALTER TABLE `misi_profil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `moto_profil`
+-- Indeks untuk tabel `moto_profil`
 --
 ALTER TABLE `moto_profil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -435,168 +491,168 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `point_home`
+-- Indeks untuk tabel `point_home`
 --
 ALTER TABLE `point_home`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `siswa_aktif`
+-- Indeks untuk tabel `siswa_aktif`
 --
 ALTER TABLE `siswa_aktif`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `struktur_org_sekolah`
+-- Indeks untuk tabel `struktur_org_sekolah`
 --
 ALTER TABLE `struktur_org_sekolah`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tenaga_kependidikan_profil`
+-- Indeks untuk tabel `tenaga_kependidikan_profil`
 --
 ALTER TABLE `tenaga_kependidikan_profil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `univ_home`
+-- Indeks untuk tabel `univ_home`
 --
 ALTER TABLE `univ_home`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `visi_profil`
+-- Indeks untuk tabel `visi_profil`
 --
 ALTER TABLE `visi_profil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wakepsek`
+-- Indeks untuk tabel `wakepsek`
 --
 ALTER TABLE `wakepsek`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `alumni`
+-- AUTO_INCREMENT untuk tabel `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ekskul`
+-- AUTO_INCREMENT untuk tabel `ekskul`
 --
 ALTER TABLE `ekskul`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `greet_home`
+-- AUTO_INCREMENT untuk tabel `greet_home`
 --
 ALTER TABLE `greet_home`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kepsek_profil`
+-- AUTO_INCREMENT untuk tabel `kepsek_profil`
 --
 ALTER TABLE `kepsek_profil`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `komite_sekolah`
+-- AUTO_INCREMENT untuk tabel `komite_sekolah`
 --
 ALTER TABLE `komite_sekolah`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `misi_profil`
+-- AUTO_INCREMENT untuk tabel `misi_profil`
 --
 ALTER TABLE `misi_profil`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `moto_profil`
+-- AUTO_INCREMENT untuk tabel `moto_profil`
 --
 ALTER TABLE `moto_profil`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `point_home`
+-- AUTO_INCREMENT untuk tabel `point_home`
 --
 ALTER TABLE `point_home`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `siswa_aktif`
+-- AUTO_INCREMENT untuk tabel `siswa_aktif`
 --
 ALTER TABLE `siswa_aktif`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `struktur_org_sekolah`
+-- AUTO_INCREMENT untuk tabel `struktur_org_sekolah`
 --
 ALTER TABLE `struktur_org_sekolah`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tenaga_kependidikan_profil`
+-- AUTO_INCREMENT untuk tabel `tenaga_kependidikan_profil`
 --
 ALTER TABLE `tenaga_kependidikan_profil`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `univ_home`
+-- AUTO_INCREMENT untuk tabel `univ_home`
 --
 ALTER TABLE `univ_home`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `visi_profil`
+-- AUTO_INCREMENT untuk tabel `visi_profil`
 --
 ALTER TABLE `visi_profil`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `wakepsek`
+-- AUTO_INCREMENT untuk tabel `wakepsek`
 --
 ALTER TABLE `wakepsek`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;

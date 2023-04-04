@@ -62,7 +62,7 @@
           </li>
           <li><a class="nav-link scrollto" href="/adminberita">Berita</a></li>
           <li><a class="nav-link scrollto" href="/adminalumni">Alumni</a></li>
-          <li><a class="nav-link scrollto" href="/alumni">LOGOUT</a></li>
+          <li><a class="nav-link scrollto" href="/logout">LOGOUT</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
