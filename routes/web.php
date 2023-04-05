@@ -37,6 +37,9 @@ Route::view('/', 'home');
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate'])->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
+Route::get('/home', function () {
+    return view('home');
+});
 
 //USER-PAGES
 Route::get('/siswa', [SiswaController::class, 'index']);

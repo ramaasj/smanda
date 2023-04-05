@@ -9,11 +9,11 @@
     <link href="assets/img/smanda.png" rel="icon" size="16x16">
     <link rel="stylesheet" href="assets/css/style_login.css">
 
-    
+
 </head>
 
 <body>
-    
+
 
     <form method="POST" action="">
         @csrf
@@ -27,7 +27,7 @@
 
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" id="password" required>
-        
+
         @if(Session::has('status'))
         <div class="warning" role="alert">
             {{Session::get('message')}}
@@ -39,7 +39,7 @@
         </div>
 
         <div class="back-button">
-            <button id="kembali" href="/">Kembali</button>
+            <button id="kembali" onclick="window.location.href = '/home';">Kembali</button>
         </div>
     </form>
 </body>

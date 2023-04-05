@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 *,
 *:before,
 *:after {
@@ -8,7 +9,8 @@
 }
 
 body {
-    background: #4f85bb; /* Old browsers */
+    background: #4f85bb;
+    /* Old browsers */
 }
 
 form {
@@ -36,12 +38,13 @@ form * {
     border: none;
 }
 
-form figure{
+form figure {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-form figure img{
+
+form figure img {
     width: 150px;
 }
 
@@ -73,16 +76,19 @@ input {
     color: #e5e5e5;
 }
 
-#username, #password{
-    border:0;
-        box-shadow:0 0 4px rgba(0,0,0,0.3);
-        transition: .3s box-shadow;
-}
-#username:hover, #password:hover{
-    box-shadow:0 0 7px black;
+#email,
+#password {
+    border: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: .3s box-shadow;
 }
 
-.login-button #login{
+#email:hover,
+#password:hover {
+    box-shadow: 0 0 7px black;
+}
+
+.login-button #login {
     margin-top: 30px;
     width: 100%;
     background-color: #ffffff;
@@ -93,7 +99,8 @@ input {
     border-radius: 5px;
     cursor: pointer;
 }
-.back-button #kembali{
+
+.back-button #kembali {
     margin-top: 20px;
     width: 100%;
     background-color: #ffffff;
@@ -104,9 +111,11 @@ input {
     border-radius: 5px;
     cursor: pointer;
 }
-.login-button #login:hover, .back-button #kembali:hover{
+
+.login-button #login:hover,
+.back-button #kembali:hover {
     opacity: 0.8;
-    box-shadow:0 0 7px black;
+    box-shadow: 0 0 7px black;
 }
 
 .warning {
@@ -116,12 +125,3 @@ input {
     color: #FFEA20;
     font-weight: bold;
 }
-        
-
-        
-
-        
-
-        
-
-        
