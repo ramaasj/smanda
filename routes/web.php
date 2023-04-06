@@ -107,7 +107,7 @@ Route::post('/updatekepsek/{id}/store', [KepsekController::class, 'updateStore']
 
 
 //ADMIN-PROFIL-PENDIDIK
-Route::get('/profil', [PendidikController::class, 'index'])->middleware('auth');
+Route::get('/profil', [PendidikController::class, 'index']);
 Route::get('/adminprofil/addpendidik', [PendidikController::class, 'create'])->middleware('auth');
 Route::post('/addpendidik/store', [PendidikController::class, 'store'])->middleware('auth');
 Route::put('/updatependidik/{id}', [PendidikController::class, 'update'])->middleware('auth');
@@ -116,7 +116,7 @@ Route::delete('/deletependidik/{id}', [PendidikController::class, 'destroy'])->m
 
 
 //ADMIN-PROFIL-STRUKTUR-ORGANISASI
-Route::get('/profil', [StrukturController::class, 'index'])->middleware('auth');
+Route::get('/profil', [StrukturController::class, 'index']);
 Route::get('/adminprofil/addstruktur', [StrukturController::class, 'create'])->middleware('auth');
 Route::post('/addstruktur/store', [StrukturController::class, 'store'])->middleware('auth');
 Route::put('/updatestruktur/{id}', [StrukturController::class, 'update'])->middleware('auth');
@@ -124,7 +124,7 @@ Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit'])->mi
 
 
 //ADMIN-PROFIL-KOMITE-SEKOLAH
-Route::get('/profil', [KomiteController::class, 'index'])->middleware('auth');
+Route::get('/profil', [KomiteController::class, 'index']);
 Route::get('/updatekomite/{id}', [KomiteController::class, 'update'])->middleware('auth');
 Route::put('/updatekomite/{id}/store', [KomiteController::class, 'updateStore'])->middleware('auth');
 Route::get('/addkomite', [KomiteController::class, 'create'])->middleware('auth');
