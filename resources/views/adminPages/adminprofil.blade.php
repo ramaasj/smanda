@@ -204,6 +204,33 @@
           <h2>Tenaga Kependidikan</h2>
         </div>
 
+        @foreach ($listTenagaPendidikan as $tenaga_pendidik)
+        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{asset($tenaga_pendidik->foto_tenaga_kependidikan) }}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content d-flex flex-column align-items-center justify-content-center">
+                <h4>{{$tenaga_pendidik->nama}}</h4>
+                <span>{{$tenaga_pendidik->jabatan}}</span>
+                <div class="fungsi-pendidik">
+                  <a href="/updatetenagapendidik/{{$tenaga_pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/deletetenagapendidik/{{$tenaga_pendidik->id}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
+
+        <div class="edit-button d-flex justify-content-center">
+          <a href="/adminprofil/addtenagapendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        </div>
+
+
         <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
             <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">

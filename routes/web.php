@@ -12,6 +12,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KepsekController;
 use App\Http\Controllers\KomiteController;
 use App\Http\Controllers\PendidikController;
+use App\Http\Controllers\TenagaPendidikanController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
 
@@ -114,6 +115,13 @@ Route::put('/updatependidik/{id}', [PendidikController::class, 'update'])->middl
 Route::get('/updatependidik/{id}/edit', [PendidikController::class, 'edit'])->middleware('auth');
 Route::delete('/deletependidik/{id}', [PendidikController::class, 'destroy'])->middleware('auth');
 
+//ADMIN-PROFIL-TENAGA-PENDIDIK
+Route::get('/profil', [TenagaPendidikanController::class, 'index']);
+Route::get('/adminprofil/addtenagapendidik', [TenagaPendidikanController::class, 'create'])->middleware('auth');
+Route::post('/addtenagapendidik/store', [TenagaPendidikanController::class, 'store'])->middleware('auth');
+Route::put('/updatetenagapendidik/{id}', [TenagaPendidikanController::class, 'update'])->middleware('auth');
+Route::get('/updatetenagapendidik/{id}/edit', [TenagaPendidikanController::class, 'edit'])->middleware('auth');
+Route::delete('/deletetenagapendidik/{id}', [TenagaPendidikanController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-PROFIL-STRUKTUR-ORGANISASI
 Route::get('/profil', [StrukturController::class, 'index']);
