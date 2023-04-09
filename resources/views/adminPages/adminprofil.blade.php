@@ -167,11 +167,12 @@
   <section id="pendidik" class="team">
     <div class="container">
 
-      <div class="section-title" data-aos="fade-in">
-        <h2>Pendidik</h2>
-      </div>
+
 
       <div class="row">
+        <div class="section-title" data-aos="fade-in">
+          <h2>Pendidik</h2>
+        </div>
         @foreach ($listPendidik as $pendidik)
         <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
@@ -197,6 +198,7 @@
       <div class="edit-button d-flex justify-content-center">
         <a href="/adminprofil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
+
 
       <div class="row">
 
@@ -226,76 +228,12 @@
         </div>
         @endforeach
 
-        <div class="edit-button d-flex justify-content-center">
-          <a href="/adminprofil/addtenagapendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>TBD</h4>
-                <span>Wakil Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-
       <div class="edit-button d-flex justify-content-center">
-        <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+        <a href="/adminprofil/addtenagapendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
+
+
 
 
   </section><!-- End Team Section -->

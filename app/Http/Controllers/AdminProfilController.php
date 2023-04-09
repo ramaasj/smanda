@@ -9,6 +9,7 @@ use App\Http\Controllers\PendidikController;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\MisiController;
+use App\Http\Controllers\TenagaPendidikanController;
 
 class AdminProfilController extends Controller
 {
@@ -21,6 +22,7 @@ class AdminProfilController extends Controller
         $misiController = new MisiController();
         $kepsekController = new KepsekController();
         $pendidikController = new PendidikController();
+        $tenagaController = new TenagaPendidikanController();
 
         $listKomite = KomiteController::getAllKomite();
         $listStruktur = StrukturController::getAllStruktur();
@@ -29,7 +31,8 @@ class AdminProfilController extends Controller
         $listMisi = MisiController::getAllMisi();
         $listKepsek = KepsekController::getAllKepsek();
         $listPendidik = PendidikController::getAllPendidik();
+        $listTenagaPendidikan = TenagaPendidikanController::getAllTenagaPendidikan();
 
-        return view('adminPages.adminprofil', compact('listKomite', 'listStruktur', 'listMoto', 'listVisi', 'listMisi', 'listKepsek', 'listPendidik'));
+        return view('adminPages.adminprofil', compact('listKomite', 'listStruktur', 'listMoto', 'listVisi', 'listMisi', 'listKepsek', 'listPendidik', 'listTenagaPendidikan'));
     }
 }
