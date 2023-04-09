@@ -123,6 +123,10 @@
           <h2>Biografi Kepala Sekolah</h2>
         </div>
 
+        <div class="d-flex justify-content-center">
+          <img class="img-kepsek" src="/assets/img/pak-digdo.jpg" alt="Bapak Digdo Santoso">
+        </div>
+
         <table class="table table-striped table-hover" data-aos="fade-up">
           <tbody>
             @foreach ($listKepsek as $kepsek)

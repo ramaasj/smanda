@@ -3,7 +3,7 @@
 @section('title', 'Profil')
 
 @section('style')
-<link href="assets/css/style_sejarah.css" rel="stylesheet">
+<link href="assets/css/style_profil.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -177,7 +177,7 @@
           </div>
 
           <div class="d-flex justify-content-center">
-            <img src="/assets/img/pak-digdo.jpg" alt="Bapak Digdo Santoso">
+            <img class="img-kepsek" src="/assets/img/pak-digdo.jpg" alt="Bapak Digdo Santoso">
           </div>
 
           <table class="table table-striped table-hover" data-aos="fade-up">
