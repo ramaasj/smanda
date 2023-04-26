@@ -3,8 +3,9 @@
 @section('title', 'Home')
 
 @section('style')
-<link href="assets/css/style_adminhome.css" rel="stylesheet">
+<link href="{{ asset('assets/css/style_adminhome.css') }}" rel="stylesheet">
 @endsection
+
 
 
 @section('content')
@@ -111,6 +112,7 @@
         </p>
       </div>
 
+
       <div class="row">
         @foreach ($listPersentase as $persentase)
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
@@ -119,11 +121,7 @@
             <h4 class="title" style="font-family: Montserrat;"><a href="">{{$persentase->year}}</a></h4>
             <a href="/updatepersentase/{{$persentase->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
           </div>
-
         </div>
-
-
-
         @endforeach
       </div>
 
