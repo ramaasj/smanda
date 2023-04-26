@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminHomeController;
 use App\Models\Struktur;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\PendidikController;
 use App\Http\Controllers\TenagaPendidikanController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
+use App\Http\Controllers\PersentaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,3 +140,14 @@ Route::put('/updatekomite/{id}/store', [KomiteController::class, 'updateStore'])
 Route::get('/addkomite', [KomiteController::class, 'create'])->middleware('auth');
 Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete'])->middleware('auth');
 Route::post('/addkomite/store', [KomiteController::class, 'store'])->middleware('auth');
+
+
+//ADMIN-HOME
+Route::get('/adminhome', [AdminHomeController::class, 'admin'])->middleware('auth')->middleware('auth');
+
+//ADMIN-HOME-PERSENTASE
+Route::get('/home', [PersentaseController::class, 'index']);
+Route::get('/adminhome/addpersentase', [PersentaseController::class, 'create'])->middleware('auth');
+Route::post('/addpersentase/store', [PersentaseController::class, 'store'])->middleware('auth');
+Route::put('/updatepersentase/{id}', [PersentaseController::class, 'update'])->middleware('auth');
+Route::get('/updatepersentase/{id}/edit', [PersentaseController::class, 'edit'])->middleware('auth');
