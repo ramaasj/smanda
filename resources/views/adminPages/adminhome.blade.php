@@ -61,41 +61,18 @@
     <div class="container">
 
       <div class="row no-gutters">
-
+        @foreach ($listPoints as $key => $points)
         <div class=" col-sm content-item" data-aos="fade-in">
-          <span>01</span>
-          <h4>Terakreditasi A</h4>
-          <p>TBD</p>
+          <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+          <h4>{{$points->title}}</h4>
+          <p>{{$points->desc}}</p>
+          <a href="/updatePoints/{{$points->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
         </div>
-
-        <div class=" col-sm content-item" data-aos="fade-in" data-aos-delay="100">
-          <span>02</span>
-          <h4>Memfasilitasi</h4>
-          <p>TBD</p>
-        </div>
-
+        @if (($key + 1) % 2 == 0 && $key + 1 != count($listPoints))
         <div class="w-100"></div>
-
-        <div class=" col-sm content-item" data-aos="fade-in" data-aos-delay="200">
-          <span>03</span>
-          <h4>Mengayomi</h4>
-          <p>TBD</p>
-        </div>
-
-        <div class=" col-sm content-item" data-aos="fade-in" data-aos-delay="300">
-          <span>04</span>
-          <h4>Adiwiyata</h4>
-          <p>TBD</p>
-        </div>
-
-
-
+        @endif
+        @endforeach
       </div>
-
-      <div class="edit-button d-flex justify-content-center">
-        <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
-      </div>
-
     </div>
   </section>
   <!-- End Steps Section -->
@@ -118,7 +95,7 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
           <div class="icon-box icon-box-pink">
             <div class="pie animate" style="--p:{{$persentase->percentage}};--c:#1677B4"> {{$persentase->percentage}}%</div>
-            <h4 class="title" style="font-family: Montserrat;"><a href="">{{$persentase->year}}</a></h4>
+            <h4 class="title" style="font-family: Montserrat;">{{$persentase->year}}</h4>
             <a href="/updatepersentase/{{$persentase->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
           </div>
         </div>

@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Persentase; // Ganti dengan model yang sesuai
+use App\Models\Points; 
 
 
-class DefaultPersentase extends Seeder
+class DefaultPoints extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,24 +15,24 @@ class DefaultPersentase extends Seeder
      */
     public function run()
     {
-        if (Persentase::count() === 0) {
-            Persentase::create([
-                'id' => '1', 'percentage' => 20, 'year' => 2020
+        if (Points::count() === 0) {
+            Points::create([
+                'id' => '1', 'title' => 'Terakreditasi A', 'desc' => 'TBD'
                 // Tambahkan kolom lainnya sesuai kebutuhan
             ]);
 
-            Persentase::create([
-                'id' => '2', 'percentage' => 20, 'year' => 2020
+            Points::create([
+                'id' => '2', 'title' => 'Memfasilitasi', 'desc' => 'TBD'
                 // Tambahkan kolom lainnya sesuai kebutuhan
             ]);
 
-            Persentase::create([
-                'id' => '3', 'percentage' => 20, 'year' => 2020
+            Points::create([
+                'id' => '3', 'title' => 'Mengayomi', 'desc' => 'TBD'
                 // Tambahkan kolom lainnya sesuai kebutuhan
             ]);
 
-            Persentase::create([
-                'id' => '4', 'percentage' => 20, 'year' => 2020
+            Points::create([
+                'id' => '4', 'title' => 'Adiwiyata', 'desc' => 'TBD'
                 // Tambahkan kolom lainnya sesuai kebutuhan
             ]);
 

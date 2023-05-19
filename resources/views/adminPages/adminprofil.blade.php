@@ -166,9 +166,6 @@
   <!-- ======= Team Section ======= -->
   <section id="pendidik" class="team">
     <div class="container">
-
-
-
       <div class="row">
         <div class="section-title" data-aos="fade-in">
           <h2>Pendidik</h2>
