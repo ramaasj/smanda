@@ -32,7 +32,7 @@
                 <h2>Update Greet</h2>
             </div>
             <div class="row justify-content-center">
-                <form action="/updateGreet/{{$greet -> id}}" method="POST" class="col-8">
+                <form action="/updateGreet/{{$greet -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">
