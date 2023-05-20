@@ -1,9 +1,9 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Edit Data Pendidik')
+@section('title', 'Update Greet')
 
 @section('style')
-<link href="{{ asset('/assets/css/style_addkomite.css') }}" rel="stylesheet">
+<link href="{{ asset('/assets/css/style_updateGreet.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -14,11 +14,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Edit Data Pendidik</h2>
+                <h2>Update Greet</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
-                    <li><a href="/adminprofil">Admin Profil</a></li>
-                    <li><a href="#">Edit Data Pendidik </a></li>
+                    <li><a href="/adminhome">Admin Home</a></li>
+                    <li><a href="#">Update Greet</a></li>
                 </ol>
             </div>
 
@@ -28,13 +28,11 @@
     <!-- ======= F.A.Q Section ======= -->
     <section id="siswa" class="faq section-bg">
         <div class="container">
-
             <div class="section-title">
-                <h2>Update Data Pendidik</h2>
-                <p>Data Pendidik Sekolah Tahun Ajaran </p>
+                <h2>Update Greet</h2>
             </div>
             <div class="row justify-content-center">
-                <form action="/updatependidik/{{$pendidik -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/updateGreet/{{$greet -> id}}" method="POST" class="col-8">
                     @method('put')
                     @csrf
                     <div class="card-body">
@@ -60,16 +58,32 @@
                     <div class="alert alert-danger">{{ session('error') }}</div>
                     @endif
                     <div class="form-group">
-                        <label for="nama">Nama Pendidik</label>
-                        <input type="text" name="nama" class="form-control" id="nama" value="{{$pendidik -> nama}}">
+                        <label for="gambar_greet">Gambar Depan</label>
+                        <input type="file" name="gambar_greet" class="form-control" id="gambar_greet" value="{{$greet -> gambar_greet}}">
                     </div>
                     <div class="form-group">
-                        <label for="jabatan">Jabatan</label>
-                        <input type="text" name="jabatan" class="form-control" id="jabatan" value="{{$pendidik -> jabatan}}">
+                        <label for="tahun_greet">Lama Berdirinya Sekolah (Tahun)</label>
+                        <input type="text" name="tahun_greet" class="form-control" id="tahun_greet" value="{{$greet -> tahun_greet}}">
                     </div>
                     <div class="form-group">
-                        <label for="foto_pendidik">Foto Pendidik</label>
-                        <input type="file" name="foto_pendidik" class="form-control" id="foto_pendidik" value="{{$pendidik -> foto_pendidik}}">
+                        <label for="desc_tahun">Deskripsi</label>
+                        <input type="text" name="desc_tahun" class="form-control" id="desc_tahun" value="{{$greet -> desc_tahun}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="siswa_greet">Jumlah Siswa</label>
+                        <input type="text" name="siswa_greet" class="form-control" id="siswa_greet" value="{{$greet -> siswa_greet}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="desc_siswa">Deskripsi</label>
+                        <input type="text" name="desc_siswa" class="form-control" id="desc_siswa" value="{{$greet -> desc_siswa}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="pendidik_greet">Jumlah Pendidik</label>
+                        <input type="text" name="pendidik_greet" class="form-control" id="pendidik_greet" value="{{$greet -> pendidik_greet}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="desc_pendidik">Deskripsi</label>
+                        <input type="text" name="desc_pendidik" class="form-control" id="desc_pendidik" value="{{$greet -> desc_pendidik}}">
                     </div>
                     <hr>
                     <div>

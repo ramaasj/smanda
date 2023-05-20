@@ -14,10 +14,10 @@
   <!-- ======= About Section ======= -->
   <section id="about" class="about section-bg">
     <div class="container">
-
+      @foreach ($listGreet as $greet)
       <div class="row">
         <div class="col-xl-6 col-lg-7" data-aos="fade-right">
-          <a href="https://www.dbl.id/r/1360/dua-sosok-imut-fotografer-smanda-force" target="_blank" rel="noopener noreferrer"><img src="assets/img/greet.jpeg" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO"></a>
+          <img src="{{asset($greet->gambar_greet) }}" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
         </div>
         <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
           <h3 data-aos="fade-up">Menunggu Kedatanganmu!</h3>
@@ -26,32 +26,32 @@
           </p>
           <div class="icon-box" data-aos="fade-up">
             <i class="bi bi-hourglass-split"></i>
-            <h4>37 Tahun</h4>
-            <p>SMA Negeri 2 Sidoarjo didirikan pada tahun 1986, tidak terasa sudah 37 tahun berlalu.</p>
+            <h4>{{$greet->tahun_greet}}</h4>
+            <p>{{$greet->desc_tahun}}</p>
           </div>
 
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
             <i class="bi bi-person-bounding-box"></i>
-            <h4>1289 Siswa Aktif</h4>
-            <p>Terdiri dari 1289 siswa aktif yang tersebar dalam Kelas X-XI-XII.</p>
+            <h4>{{$greet->siswa_greet}}</h4>
+            <p>{{$greet->desc_siswa}}</p>
           </div>
 
           <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
             <i class="bi bi-person-badge"></i>
-            <h4>64 Tenaga Kependidikan</h4>
-            <p>Pendidikan adalah hal yang terpenting, oleh karena itu kami mempunyai Tenaga Kependidikan yang luar biasa.</p>
+            <h4>{{$greet->pendidik_greet}}</h4>
+            <p>{{$greet->desc_pendidik}}</p>
           </div>
         </div>
 
-
-        <div class="edit-button d-flex justify-content-center">
-          <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
-        </div>
-
+        <a href="/updateGreet/{{$greet->id}}/edit">
+          <div class="edit-button d-flex justify-content-center">
+            <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
+          </div>
+        </a>
       </div>
 
 
-
+      @endforeach
     </div>
   </section><!-- End About Section -->
 
@@ -66,7 +66,7 @@
           <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
           <h4>{{$points->title}}</h4>
           <p>{{$points->desc}}</p>
-          <a href="/updatePoints/{{$points->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+          <a href=" /updatePoints/{{$points->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
         </div>
         @if (($key + 1) % 2 == 0 && $key + 1 != count($listPoints))
         <div class="w-100"></div>

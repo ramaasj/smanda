@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DefaultPersentase::class);
         $this->call(DefaultPoints::class);
+        $this->call(DefaultGreet::class);
     }
 }
