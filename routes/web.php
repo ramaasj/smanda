@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\PointsController;
+use App\Http\Controllers\userHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,17 +37,15 @@ use App\Http\Controllers\PointsController;
 // });
 
 //USER-HOME
-Route::view('/', 'home');
-
+Route::get('/', [UserHomeController::class, 'index']);
 //ADMIN-LOGIN
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate'])->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
-Route::get('/home', function () {
-    return view('home');
-});
 
 //USER-PAGES
+
+Route::get('/home', [UserHomeController::class, 'index']);
 Route::get('/siswa', [SiswaController::class, 'index']);
 Route::view('/ekstrakurikuler', 'ekstrakurikuler');
 Route::get('/berita', [BeritaController::class, 'index']);
@@ -147,22 +146,22 @@ Route::post('/addkomite/store', [KomiteController::class, 'store'])->middleware(
 //ADMIN-HOME
 Route::get('/adminhome', [AdminHomeController::class, 'admin'])->middleware('auth')->middleware('auth');
 
-//ADMIN-HOME-POINTS
-Route::get('/home', [GreetController::class, 'index']);
+//ADMIN-HOME-GREET
+
 Route::get('/adminhome/addGreet', [GreetController::class, 'create'])->middleware('auth');
 Route::post('/addGreet/store', [GreetController::class, 'store'])->middleware('auth');
 Route::put('/updateGreet/{id}', [GreetController::class, 'update'])->middleware('auth');
 Route::get('/updateGreet/{id}/edit', [GreetController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-POINTS
-Route::get('/home', [PointsController::class, 'index']);
+
 Route::get('/adminhome/addPoints', [PointsController::class, 'create'])->middleware('auth');
 Route::post('/addPoints/store', [PointsController::class, 'store'])->middleware('auth');
 Route::put('/updatePoints/{id}', [PointsController::class, 'update'])->middleware('auth');
 Route::get('/updatePoints/{id}/edit', [PointsController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-PERSENTASE
-Route::get('/home', [PersentaseController::class, 'index']);
+
 Route::get('/adminhome/addpersentase', [PersentaseController::class, 'create'])->middleware('auth');
 Route::post('/addpersentase/store', [PersentaseController::class, 'store'])->middleware('auth');
 Route::put('/updatepersentase/{id}', [PersentaseController::class, 'update'])->middleware('auth');

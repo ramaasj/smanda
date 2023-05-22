@@ -43,14 +43,14 @@ class PointsController extends Controller
     public function update($id, Request $request)
     {
         $points = Points::find($id);
-        $points -> update ($request -> except(['_token', 'submit']));
+        $points->update($request->except(['_token', 'submit']));
         return redirect('/adminhome');
     }
 
     public function delete($id)
     {
         $points = Points::find($id);
-        $points -> delete();
+        $points->delete();
         return redirect('/adminhome');
     }
 }
