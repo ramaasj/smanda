@@ -20,7 +20,6 @@
 </section><!-- End Hero -->
 
 <main id="main">
-
   <!-- ======= About Section ======= -->
   <section id="about" class="about section-bg">
     <div class="container">
@@ -39,13 +38,11 @@
             <h4>{{$greet->tahun_greet}}</h4>
             <p>{{$greet->desc_tahun}}</p>
           </div>
-
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
             <i class="bi bi-person-bounding-box"></i>
             <h4>{{$greet->siswa_greet}}</h4>
             <p>{{$greet->desc_siswa}}</p>
           </div>
-
           <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
             <i class="bi bi-person-badge"></i>
             <h4>{{$greet->pendidik_greet}}</h4>
@@ -56,11 +53,9 @@
       @endforeach
     </div>
   </section><!-- End About Section -->
-
   <!-- ======= Steps Section ======= -->
   <section id="steps" class="steps">
     <div class="container">
-
       <div class="row no-gutters">
         @foreach ($listPoints as $key => $points)
         <div class=" col-sm content-item" data-aos="fade-in">
@@ -76,9 +71,6 @@
     </div>
   </section>
   <!-- End Steps Section -->
-
-
-
   <!-- ======= Alumni Section ====== -->
   <section id="services" class="services section-bg">
     <div class="container">
@@ -88,8 +80,6 @@
           <span style="font-weight: bold;">Perguruan Tinggi Negeri (PTN)</span>
         </p>
       </div>
-
-
       <div class="row">
         @foreach ($listPersentase as $persentase)
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
@@ -100,76 +90,71 @@
         </div>
         @endforeach
       </div>
-
-
     </div>
   </section>
   <!-- End Alumni Section -->
-
-
-
-  <!-- ======= Team Section ======= -->
   <section id="team" class="team">
     <div class="container">
-
       <div class="section-title" data-aos="fade-in">
         <h2>Kepala dan Wakil Kepala Sekolah</h2>
         <p>Tokoh-tokoh yang memimpin SMA Negeri 2 Sidoarjo pada saat ini.</p>
       </div>
-
       <div class="row">
-
+        @php
+        $filteredTokoh = collect($listTokoh)->filter(function ($tokoh) {
+        return $tokoh->id == 1 || $tokoh->id == 2;
+        });
+        @endphp
         <div class="col-xl-3 col-sm"></div>
-
+        @foreach ($filteredTokoh as $tokoh)
+        @if ($tokoh->id == 1)
         <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>Drs. Digdo Santoso, M.Pd</h4>
+                <h4>{{$tokoh->nama_tokoh}}</h4>
                 <span>Kepala Sekolah</span>
+                <div class="fungsi-pendidik">
+                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
+        @endif
+        @if ($tokoh->id == 2)
         <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>TBD</h4>
+                <h4>{{$tokoh->nama_tokoh}}</h4>
                 <span>Wakil Kepala Sekolah</span>
+                <div class="fungsi-pendidik">
+                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
+        @endif
+        @endforeach
         <div class="col-xl-3 col-sm"></div>
-
-
-
       </div>
-
       <div class="section-title" data-aos="fade-in" data-aos-delay="300">
         <a class="btn btn-primary btn-sm" href="#" role="button">Biografi Kepala Sekolah</a>
       </div>
-
-
     </div>
-  </section><!-- End Team Section -->
-
+  </section>
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
-
       <div class="section-title" data-aos="fade-up">
         <h2>Kunjungi Kami</h2>
         <p>Terletak di dekat Pusat Kota Sidoarjo dan Stasiun Kereta Api, SMA Negeri 2 Sidoarjo mudah untuk diakses.</p>
       </div>
-
       <div class="row no-gutters justify-content-center" data-aos="fade-up">
-
         <div class="col-lg-5 d-flex align-items-stretch">
           <div class="info">
             <div class="address">
@@ -177,33 +162,23 @@
               <h4>Alamat:</h4>
               <p>Jl. Lingkar Barat Gading Fajar 2, Sidoarjo</p>
             </div>
-
             <div class="email mt-4">
               <i class="bi bi-envelope"></i>
               <h4>Email:</h4>
               <p>smanda_sda@yahoo.com</p>
             </div>
-
             <div class="phone mt-4">
               <i class="bi bi-phone"></i>
               <h4>Telp:</h4>
               <p>(031) 8961119</p>
             </div>
-
           </div>
-
         </div>
-
         <div class="col-lg-5 d-flex align-items-stretch">
           <iframe style="border:0; width: 100%; height: 270px;" src="https://maps.google.com/maps?width=500&amp;height=300&amp;hl=en&amp;q=SMA Negeri 2 Sidoarjo&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" allowfullscreen></iframe>
         </div>
-
       </div>
-
-
-
     </div>
   </section><!-- End Contact Section -->
-
 </main><!-- End #main -->
 @endsection

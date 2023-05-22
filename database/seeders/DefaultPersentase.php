@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Persentase; // Ganti dengan model yang sesuai
+use App\Models\Persentase; 
 
 
 class DefaultPersentase extends Seeder

@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\PointsController;
+use App\Http\Controllers\TokohController;
 use App\Http\Controllers\userHomeController;
 
 /*
@@ -147,22 +148,25 @@ Route::post('/addkomite/store', [KomiteController::class, 'store'])->middleware(
 Route::get('/adminhome', [AdminHomeController::class, 'admin'])->middleware('auth')->middleware('auth');
 
 //ADMIN-HOME-GREET
-
 Route::get('/adminhome/addGreet', [GreetController::class, 'create'])->middleware('auth');
 Route::post('/addGreet/store', [GreetController::class, 'store'])->middleware('auth');
 Route::put('/updateGreet/{id}', [GreetController::class, 'update'])->middleware('auth');
 Route::get('/updateGreet/{id}/edit', [GreetController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-POINTS
-
 Route::get('/adminhome/addPoints', [PointsController::class, 'create'])->middleware('auth');
 Route::post('/addPoints/store', [PointsController::class, 'store'])->middleware('auth');
 Route::put('/updatePoints/{id}', [PointsController::class, 'update'])->middleware('auth');
 Route::get('/updatePoints/{id}/edit', [PointsController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-PERSENTASE
-
 Route::get('/adminhome/addpersentase', [PersentaseController::class, 'create'])->middleware('auth');
 Route::post('/addpersentase/store', [PersentaseController::class, 'store'])->middleware('auth');
 Route::put('/updatepersentase/{id}', [PersentaseController::class, 'update'])->middleware('auth');
 Route::get('/updatepersentase/{id}/edit', [PersentaseController::class, 'edit'])->middleware('auth');
+
+//ADMIN-HOME-PERSENTASE
+Route::get('/adminhome/addtokoh', [TokohController::class, 'create'])->middleware('auth');
+Route::post('/addtokoh/store', [TokohController::class, 'store'])->middleware('auth');
+Route::put('/updateTokoh/{id}', [TokohController::class, 'update'])->middleware('auth');
+Route::get('/updateTokoh/{id}/edit', [TokohController::class, 'edit'])->middleware('auth');

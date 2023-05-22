@@ -107,5 +107,68 @@
   </section>
   <!-- End Alumni Section -->
 
+
+  <section id="team" class="team">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-in">
+        <h2>Kepala dan Wakil Kepala Sekolah</h2>
+        <p>Tokoh-tokoh yang memimpin SMA Negeri 2 Sidoarjo pada saat ini.</p>
+      </div>
+
+      <div class="row">
+        @php
+        $filteredTokoh = collect($listTokoh)->filter(function ($tokoh) {
+        return $tokoh->id == 1 || $tokoh->id == 2;
+        });
+        @endphp
+        <div class="col-xl-3 col-sm"></div>
+        @foreach ($filteredTokoh as $tokoh)
+        @if ($tokoh->id == 1)
+        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>{{$tokoh->nama_tokoh}}</h4>
+                <span>Kepala Sekolah</span>
+                <div class="fungsi-pendidik">
+                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endif
+
+        @if ($tokoh->id == 2)
+        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>{{$tokoh->nama_tokoh}}</h4>
+                <span>Wakil Kepala Sekolah</span>
+                <div class="fungsi-pendidik">
+                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endif
+        @endforeach
+        <div class="col-xl-3 col-sm"></div>
+
+
+
+      </div>
+
+
+
+
+    </div>
+  </section>
+
 </main><!-- End #main -->
 @endsection
