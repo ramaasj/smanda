@@ -69,6 +69,9 @@ Route::post('/addsiswa/store', [SiswaController::class, 'store'])->middleware('a
 Route::get('/adminekstrakurikuler', [EkstrakurikulerController::class, 'admin'])->middleware('auth');
 Route::get('/addekstrakurikuler', [EkstrakurikulerController::class, 'create'])->middleware('auth');
 Route::post('/addekstrakurikuler/store', [EkstrakurikulerController::class, 'store'])->middleware('auth');
+Route::get('/updateEkstrakurikuler/{id}', [EkstrakurikulerController::class, 'edit'])->middleware('auth');
+Route::put('/updatEkstrakurikuler/{id}/store', [EkstrakurikulerController::class, 'update'])->middleware('auth');
+Route::delete('/deleteEkstrakurikuler/{id}', [EkstrakurikulerController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-BERITA
 Route::view('/adminberita', 'adminPages/adminberita')->middleware('auth');

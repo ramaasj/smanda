@@ -51,6 +51,26 @@
               </div>
             </div>
           </div>
+
+          @foreach ($listEkskul as $ekskul)
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="{{asset($ekskul->foto_ekskul)}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{$ekskul->naama_ekskul}}</h4>
+                <div class="portfolio-links">
+                  <a href="/updateEkstrakurikuler/{{$ekskul->id}}" data-gallery="portfolioGallery" title="Update"><i class="bi bi-pencil-square"></i></a>
+                  <form action="/deleteEkstrakurikuler/{{$ekskul->id}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit"><i class="bi bi-trash3"></i></button>
+                    {{-- <a href="/deleteEkstrakurikuler/{{$ekskul->id}}" type="submit" data-gallery="portfolioGallery" title="Delete"><i class="bi bi-trash3"></i></a> --}}
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
           
           <div class="col-lg-4 col-md-6 portfolio-item">
             <div class="portfolio-wrap">
