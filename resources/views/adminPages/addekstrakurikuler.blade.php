@@ -33,15 +33,17 @@
           <h2>Tambah Ekstrakurikuler</h2>
           <p>Ekstrakurikuler SMAN 2 Sidoarjo</p>
         </div>
-        <form action="" class="">
+        <form action="/addekstrakurikuler/store" class="col-16" method="POST" enctype="multipart/form-data">
+          @csrf
             <div class="form-group">
-                <label for="kelas">Nama Ekstrakurikuler</label>
-                <input type="text" class="form-control" id="ekstrakurikuler" placeholder="Nama Ekstrakurikuler">
+                <label for="namaekskul">Nama Ekstrakurikuler</label>
+                <input type="text" class="form-control" id="naama_ekskul" placeholder="Nama Ekstrakurikuler">
             </div>
             <hr>
             <div class="custom-file">
-            <input type="file" class="custom-file-input" id="logoekstra">
-            <label class="custom-file-label" for="logoekstra">Masukkan logo/gambar ekstrakurikuler</label>
+              <label class="custom-file-label" for="logoekstra">Masukkan logo/gambar ekstrakurikuler</label>
+              <br>
+              <input type="file" class="custom-file-input" id="logoekstra">
             </div>
             <hr>
             <div>

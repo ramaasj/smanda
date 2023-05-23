@@ -16,6 +16,7 @@ use App\Http\Controllers\PendidikController;
 use App\Http\Controllers\TenagaPendidikanController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\PointsController;
@@ -65,9 +66,9 @@ Route::delete('/deletesiswa/{id}', [SiswaController::class, 'delete'])->middlewa
 Route::post('/addsiswa/store', [SiswaController::class, 'store'])->middleware('auth');
 
 //ADMIN-EKSTRA
-Route::view('/adminekstrakurikuler', 'adminPages/adminekstrakurikuler')->middleware('auth');
-Route::view('/addekstrakurikuler', 'adminPages/addekstrakurikuler')->middleware('auth');
-Route::view('/updateekstrakurikuler', 'adminPages/updateekstrakurikuler')->middleware('auth');
+Route::get('/adminekstrakurikuler', [EkstrakurikulerController::class, 'admin'])->middleware('auth');
+Route::get('/addekstrakurikuler', [EkstrakurikulerController::class, 'create'])->middleware('auth');
+Route::post('/addekstrakurikuler/store', [EkstrakurikulerController::class. 'store'])->middleware('auth');
 
 //ADMIN-BERITA
 Route::view('/adminberita', 'adminPages/adminberita')->middleware('auth');
