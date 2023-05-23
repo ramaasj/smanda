@@ -87,65 +87,65 @@ Route::put('/updatealumni/{id}/store', [AlumniController::class, 'updateStore'])
 Route::delete('/deletealumni/{id}', [AlumniController::class, 'delete'])->middleware('auth');
 
 //ADMIN-PROFIL
-Route::get('/adminprofil', [AdminProfilController::class, 'admin'])->middleware('auth')->middleware('auth');
+Route::get('/adminProfil', [AdminProfilController::class, 'admin'])->middleware('auth')->middleware('auth');
 
 //ADMIN-MOTO
-Route::get('/addmoto', [MotoController::class, 'create'])->middleware('auth');
-Route::post('/addmoto/store', [MotoController::class, 'store'])->middleware('auth');
-Route::get('/updatemoto/{id}', [MotoController::class, 'update'])->middleware('auth');
-Route::post('/updatemoto/{id}/store', [MotoController::class, 'updateStore'])->middleware('auth');
-Route::delete('/deletemoto/{id}', [MotoController::class, 'delete'])->middleware('auth');
+Route::get('/adminProfil/addmoto', [MotoController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addmoto/store', [MotoController::class, 'store'])->middleware('auth');
+Route::get('/adminProfil/updatemoto/{id}', [MotoController::class, 'update'])->middleware('auth');
+Route::post('/adminProfil/updatemoto/{id}/store', [MotoController::class, 'updateStore'])->middleware('auth');
+Route::delete('/adminProfil/deletemoto/{id}', [MotoController::class, 'delete'])->middleware('auth');
 
 //ADMIN-VISI
-Route::get('/addvisi', [VisiController::class, 'create'])->middleware('auth');
-Route::post('/addvisi/store', [VisiController::class, 'store'])->middleware('auth');
-Route::get('/updatevisi/{id}', [VisiController::class, 'update'])->middleware('auth');
-Route::post('/updatevisi/{id}/store', [VisiController::class, 'updateStore'])->middleware('auth');
-Route::delete('/deletevisi/{id}', [VisiController::class, 'delete'])->middleware('auth');
+Route::get('/adminProfil/addvisi', [VisiController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addvisi/store', [VisiController::class, 'store'])->middleware('auth');
+Route::get('/adminProfil/updatevisi/{id}', [VisiController::class, 'update'])->middleware('auth');
+Route::post('/adminProfil/updatevisi/{id}/store', [VisiController::class, 'updateStore'])->middleware('auth');
+Route::delete('/adminProfil/deletevisi/{id}', [VisiController::class, 'delete'])->middleware('auth');
 
 //ADMIN-MISI
-Route::get('/addmisi', [MisiController::class, 'create'])->middleware('auth');
-Route::post('/addmisi/store', [MisiController::class, 'store'])->middleware('auth');
-Route::get('/updatemisi/{id}', [MisiController::class, 'update'])->middleware('auth');
-Route::post('/updatemisi/{id}/store', [MisiController::class, 'updateStore'])->middleware('auth');
-Route::delete('/deletemisi/{id}', [MisiController::class, 'delete'])->middleware('auth');
+Route::get('/adminProfil/addmisi', [MisiController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addmisi/store', [MisiController::class, 'store'])->middleware('auth');
+Route::get('/adminProfil/updatemisi/{id}', [MisiController::class, 'update'])->middleware('auth');
+Route::post('/adminProfil/updatemisi/{id}/store', [MisiController::class, 'updateStore'])->middleware('auth');
+Route::delete('/adminProfil/deletemisi/{id}', [MisiController::class, 'delete'])->middleware('auth');
 
 //ADMIN-BIO-KEPSEK
-Route::get('/updatekepsek/{id}', [KepsekController::class, 'update'])->middleware('auth');
-Route::post('/updatekepsek/{id}/store', [KepsekController::class, 'updateStore'])->middleware('auth');
+Route::get('/adminProfil/updatekepsek/{id}', [KepsekController::class, 'update'])->middleware('auth');
+Route::post('/adminProfil/updatekepsek/{id}/store', [KepsekController::class, 'updateStore'])->middleware('auth');
 
 
 //ADMIN-PROFIL-PENDIDIK
-Route::get('/profil', [PendidikController::class, 'index']);
-Route::get('/adminprofil/addpendidik', [PendidikController::class, 'create'])->middleware('auth');
-Route::post('/addpendidik/store', [PendidikController::class, 'store'])->middleware('auth');
-Route::put('/updatependidik/{id}', [PendidikController::class, 'update'])->middleware('auth');
-Route::get('/updatependidik/{id}/edit', [PendidikController::class, 'edit'])->middleware('auth');
-Route::delete('/deletependidik/{id}', [PendidikController::class, 'destroy'])->middleware('auth');
+Route::get('/adminProfil/profil', [PendidikController::class, 'index']);
+Route::get('/adminProfil/addpendidik', [PendidikController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addpendidik/store', [PendidikController::class, 'store'])->middleware('auth');
+Route::put('/adminProfil/updatependidik/{id}', [PendidikController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updatependidik/{id}/edit', [PendidikController::class, 'edit'])->middleware('auth');
+Route::delete('/adminProfil/deletependidik/{id}', [PendidikController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-PROFIL-TENAGA-PENDIDIK
 Route::get('/profil', [TenagaPendidikanController::class, 'index']);
-Route::get('/adminprofil/addtenagapendidik', [TenagaPendidikanController::class, 'create'])->middleware('auth');
-Route::post('/addtenagapendidik/store', [TenagaPendidikanController::class, 'store'])->middleware('auth');
-Route::put('/updatetenagapendidik/{id}', [TenagaPendidikanController::class, 'update'])->middleware('auth');
-Route::get('/updatetenagapendidik/{id}/edit', [TenagaPendidikanController::class, 'edit'])->middleware('auth');
-Route::delete('/deletetenagapendidik/{id}', [TenagaPendidikanController::class, 'destroy'])->middleware('auth');
+Route::get('/adminProfil/addtenagapendidik', [TenagaPendidikanController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addtenagapendidik/store', [TenagaPendidikanController::class, 'store'])->middleware('auth');
+Route::put('/adminProfil/updatetenagapendidik/{id}', [TenagaPendidikanController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updatetenagapendidik/{id}/edit', [TenagaPendidikanController::class, 'edit'])->middleware('auth');
+Route::delete('/adminProfil/deletetenagapendidik/{id}', [TenagaPendidikanController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-PROFIL-STRUKTUR-ORGANISASI
 Route::get('/profil', [StrukturController::class, 'index']);
-Route::get('/adminprofil/addstruktur', [StrukturController::class, 'create'])->middleware('auth');
-Route::post('/addstruktur/store', [StrukturController::class, 'store'])->middleware('auth');
-Route::put('/updatestruktur/{id}', [StrukturController::class, 'update'])->middleware('auth');
-Route::get('/updatestruktur/{id}/edit', [StrukturController::class, 'edit'])->middleware('auth');
+Route::get('/adminProfil/addstruktur', [StrukturController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addstruktur/store', [StrukturController::class, 'store'])->middleware('auth');
+Route::put('/adminProfil/updatestruktur/{id}', [StrukturController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updatestruktur/{id}/edit', [StrukturController::class, 'edit'])->middleware('auth');
 
 
 //ADMIN-PROFIL-KOMITE-SEKOLAH
 Route::get('/profil', [KomiteController::class, 'index']);
-Route::get('/updatekomite/{id}', [KomiteController::class, 'update'])->middleware('auth');
-Route::put('/updatekomite/{id}/store', [KomiteController::class, 'updateStore'])->middleware('auth');
-Route::get('/addkomite', [KomiteController::class, 'create'])->middleware('auth');
-Route::delete('/deletekomite/{id}', [KomiteController::class, 'delete'])->middleware('auth');
-Route::post('/addkomite/store', [KomiteController::class, 'store'])->middleware('auth');
+Route::get('/adminProfil/updatekomite/{id}', [KomiteController::class, 'update'])->middleware('auth');
+Route::put('/adminProfil/updatekomite/{id}/store', [KomiteController::class, 'updateStore'])->middleware('auth');
+Route::get('/adminProfil/addkomite', [KomiteController::class, 'create'])->middleware('auth');
+Route::delete('/adminProfil/deletekomite/{id}', [KomiteController::class, 'delete'])->middleware('auth');
+Route::post('/adminProfil/addkomite/store', [KomiteController::class, 'store'])->middleware('auth');
 
 
 //ADMIN-HOME

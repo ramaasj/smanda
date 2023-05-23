@@ -20,7 +20,7 @@ class MotoController extends Controller
     public function store(Request $request)
     {
         Moto::create($request->except('_token', 'submit'));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function update($id)
@@ -33,13 +33,13 @@ class MotoController extends Controller
     {
         $moto = Moto::find($id);
         $moto -> update ($request -> except(['_token', 'submit']));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function delete($id)
     {
         $moto = Moto::find($id);
         $moto -> delete();
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }

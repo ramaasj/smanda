@@ -20,7 +20,7 @@ class KomiteController extends Controller
     public function admin()
     {
         $komite = Komite::all();
-        return view('adminPages.adminprofil', ['listKomite' => $komite]);
+        return view('adminPages.adminProfil', ['listKomite' => $komite]);
     }
 
     public function create()
@@ -31,7 +31,7 @@ class KomiteController extends Controller
     public function store(Request $request)
     {
         Komite::create($request->except('_token', 'submit'));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function update($id)
@@ -44,13 +44,13 @@ class KomiteController extends Controller
     {
         $komite = Komite::find($id);
         $komite -> update ($request -> except(['_token', 'submit']));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function delete($id)
     {
         $komite = Komite::find($id);
         $komite -> delete();
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }

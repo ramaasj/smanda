@@ -19,7 +19,7 @@ class VisiController extends Controller
     public function store(Request $request)
     {
         Visi::create($request->except('_token', 'submit'));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function update($id)
@@ -32,13 +32,13 @@ class VisiController extends Controller
     {
         $visi = Visi::find($id);
         $visi -> update ($request -> except(['_token', 'submit']));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function delete($id)
     {
         $visi = Visi::find($id);
         $visi -> delete();
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }

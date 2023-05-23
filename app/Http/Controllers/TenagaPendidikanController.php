@@ -26,7 +26,7 @@ class TenagaPendidikanController extends Controller
     public function admin()
     {
         $tenaga_pendidik = TenagaPendidikan::all();
-        return view('adminPages.adminprofil', ['listTenagaPendidikan' => $tenaga_pendidik]);
+        return view('adminPages.adminProfil', ['listTenagaPendidikan' => $tenaga_pendidik]);
     }
 
     /**
@@ -57,7 +57,7 @@ class TenagaPendidikanController extends Controller
             $tenaga_pendidik->foto_tenaga_kependidikan = $imagePath;
             $tenaga_pendidik->save();
 
-            return redirect('/adminprofil')->with('success', 'Added!');
+            return redirect('/adminProfil')->with('success', 'Added!');
         }
     }
 
@@ -106,7 +106,7 @@ class TenagaPendidikanController extends Controller
 
         $pendidik->update($params);
 
-        return redirect('/adminprofil')->with('success', 'Updated!');
+        return redirect('/adminProfil')->with('success', 'Updated!');
     }
 
     /**
@@ -119,6 +119,6 @@ class TenagaPendidikanController extends Controller
     {
         $tenaga_pendidik = TenagaPendidikan::find($id);
         $tenaga_pendidik->delete();
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }

@@ -28,21 +28,18 @@
   <!-- ======= Steps Section ======= -->
   <section id="visi-misi" class="steps section-bg">
     <div class="container">
-
       <div class="row">
-
         <div class="col-sm" data-aos="fade-right">
           <div class="content-item">
             <div class="section-title">
               <h3>Moto Kami</h3>
             </div>
-
             <div class="paragraph">
               @foreach ($listMoto as $moto)
               <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p>
               <div class="fungsimoto">
-                <a href="/updatemoto/{{$moto->id}}"><button class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
-                <form action="/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
+                <a href="/adminProfil/updatemoto/{{$moto->id}}"><button class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <form action="/adminProfil/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
                   <button type="submit" class="btn btn-danger button" data-aos="fade-up" data-aos-delay="300">Delete</button>
@@ -50,23 +47,20 @@
               </div>
               @endforeach
             </div>
-
             <div class="edit-button d-flex justify-content-center">
-              <a href="/addmoto"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Moto</button></a>
+              <a href="/adminProfil/addmoto"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Moto</button></a>
             </div>
           </div>
-
           <div class="content-item">
             <div class="section-title">
               <h3>Visi</h3>
             </div>
-
             <div class="paragraph">
               @foreach ($listVisi as $visi)
               <p><i class="bi bi-search"></i> {{$visi->visi_points}} </p>
               <div class="fungsivisi">
-                <a href="/updatevisi/{{$visi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
-                <form action="/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
+                <a href="/adminProfil/updatevisi/{{$visi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <form action="/adminProfil/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
                   <button type="submit" class="btn btn-danger button" data-aos="fade-up" data-aos-delay="300">Delete</button>
@@ -74,9 +68,8 @@
               </div>
               @endforeach
             </div>
-
             <div class="edit-button d-flex justify-content-center">
-              <a href="/addvisi"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Visi</button></a>
+              <a href="/adminProfil/addvisi"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Visi</button></a>
             </div>
           </div>
         </div>
@@ -85,7 +78,6 @@
           <div class="section-title">
             <h3>Misi</h3>
           </div>
-
           <ul id="mission" class="list-unstyled">
             @foreach ($listMisi as $misi)
             <li class="d-flex py-1">
@@ -93,8 +85,8 @@
               {{$misi->misi_points}}
             </li>
             <div class="fungsimisi">
-              <a href="/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
-              <form action="/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
+              <a href="/adminProfil/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+              <form action="/adminProfil/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger button" data-aos="fade-up" data-aos-delay="300">Delete</button>
@@ -102,31 +94,23 @@
             </div>
             @endforeach
           </ul>
-
           <div class="edit-button d-flex justify-content-center">
-            <a href="/addmisi"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Misi</button></a>
+            <a href="/adminProfil/addmisi"><button type="button" class="btn btn-success" data-aos="fade-up" data-aos-delay="300">Tambah Misi</button></a>
           </div>
         </div>
-
       </div>
-
-
-
     </div>
   </section><!-- End Steps Section -->
 
   <section id="kepala-sekolah" class="features">
     <div class="container">
-
       <div class="row">
         <div class="section-title" data-aos="fade-in">
           <h2>Biografi Kepala Sekolah</h2>
         </div>
-
         <div class="d-flex justify-content-center">
           <img class="img-kepsek" src="/assets/img/pak-digdo.jpg" alt="Bapak Digdo Santoso">
         </div>
-
         <table class="table table-striped table-hover" data-aos="fade-up">
           <tbody>
             @foreach ($listKepsek as $kepsek)
@@ -154,9 +138,8 @@
           </tbody>
         </table>
       </div>
-
       <div class="edit-button d-flex justify-content-center">
-        <a href="/updatekepsek/{{$kepsek->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+        <a href="/adminProfil/updatekepsek/{{$kepsek->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
       </div>
 
 
@@ -179,8 +162,8 @@
                 <h4>{{$pendidik->nama}}</h4>
                 <span>{{$pendidik->jabatan}}</span>
                 <div class="fungsi-pendidik">
-                  <a href="/updatependidik/{{$pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/deletependidik/{{$pendidik->id}}" method="POST">
+                  <a href="/adminProfil/updatependidik/{{$pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deletependidik/{{$pendidik->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -193,16 +176,13 @@
         @endforeach
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminprofil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        <a href="/adminProfil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
 
-
       <div class="row">
-
         <div id="title-tenkep" class="section-title" data-aos="fade-in">
           <h2>Tenaga Kependidikan</h2>
         </div>
-
         @foreach ($listTenagaPendidikan as $tenaga_pendidik)
         <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
@@ -212,8 +192,8 @@
                 <h4>{{$tenaga_pendidik->nama}}</h4>
                 <span>{{$tenaga_pendidik->jabatan}}</span>
                 <div class="fungsi-pendidik">
-                  <a href="/updatetenagapendidik/{{$tenaga_pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/deletetenagapendidik/{{$tenaga_pendidik->id}}" method="POST">
+                  <a href="/adminProfil/updatetenagapendidik/{{$tenaga_pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deletetenagapendidik/{{$tenaga_pendidik->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -224,10 +204,9 @@
           </div>
         </div>
         @endforeach
-
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminprofil/addtenagapendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        <a href="/adminProfil/addtenagapendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
 
 
@@ -248,7 +227,7 @@
               display:block; 
               height: auto;" class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
       <div class="edit-button d-flex justify-content-center">
-        <a href="/updatestruktur/{{ $struktur->id }}/edit" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</a>
+        <a href="/adminProfil/updatestruktur/{{ $struktur->id }}/edit" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</a>
       </div>
       @endforeach
     </div>
@@ -266,7 +245,7 @@
         </p>
       </div>
       <div class="tablesiswa">
-        <a href="/addkomite"><button type="button" class="btn btn-success">Tambah +</button></a>
+        <a href="/adminProfil/addkomite"><button type="button" class="btn btn-success">Tambah +</button></a>
         <table class="table ">
           <thead>
             <tr>
@@ -284,8 +263,8 @@
               <td> {{$komite->jabatan}} </td>
               <td>
                 <div class="fungsi">
-                  <a href="/updatekomite/{{$komite->id}}"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/deletekomite/{{$komite->id}}" method="POST">
+                  <a href="/adminProfil/updatekomite/{{$komite->id}}"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deletekomite/{{$komite->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>

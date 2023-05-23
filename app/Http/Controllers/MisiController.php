@@ -20,7 +20,7 @@ class MisiController extends Controller
     public function store(Request $request)
     {
         Misi::create($request->except('_token', 'submit'));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function update($id)
@@ -33,13 +33,13 @@ class MisiController extends Controller
     {
         $misi = Misi::find($id);
         $misi -> update ($request -> except(['_token', 'submit']));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 
     public function delete($id)
     {
         $misi = Misi::find($id);
         $misi -> delete();
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }

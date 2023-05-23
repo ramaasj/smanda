@@ -26,7 +26,7 @@ class StrukturController extends Controller
     public function admin()
     {
         $struktur = Struktur::all();
-        return view('adminPages.adminprofil', ['listStruktur' => $struktur]);
+        return view('adminPages.adminProfil', ['listStruktur' => $struktur]);
     }
 
     /**
@@ -57,7 +57,7 @@ class StrukturController extends Controller
             $struktur->foto_org_sekolah = $imagePath;
             $struktur->save();
 
-            return redirect('/adminprofil')->with('success', 'Added!');
+            return redirect('/adminProfil')->with('success', 'Added!');
         }
     }
 
@@ -106,7 +106,7 @@ class StrukturController extends Controller
 
         $struktur->update($params);
 
-        return redirect('/adminprofil')->with('success', 'Updated!');
+        return redirect('/adminProfil')->with('success', 'Updated!');
     }
 
     /**

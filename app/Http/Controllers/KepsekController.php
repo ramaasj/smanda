@@ -22,6 +22,6 @@ class KepsekController extends Controller
     {
         $kepsek = Kepsek::find($id);
         $kepsek -> update ($request -> except(['_token', 'submit']));
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }

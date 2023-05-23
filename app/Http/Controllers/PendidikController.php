@@ -26,7 +26,7 @@ class PendidikController extends Controller
     public function admin()
     {
         $pendidik = Pendidik::all();
-        return view('adminPages.adminprofil', ['listPendidik' => $pendidik]);
+        return view('adminPages.adminProfil', ['listPendidik' => $pendidik]);
     }
 
     /**
@@ -57,7 +57,7 @@ class PendidikController extends Controller
             $pendidik->foto_pendidik = $imagePath;
             $pendidik->save();
 
-            return redirect('/adminprofil')->with('success', 'Added!');
+            return redirect('/adminProfil')->with('success', 'Added!');
         }
     }
 
@@ -106,7 +106,7 @@ class PendidikController extends Controller
 
         $pendidik->update($params);
 
-        return redirect('/adminprofil')->with('success', 'Updated!');
+        return redirect('/adminProfil')->with('success', 'Updated!');
     }
 
     /**
@@ -119,6 +119,6 @@ class PendidikController extends Controller
     {
         $pendidik = Pendidik::find($id);
         $pendidik->delete();
-        return redirect('/adminprofil');
+        return redirect('/adminProfil');
     }
 }
