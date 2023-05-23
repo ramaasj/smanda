@@ -17,7 +17,7 @@
                 <h2>Update Greet</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
-                    <li><a href="/adminhome">Admin Home</a></li>
+                    <li><a href="/adminHome">Admin Home</a></li>
                     <li><a href="#">Update Greet</a></li>
                 </ol>
             </div>
@@ -32,7 +32,7 @@
                 <h2>Update Greet</h2>
             </div>
             <div class="row justify-content-center">
-                <form action="/updateGreet/{{$greet -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminHome/updateGreet/{{$greet -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">

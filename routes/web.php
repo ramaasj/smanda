@@ -55,7 +55,7 @@ Route::view('/detail-berita', 'detail-berita');
 Route::get('/alumni', [AlumniController::class, 'index']);
 
 //ADMIN-HOME
-Route::view('/adminhome', 'adminPages/adminhome')->middleware('auth');
+Route::view('/adminHome', 'adminPages/adminHome')->middleware('auth');
 
 //ADMIN-SISWA
 Route::get('/adminsiswa', [SiswaController::class, 'admin'])->middleware('auth');
@@ -146,28 +146,28 @@ Route::post('/addkomite/store', [KomiteController::class, 'store'])->middleware(
 
 
 //ADMIN-HOME
-Route::get('/adminhome', [AdminHomeController::class, 'admin'])->middleware('auth')->middleware('auth');
+Route::get('/adminHome', [AdminHomeController::class, 'admin'])->middleware('auth')->middleware('auth');
 
 //ADMIN-HOME-GREET
-Route::get('/adminhome/addGreet', [GreetController::class, 'create'])->middleware('auth');
-Route::post('/addGreet/store', [GreetController::class, 'store'])->middleware('auth');
-Route::put('/updateGreet/{id}', [GreetController::class, 'update'])->middleware('auth');
-Route::get('/updateGreet/{id}/edit', [GreetController::class, 'edit'])->middleware('auth');
+Route::get('/adminHome/addGreet', [GreetController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addGreet/store', [GreetController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updateGreet/{id}', [GreetController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updateGreet/{id}/edit', [GreetController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-POINTS
-Route::get('/adminhome/addPoints', [PointsController::class, 'create'])->middleware('auth');
-Route::post('/addPoints/store', [PointsController::class, 'store'])->middleware('auth');
-Route::put('/updatePoints/{id}', [PointsController::class, 'update'])->middleware('auth');
-Route::get('/updatePoints/{id}/edit', [PointsController::class, 'edit'])->middleware('auth');
+Route::get('/adminHome/addPoints', [PointsController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addPoints/store', [PointsController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updatePoints/{id}', [PointsController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updatePoints/{id}/edit', [PointsController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-PERSENTASE
-Route::get('/adminhome/addpersentase', [PersentaseController::class, 'create'])->middleware('auth');
-Route::post('/addpersentase/store', [PersentaseController::class, 'store'])->middleware('auth');
-Route::put('/updatepersentase/{id}', [PersentaseController::class, 'update'])->middleware('auth');
-Route::get('/updatepersentase/{id}/edit', [PersentaseController::class, 'edit'])->middleware('auth');
+Route::get('/adminHome/addpersentase', [PersentaseController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addpersentase/store', [PersentaseController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updatepersentase/{id}', [PersentaseController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updatepersentase/{id}/edit', [PersentaseController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-PERSENTASE
-Route::get('/adminhome/addtokoh', [TokohController::class, 'create'])->middleware('auth');
-Route::post('/addtokoh/store', [TokohController::class, 'store'])->middleware('auth');
-Route::put('/updateTokoh/{id}', [TokohController::class, 'update'])->middleware('auth');
-Route::get('/updateTokoh/{id}/edit', [TokohController::class, 'edit'])->middleware('auth');
+Route::get('/adminHome/addtokoh', [TokohController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addtokoh/store', [TokohController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updateTokoh/{id}', [TokohController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updateTokoh/{id}/edit', [TokohController::class, 'edit'])->middleware('auth');

@@ -17,7 +17,7 @@
                 <h2>Edit Data Kepala Sekolah dan Wakil</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
-                    <li><a href="/adminhome">Admin Home</a></li>
+                    <li><a href="/adminHome">Admin Home</a></li>
                     <li><a href="#">Edit Data Kepala Sekolah dan Wakil </a></li>
                 </ol>
             </div>
@@ -34,7 +34,7 @@
                 <p>Data Kepala Sekolah dan Wakil Sekolah</p>
             </div>
             <div class="row justify-content-center">
-                <form action="/updateTokoh/{{$tokoh -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminHome/updateTokoh/{{$tokoh -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">

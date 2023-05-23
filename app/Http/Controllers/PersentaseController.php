@@ -20,7 +20,7 @@ class PersentaseController extends Controller
     public function admin()
     {
         $persentase = Persentase::all();
-        return view('adminPages.adminhome', ['listPersentase' => $persentase]);
+        return view('adminPages.adminHome', ['listPersentase' => $persentase]);
     }
 
     public function create()
@@ -31,7 +31,7 @@ class PersentaseController extends Controller
     public function store(Request $request)
     {
         Persentase::create($request->except('_token', 'submit'));
-        return redirect('/adminhome');
+        return redirect('/adminHome');
     }
 
     public function edit($id)
@@ -43,14 +43,14 @@ class PersentaseController extends Controller
     public function update($id, Request $request)
     {
         $persentase = Persentase::find($id);
-        $persentase -> update ($request -> except(['_token', 'submit']));
-        return redirect('/adminhome');
+        $persentase->update($request->except(['_token', 'submit']));
+        return redirect('/adminHome');
     }
 
     public function delete($id)
     {
         $persentase = Persentase::find($id);
-        $persentase -> delete();
-        return redirect('/adminhome');
+        $persentase->delete();
+        return redirect('/adminHome');
     }
 }

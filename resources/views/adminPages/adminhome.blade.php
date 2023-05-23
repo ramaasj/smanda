@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <a href="/updateGreet/{{$greet->id}}/edit">
+        <a href="/adminHome/updateGreet/{{$greet->id}}/edit">
           <div class="edit-button d-flex justify-content-center">
             <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
           </div>
@@ -66,7 +66,7 @@
           <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
           <h4>{{$points->title}}</h4>
           <p>{{$points->desc}}</p>
-          <a href=" /updatePoints/{{$points->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+          <a href=" /adminHome/updatePoints/{{$points->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
         </div>
         @if (($key + 1) % 2 == 0 && $key + 1 != count($listPoints))
         <div class="w-100"></div>
@@ -96,7 +96,7 @@
           <div class="icon-box icon-box-pink">
             <div class="pie animate" style="--p:{{$persentase->percentage}};--c:#1677B4"> {{$persentase->percentage}}%</div>
             <h4 class="title" style="font-family: Montserrat;">{{$persentase->year}}</h4>
-            <a href="/updatepersentase/{{$persentase->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+            <a href="/adminHome/updatepersentase/{{$persentase->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
           </div>
         </div>
         @endforeach
@@ -133,7 +133,7 @@
                 <h4>{{$tokoh->nama_tokoh}}</h4>
                 <span>Kepala Sekolah</span>
                 <div class="fungsi-pendidik">
-                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <a href="/adminHome/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@
                 <h4>{{$tokoh->nama_tokoh}}</h4>
                 <span>Wakil Kepala Sekolah</span>
                 <div class="fungsi-pendidik">
-                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <a href="/adminHome/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
                 </div>
               </div>
             </div>

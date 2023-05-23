@@ -17,7 +17,7 @@
                 <h2>Update Points</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
-                    <li><a href="/adminhome">Admin Home</a></li>
+                    <li><a href="/adminHome">Admin Home</a></li>
                     <li><a href="#">Update Points</a></li>
                 </ol>
             </div>
@@ -32,7 +32,7 @@
                 <h2>Update Points</h2>
             </div>
             <div class="row justify-content-center">
-                <form action="/updatePoints/{{$points -> id}}" method="POST" class="col-8">
+                <form action="/adminHome/updatePoints/{{$points -> id}}" method="POST" class="col-8">
                     @method('put')
                     @csrf
                     <div class="form-group">

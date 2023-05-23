@@ -20,7 +20,7 @@ class PointsController extends Controller
     public function admin()
     {
         $points = Points::all();
-        return view('adminPages.adminhome', ['listPoints' => $points]);
+        return view('adminPages.adminHome', ['listPoints' => $points]);
     }
 
     public function create()
@@ -31,7 +31,7 @@ class PointsController extends Controller
     public function store(Request $request)
     {
         Points::create($request->except('_token', 'submit'));
-        return redirect('/adminhome');
+        return redirect('/adminHome');
     }
 
     public function edit($id)
@@ -44,13 +44,13 @@ class PointsController extends Controller
     {
         $points = Points::find($id);
         $points->update($request->except(['_token', 'submit']));
-        return redirect('/adminhome');
+        return redirect('/adminHome');
     }
 
     public function delete($id)
     {
         $points = Points::find($id);
         $points->delete();
-        return redirect('/adminhome');
+        return redirect('/adminHome');
     }
 }

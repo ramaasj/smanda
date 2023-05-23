@@ -23,7 +23,7 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-  
+
   <!-- Vendor CSS Files -->
   <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -45,14 +45,14 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1><a href="/adminhome"><img src="{{ asset('assets/img/smanda.png') }}" alt=""><span>ADMIN SMANDA</span></a></h1>
+        <h1><a href="/adminHome"><img src="{{ asset('assets/img/smanda.png') }}" alt=""><span>ADMIN SMANDA</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="/adminhome">Home</a></li>
+          <li><a class="nav-link scrollto" href="/adminHome">Home</a></li>
           <li><a class="nav-link scrollto" href="/adminprofil">Profil</a></li>
           <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

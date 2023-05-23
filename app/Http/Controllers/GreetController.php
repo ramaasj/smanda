@@ -26,7 +26,7 @@ class GreetController extends Controller
     public function admin()
     {
         $greet = Greet::all();
-        return view('adminPages.adminhome', ['listGreet' => $greet]);
+        return view('adminPages.adminHome', ['listGreet' => $greet]);
     }
 
     /**
@@ -57,7 +57,7 @@ class GreetController extends Controller
             $greet->gambar_greet = $imagePath;
             $greet->save();
 
-            return redirect('/adminhome')->with('success', 'Added!');
+            return redirect('/adminHome')->with('success', 'Added!');
         }
     }
 
@@ -106,7 +106,7 @@ class GreetController extends Controller
 
         $greet->update($params);
 
-        return redirect('/adminhome')->with('success', 'Updated!');
+        return redirect('/adminHome')->with('success', 'Updated!');
     }
 
     /**
@@ -119,6 +119,6 @@ class GreetController extends Controller
     {
         $greet = Greet::find($id);
         $greet->delete();
-        return redirect('/adminhome');
+        return redirect('/adminHome');
     }
 }

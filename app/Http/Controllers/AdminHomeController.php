@@ -23,6 +23,6 @@ class AdminHomeController extends Controller
         $listTokoh = TokohController::getAllTokoh();
 
 
-        return view('adminPages.adminhome', compact('listGreet', 'listPoints', 'listPersentase', 'listTokoh'));
+        return view('adminPages.adminHome', compact('listGreet', 'listPoints', 'listPersentase', 'listTokoh'));
     }
 }

@@ -26,7 +26,7 @@ class TokohController extends Controller
     public function admin()
     {
         $tokoh = Tokoh::all();
-        return view('adminPages.adminhome', ['listTokoh' => $tokoh]);
+        return view('adminPages.adminHome', ['listTokoh' => $tokoh]);
     }
 
     /**
@@ -57,7 +57,7 @@ class TokohController extends Controller
             $tokoh->foto_tokoh = $imagePath;
             $tokoh->save();
 
-            return redirect('/adminhome')->with('success', 'Added!');
+            return redirect('/adminHome')->with('success', 'Added!');
         }
     }
 
@@ -106,7 +106,7 @@ class TokohController extends Controller
 
         $tokoh->update($params);
 
-        return redirect('/adminhome')->with('success', 'Updated!');
+        return redirect('/adminHome')->with('success', 'Updated!');
     }
 
     /**
@@ -119,6 +119,6 @@ class TokohController extends Controller
     {
         $tokoh = Tokoh::find($id);
         $tokoh->delete();
-        return redirect('/adminhome');
+        return redirect('/adminHome');
     }
 }
