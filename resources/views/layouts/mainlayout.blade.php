@@ -63,14 +63,14 @@
               <li><a href="/profil#komite-sekolah">Komite Sekolah</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="/"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="/siswa"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/siswa">Daftar Siswa Aktif</a></li>
               <li><a href="/ekstrakurikuler">Kegiatan Ekstrakurikuler</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/berita">Berita</a></li>
-          <li class="dropdown"><a href="/"><span>Lainnya</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="/alumni"><span>Lainnya</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/alumni">Alumni</a></li>
               <li><a href="/">PPDB</a></li>
