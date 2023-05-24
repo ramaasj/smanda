@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DefaultPoints::class);
         $this->call(DefaultGreet::class);
         $this->call(DefaultTokoh::class);
+        $this->call(DefaultStruktur::class);
     }
 }
