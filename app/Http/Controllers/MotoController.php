@@ -7,9 +7,20 @@ use App\Models\Moto;
 
 class MotoController extends Controller
 {
-    public static function getAllMoto()
+    public static function getAllmoto()
     {
         return Moto::all();
+    }
+    public function index()
+    {
+        $moto = Moto::all();
+        return view('profil', ['listmoto' => $moto]);
+    }
+
+    public function admin()
+    {
+        $moto = Moto::all();
+        return view('adminPages.adminProfil', ['listmoto' => $moto]);
     }
 
     public function create()
@@ -23,23 +34,23 @@ class MotoController extends Controller
         return redirect('/adminProfil');
     }
 
-    public function update($id)
+    public function edit($id)
     {
         $moto = Moto::find($id);
         return view('adminPages.updatemoto', compact(['moto']));
     }
 
-    public function updateStore($id, Request $request)
+    public function update($id, Request $request)
     {
         $moto = Moto::find($id);
-        $moto -> update ($request -> except(['_token', 'submit']));
+        $moto->update($request->except(['_token', 'submit']));
         return redirect('/adminProfil');
     }
 
     public function delete($id)
     {
         $moto = Moto::find($id);
-        $moto -> delete();
+        $moto->delete();
         return redirect('/adminProfil');
     }
 }

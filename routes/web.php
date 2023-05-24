@@ -22,6 +22,7 @@ use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\PointsController;
 use App\Http\Controllers\TokohController;
 use App\Http\Controllers\userHomeController;
+use App\Http\Controllers\userProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 //USER-PAGES
 
 Route::get('/home', [UserHomeController::class, 'index']);
+Route::get('/profil', [UserProfilController::class, 'index']);
 Route::get('/siswa', [SiswaController::class, 'index']);
 Route::view('/ekstrakurikuler', 'ekstrakurikuler');
 Route::get('/berita', [BeritaController::class, 'index']);
@@ -92,31 +94,31 @@ Route::get('/adminProfil', [AdminProfilController::class, 'admin'])->middleware(
 //ADMIN-MOTO
 Route::get('/adminProfil/addmoto', [MotoController::class, 'create'])->middleware('auth');
 Route::post('/adminProfil/addmoto/store', [MotoController::class, 'store'])->middleware('auth');
-Route::get('/adminProfil/updatemoto/{id}', [MotoController::class, 'update'])->middleware('auth');
-Route::post('/adminProfil/updatemoto/{id}/store', [MotoController::class, 'updateStore'])->middleware('auth');
+Route::put('/adminProfil/updatemoto/{id}', [MotoController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updatemoto/{id}/edit', [MotoController::class, 'edit'])->middleware('auth');
 Route::delete('/adminProfil/deletemoto/{id}', [MotoController::class, 'delete'])->middleware('auth');
+
 
 //ADMIN-VISI
 Route::get('/adminProfil/addvisi', [VisiController::class, 'create'])->middleware('auth');
 Route::post('/adminProfil/addvisi/store', [VisiController::class, 'store'])->middleware('auth');
-Route::get('/adminProfil/updatevisi/{id}', [VisiController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updatevisi/{id}/edit', [VisiController::class, 'update'])->middleware('auth');
 Route::post('/adminProfil/updatevisi/{id}/store', [VisiController::class, 'updateStore'])->middleware('auth');
 Route::delete('/adminProfil/deletevisi/{id}', [VisiController::class, 'delete'])->middleware('auth');
 
 //ADMIN-MISI
 Route::get('/adminProfil/addmisi', [MisiController::class, 'create'])->middleware('auth');
 Route::post('/adminProfil/addmisi/store', [MisiController::class, 'store'])->middleware('auth');
-Route::get('/adminProfil/updatemisi/{id}', [MisiController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updatemisi/{id}/edit', [MisiController::class, 'update'])->middleware('auth');
 Route::post('/adminProfil/updatemisi/{id}/store', [MisiController::class, 'updateStore'])->middleware('auth');
 Route::delete('/adminProfil/deletemisi/{id}', [MisiController::class, 'delete'])->middleware('auth');
 
 //ADMIN-BIO-KEPSEK
-Route::get('/adminProfil/updatekepsek/{id}', [KepsekController::class, 'update'])->middleware('auth');
-Route::post('/adminProfil/updatekepsek/{id}/store', [KepsekController::class, 'updateStore'])->middleware('auth');
+Route::get('/adminProfil/updateKepsek/{id}/edit', [KepsekController::class, 'edit'])->middleware('auth');
+Route::put('/adminProfil/updateKepsek/{id}', [KepsekController::class, 'update'])->middleware('auth');
 
 
 //ADMIN-PROFIL-PENDIDIK
-Route::get('/adminProfil/profil', [PendidikController::class, 'index']);
 Route::get('/adminProfil/addpendidik', [PendidikController::class, 'create'])->middleware('auth');
 Route::post('/adminProfil/addpendidik/store', [PendidikController::class, 'store'])->middleware('auth');
 Route::put('/adminProfil/updatependidik/{id}', [PendidikController::class, 'update'])->middleware('auth');
@@ -124,7 +126,6 @@ Route::get('/adminProfil/updatependidik/{id}/edit', [PendidikController::class, 
 Route::delete('/adminProfil/deletependidik/{id}', [PendidikController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-PROFIL-TENAGA-PENDIDIK
-Route::get('/profil', [TenagaPendidikanController::class, 'index']);
 Route::get('/adminProfil/addtenagapendidik', [TenagaPendidikanController::class, 'create'])->middleware('auth');
 Route::post('/adminProfil/addtenagapendidik/store', [TenagaPendidikanController::class, 'store'])->middleware('auth');
 Route::put('/adminProfil/updatetenagapendidik/{id}', [TenagaPendidikanController::class, 'update'])->middleware('auth');
@@ -132,7 +133,6 @@ Route::get('/adminProfil/updatetenagapendidik/{id}/edit', [TenagaPendidikanContr
 Route::delete('/adminProfil/deletetenagapendidik/{id}', [TenagaPendidikanController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-PROFIL-STRUKTUR-ORGANISASI
-Route::get('/profil', [StrukturController::class, 'index']);
 Route::get('/adminProfil/addstruktur', [StrukturController::class, 'create'])->middleware('auth');
 Route::post('/adminProfil/addstruktur/store', [StrukturController::class, 'store'])->middleware('auth');
 Route::put('/adminProfil/updatestruktur/{id}', [StrukturController::class, 'update'])->middleware('auth');
@@ -140,7 +140,6 @@ Route::get('/adminProfil/updatestruktur/{id}/edit', [StrukturController::class, 
 
 
 //ADMIN-PROFIL-KOMITE-SEKOLAH
-Route::get('/profil', [KomiteController::class, 'index']);
 Route::get('/adminProfil/updatekomite/{id}', [KomiteController::class, 'update'])->middleware('auth');
 Route::put('/adminProfil/updatekomite/{id}/store', [KomiteController::class, 'updateStore'])->middleware('auth');
 Route::get('/adminProfil/addkomite', [KomiteController::class, 'create'])->middleware('auth');

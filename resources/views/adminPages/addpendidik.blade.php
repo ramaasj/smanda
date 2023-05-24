@@ -34,7 +34,7 @@
                 <p>Daftar Pendidik Tahun Ajaran 2022/2023</p>
             </div>
             <div class="row justify-content-center">
-                <form action="/addpendidik/store" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminProfil/addpendidik/store" method="POST" class="col-8" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         @if ($errors->any())

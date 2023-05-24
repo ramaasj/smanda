@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('kepsek_profil', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 100);
-            $table->string('nip', 100);
-            $table->string('pangkat', 100);
-            $table->string('pendidikan', 100);
-            $table->string('masa_kerja', 100);
-            $table->string('foto_kepsek', 100);
+            $table->string('nama', 200);
+            $table->string('nip', 200);
+            $table->string('pangkat', 200);
+            $table->string('pendidikan', 200);
+            $table->string('masa_kerja', 200);
+            $table->string('foto_kepsek', 200);
             $table->timestamps();
         });
     }

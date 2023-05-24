@@ -34,7 +34,7 @@
                 <p>Data Pendidik Sekolah Tahun Ajaran </p>
             </div>
             <div class="row justify-content-center">
-                <form action="/updatependidik/{{$pendidik -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminProfil/updatependidik/{{$pendidik -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">

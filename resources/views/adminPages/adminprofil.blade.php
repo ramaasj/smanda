@@ -24,7 +24,6 @@
     </div>
   </section><!-- Breadcrumbs Section -->
 
-
   <!-- ======= Steps Section ======= -->
   <section id="visi-misi" class="steps section-bg">
     <div class="container">
@@ -38,7 +37,7 @@
               @foreach ($listMoto as $moto)
               <p><i class="bi bi-airplane"></i> {{$moto->moto_points}}</p>
               <div class="fungsimoto">
-                <a href="/adminProfil/updatemoto/{{$moto->id}}"><button class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <a href="/adminProfil/updatemoto/{{$moto->id}}/edit"><button class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
                 <form action="/adminProfil/deletemoto/{{$moto->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
@@ -59,7 +58,7 @@
               @foreach ($listVisi as $visi)
               <p><i class="bi bi-search"></i> {{$visi->visi_points}} </p>
               <div class="fungsivisi">
-                <a href="/adminProfil/updatevisi/{{$visi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+                <a href="/adminProfil/updatevisi/{{$visi->id}}/edit"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
                 <form action="/adminProfil/deletevisi/{{$visi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                   @csrf
                   @method('delete')
@@ -85,7 +84,7 @@
               {{$misi->misi_points}}
             </li>
             <div class="fungsimisi">
-              <a href="/adminProfil/updatemisi/{{$misi->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+              <a href="/adminProfil/updatemisi/{{$misi->id}}/edit"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
               <form action="/adminProfil/deletemisi/{{$misi->id}}" method="POST" data-aos="fade-up" data-aos-delay="300">
                 @csrf
                 @method('delete')
@@ -104,16 +103,16 @@
 
   <section id="kepala-sekolah" class="features">
     <div class="container">
+      @foreach ($listKepsek as $kepsek)
       <div class="row">
         <div class="section-title" data-aos="fade-in">
           <h2>Biografi Kepala Sekolah</h2>
         </div>
         <div class="d-flex justify-content-center">
-          <img class="img-kepsek" src="/assets/img/pak-digdo.jpg" alt="Bapak Digdo Santoso">
+          <img class="img-kepsek" src="{{asset($kepsek->foto_kepsek) }}" alt="Kepala Sekolah">
         </div>
         <table class="table table-striped table-hover" data-aos="fade-up">
           <tbody>
-            @foreach ($listKepsek as $kepsek)
             <tr>
               <td>Nama</td>
               <td> {{$kepsek->nama}} </td>
@@ -139,7 +138,7 @@
         </table>
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminProfil/updatekepsek/{{$kepsek->id}}"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+        <a href="/adminProfil/updateKepsek/{{$kepsek->id}}/edit"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
       </div>
 
 

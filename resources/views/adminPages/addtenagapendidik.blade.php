@@ -17,7 +17,7 @@
                 <h2>Tambah Tenaga Pendidik</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
-                    <li><a href="/adminprofil">Admin Profil</a></li>
+                    <li><a href="/adminProfil">Admin Profil</a></li>
                     <li><a href="#">Tambah Daftar Tenaga Pendidik</a></li>
                 </ol>
             </div>
@@ -34,7 +34,7 @@
                 <p>Daftar Tenaga Pendidik Tahun Ajaran 2022/2023</p>
             </div>
             <div class="row justify-content-center">
-                <form action="/addtenagapendidik/store" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminProfil/addtenagapendidik/store" method="POST" class="col-8" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         @if ($errors->any())
