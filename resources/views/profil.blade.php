@@ -3,13 +3,12 @@
 @section('title', 'Profil')
 
 @section('style')
-<link href="assets/css/style_profil.css" rel="stylesheet">
+<link href="{{asset('assets/css/style_profil.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
 <main id="main">
 
-  <!-- ======= Breadcrumbs Section ======= -->
   <section class="breadcrumbs">
     <div class="container">
 
@@ -22,8 +21,7 @@
       </div>
 
     </div>
-  </section><!-- Breadcrumbs Section -->
-
+  </section>
   <section id="sejarah" class="features">
     <div class="container">
 
@@ -95,9 +93,7 @@
       </div>
 
     </div>
-  </section><!-- End Features Section -->
-
-  <!-- ======= Steps Section ======= -->
+  </section>
   <section id="visi-misi" class="steps section-bg">
     <div class="container">
       <div class="row">
@@ -139,8 +135,7 @@
         </div>
       </div>
     </div>
-  </section><!-- End Steps Section -->
-
+  </section>
   <section id="kepala-sekolah" class="features">
     <div class="container">
       @foreach ($listKepsek as $kepsek)
@@ -178,9 +173,7 @@
         </table>
       </div>
     </div>
-  </section><!-- End Features Section -->
-
-  <!-- ======= Team Section ======= -->
+  </section>
   <section id="pendidik" class="team">
     <div class="container">
       <div class="row">
@@ -219,9 +212,7 @@
         </div>
         @endforeach
       </div>
-  </section><!-- End Team Section -->
-
-  <!-- ======= F.A.Q Section ======= -->
+  </section>
   <section id="organisasi-sekolah" class="faq section-bg">
     <div class="container">
       @foreach ($listStruktur as $struktur)
@@ -235,9 +226,7 @@
               height: auto;" class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
       @endforeach
     </div>
-  </section><!-- End F.A.Q Section -->
-
-  <!-- ======= F.A.Q Section ======= -->
+  </section>
   <section id="komite-sekolah" class="faq">
     <div class="container">
       <div class="section-title">
@@ -271,7 +260,6 @@
         </table>
       </div>
     </div>
-  </section><!-- End F.A.Q Section -->
-
-</main><!-- End #main -->
+  </section>
+</main>
 @endsection
