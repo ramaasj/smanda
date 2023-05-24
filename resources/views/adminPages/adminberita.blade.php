@@ -36,11 +36,11 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-informasi">Informasi</li>
-              <li data-filter=".filter-prestasi">Prestasi</li>
-              <li data-filter=".filter-kurikulum">Kurikulum</li>
-              <li data-filter=".filter-adiwiyata">Adiwiyata</li>
-              <li data-filter=".filter-lainnya">Lainnya...</li>
+              <li data-filter=".filter-Informasi">Informasi</li>
+              <li data-filter=".filter-Prestasi">Prestasi</li>
+              <li data-filter=".filter-Kurikulum">Kurikulum</li>
+              <li data-filter=".filter-Adiwiyata">Adiwiyata</li>
+              <li data-filter=".filter-Lainnya">Lainnya...</li>
             </ul>
           </div>
         </div>
@@ -61,7 +61,7 @@
           </div>
 
           @foreach ($listBerita as $berita)
-          <div class="col-lg-4 col-md-6 portfolio-item filter-adiwiyata">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{$berita->kategori}}">
             <div class="portfolio-wrap">
               <img src="{{asset($berita->foto_berita)}}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -69,7 +69,7 @@
                 <p>{{$berita->kategori}}</p>
                 <div class="portfolio-links">
                   <a href="/updateberita/{{$berita->id}}" title="Edit Berita"><i class="bi bi-pencil-square"></i></a>
-                  <form action="/deleteBerita/{{$berita->id}}" method="POST">
+                  <form action="/deleteberita/{{$berita->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit"><i class="bi bi-trash3"></i></button>

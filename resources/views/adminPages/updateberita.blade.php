@@ -3,7 +3,7 @@
 @section('title', 'Update Berita')
 
 @section('style')
-<link href="assets/css/style_updateberita.css" rel="stylesheet">
+<link href="{{ asset('/assets/css/style_updateberita.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -33,7 +33,8 @@
           <h2>Update Berita</h2>
           <p>Berita SMAN 2 Sidoarjo</p>
         </div>
-        <form action="/addberita/store" class="" method="POST" enctype="multipart/form-data">
+        <form action="/updateberita/{{$berita -> id}}/store" method="POST" class="col-8" enctype="multipart/form-data">
+          @method('put')
           @csrf
           <div class="card-body">
             @if ($errors->any())
@@ -62,7 +63,7 @@
               <input type="text" class="form-control" name="judul" id="judul" value="{{$berita -> judul}}">
           </div>
           <div class="form-group">
-              <label for="judul">Kategori</label>
+              <label for="kategori">Kategori</label>
               <input type="text" class="form-control" name="kategori" id="judul" value="{{$berita -> kategori}}">
           </div>
           <div class="form-group">
@@ -70,9 +71,10 @@
               <input type="text" class="form-control" name="description" id="deskripsi" value="{{$berita -> description}}">
           </div>
           <hr>
-          <div class="custom-file">
-          <input type="file" class="custom-file-input" id="fotoberita" value="{{$berita -> foto_berita}}">
-          <label class="custom-file-label" for="foto_berita">Masukkan foto/gambar berita</label>
+          <div class="form-group">
+            <label for="foto_berita">Masukkan foto/gambar berita</label>
+            <br>
+            <input type="file" class="form-control" name="foto_berita" id="foto_berita" value="{{$berita -> foto_berita}}">
           </div>
           <hr>
           <div>
