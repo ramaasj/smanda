@@ -14,7 +14,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Siswa</h2>
+          <h2>Ekstrakurikuler</h2>
           <ol>
             <li><a href="/">Beranda</a></li>
             <li><a href="/siswa">Daftar Siswa Aktif</a></li>
