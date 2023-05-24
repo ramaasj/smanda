@@ -3,7 +3,7 @@
 @section('title', 'Detail Berita')
 
 @section('style')
-<link href="assets/css/style_berita.css" rel="stylesheet">
+<link href="{{asset('assets/css/style_berita.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -35,16 +35,8 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
+                <div class="swiper">
+                  <img src="{{asset($berita -> foto_berita)}}" alt="">
                 </div>
 
               </div>
@@ -56,14 +48,14 @@
             <div class="portfolio-info">
               <h3>Terkait Berita Ini</h3>
               <ul>
-                <li><strong>Kategori</strong>: Web design</li>
-                <li><strong>Tanggal</strong>: 01 March, 2020</li>
+                <li><strong>Kategori</strong>: {{$berita -> kategori}}</li>
+                <li><strong>Tanggal</strong>: {{$berita -> created_at}}</li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>Judul</h2>
+              <h2>{{$berita -> judul}}</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                <p> {{$berita -> description}} </p>
               </p>
             </div>
           </div>

@@ -82,6 +82,7 @@ Route::post('/addberita/store', [BeritaController::class, 'store'])->middleware(
 Route::get('/updateberita/{id}', [BeritaController::class, 'edit'])->middleware('auth');
 Route::put('/updateberita/{id}/store', [BeritaController::class, 'update'])->middleware('auth');
 Route::delete('/deleteberita/{id}', [BeritaController::class, 'destroy'])->middleware('auth');
+Route::get('/detailberita/{id}', [BeritaController::class, 'detail'])->middleware('auth');
 
 // Route::view('/adminberita', 'adminPages/adminberita')->middleware('auth');
 // Route::view('/addberita', 'adminPages/addberita')->middleware('auth');

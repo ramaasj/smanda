@@ -22,6 +22,11 @@ class BeritaController extends Controller
         $berita = Berita::all();
         return view('adminPages.adminberita', ['listBerita' => $berita]);
     }
+    public function detail($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('detailberita', ['berita' => $berita]);
+    }
     public function create()
     {
         return view('adminPages.addberita');

@@ -56,7 +56,7 @@
                 <p>{{$berita->kategori}}</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Adiwiyata 1"><i class="bx bx-plus"></i></a>
-                  <a href="/detail-berita" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="/detailberita/{{$berita->id}}" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
