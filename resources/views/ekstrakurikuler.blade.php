@@ -43,7 +43,7 @@
             <div class="portfolio-wrap">
               <img src="{{asset($ekskul->foto_ekskul)}}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>{{$naama_ekskul}}</h4>
+                <h4>{{$ekskul->naama_ekskul}}</h4>
               </div>
             </div>
           </div>
