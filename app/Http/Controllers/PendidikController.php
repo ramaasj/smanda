@@ -48,8 +48,8 @@ class PendidikController extends Controller
     public function store(StorePendidikRequest $request)
     {
         $imageName = time() . '.' . $request->foto_pendidik->extension();
-        $uploadedImage = $request->foto_pendidik->move(public_path('assets/img'), $imageName);
-        $imagePath = 'assets/img/' . $imageName;
+        $uploadedImage = $request->foto_pendidik->move(public_path('assets/img/pendidik/'), $imageName);
+        $imagePath = 'assets/img/pendidik/' . $imageName;
 
         $params = $request->validated();
 
@@ -99,8 +99,8 @@ class PendidikController extends Controller
 
         if ($request->hasFile('foto_pendidik')) {
             $imageName = time() . '.' . $request->foto_pendidik->extension();
-            $uploadedImage = $request->foto_pendidik->move(public_path('assets/img'), $imageName);
-            $imagePath = 'assets/img/' . $imageName;
+            $uploadedImage = $request->foto_pendidik->move(public_path('assets/img/pendidik/'), $imageName);
+            $imagePath = 'assets/img/pendidik/' . $imageName;
             $params['foto_pendidik'] = $imagePath;
         }
 
