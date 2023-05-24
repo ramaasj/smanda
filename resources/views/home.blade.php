@@ -143,7 +143,7 @@
         <div class="col-xl-3 col-sm"></div>
       </div>
       <div class="section-title" data-aos="fade-in" data-aos-delay="300">
-        <a class="btn btn-primary btn-sm" href="#" role="button">Biografi Kepala Sekolah</a>
+        <a class="btn btn-primary btn-sm" href="/profil#kepala-sekolah" role="button">Biografi Kepala Sekolah</a>
       </div>
     </div>
   </section>
