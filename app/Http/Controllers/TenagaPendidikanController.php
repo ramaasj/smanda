@@ -48,8 +48,8 @@ class TenagaPendidikanController extends Controller
     public function store(StoreTenagaPendidikRequest $request)
     {
         $imageName = time() . '.' . $request->foto_tenaga_kependidikan->extension();
-        $uploadedImage = $request->foto_tenaga_kependidikan->move(public_path('assets/img'), $imageName);
-        $imagePath = 'assets/img/' . $imageName;
+        $uploadedImage = $request->foto_tenaga_kependidikan->move(public_path('assets/img/tenagapendidikan/'), $imageName);
+        $imagePath = 'assets/img/tenagapendidikan/' . $imageName;
 
         $params = $request->validated();
 
@@ -99,8 +99,8 @@ class TenagaPendidikanController extends Controller
 
         if ($request->hasFile('foto_tenaga_kependidikan')) {
             $imageName = time() . '.' . $request->foto_tenaga_kependidikan->extension();
-            $uploadedImage = $request->foto_tenaga_kependidikan->move(public_path('assets/img'), $imageName);
-            $imagePath = 'assets/img/' . $imageName;
+            $uploadedImage = $request->foto_tenaga_kependidikan->move(public_path('assets/img/tenagapendidikan/'), $imageName);
+            $imagePath = 'assets/img/tenagapendidikan/' . $imageName;
             $params['foto_tenaga_kependidikan'] = $imagePath;
         }
 
