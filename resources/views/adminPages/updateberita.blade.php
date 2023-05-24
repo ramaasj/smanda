@@ -64,7 +64,13 @@
           </div>
           <div class="form-group">
               <label for="kategori">Kategori</label>
-              <input type="text" class="form-control" name="kategori" id="judul" value="{{$berita -> kategori}}">
+              <select name="kategori" id="kategori" class="form-control">
+                <option value="Informasi" {{ old('name',$berita -> kategori)=='Informasi' ? 'selected' : ''  }}>Informasi</option>
+                <option value="Prestasi" {{ old('name',$berita -> kategori)=='Prestasi' ? 'selected' : ''  }}>Prestasi</option>
+                <option value="Kurikulum" {{ old('name',$berita->kategori)=='Kurikulum' ? 'selected' : ''  }}>Kurikulum</option>
+                <option value="Adiwiyata" {{ old('name',$berita -> kategori)=='Adiwiyata' ? 'selected' : ''  }}>Adiwiyata</option>
+                <option value="Lainnya" {{ old('name',$berita -> kategori)=='Lainnya' ? 'selected' : ''  }}>Lainnya</option>
+              </select>
           </div>
           <div class="form-group">
               <label for="deskripsi">Deskripsi Berita</label>

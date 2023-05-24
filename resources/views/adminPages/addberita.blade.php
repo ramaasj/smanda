@@ -63,7 +63,13 @@
               </div>
               <div class="form-group">
                   <label for="kategori">Kategori</label>
-                  <input type="text" class="form-control" name="kategori" id="judul" placeholder="Kategori Berita">
+                  <select name="kategori" id="kategori" class="form-control">
+                    <option value="Informasi">Informasi</option>
+                    <option value="Prestasi">Prestasi</option>
+                    <option value="Kurikulum">Kurikulum</option>
+                    <option value="Adiwiyata">Adiwiyata</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
               </div>
               <div class="form-group">
                   <label for="description">Deskripsi Berita</label>
