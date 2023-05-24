@@ -33,24 +33,52 @@
           <h2>Tambah Berita</h2>
           <p>Berita SMAN 2 Sidoarjo</p>
         </div>
-        <form action="" class="">
-            <div class="form-group">
-                <label for="judul">Judul Berita</label>
-                <input type="text" class="form-control" id="judul" placeholder="Judul Berita">
-            </div>
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi Berita</label>
-                <input type="text" class="form-control" id="deskripsi" placeholder="Deskripsi Berita">
-            </div>
-            <hr>
-            <div class="custom-file">
-            <input type="file" class="custom-file-input" id="fotoberita">
-            <label class="custom-file-label" for="fotoberita">Masukkan foto/gambar berita</label>
-            </div>
-            <hr>
-            <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+        <form action="/addberita/store" class="" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="card-body">
+              @if ($errors->any())
+              <div class="alert alert-danger">
+                <div class="alert-title">
+                  <h4>Whoops!</h4>
+                </div>
+                There are some problems with your input.
+                <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+              @endif
+    
+              @if (session('success'))
+              <div class="alert alert-success">{{ session('success') }}</div>
+              @endif
+    
+              @if (session('error'))
+              <div class="alert alert-danger">{{ session('error') }}</div>
+              @endif
+              <div class="form-group">
+                  <label for="judul">Judul Berita</label>
+                  <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul Berita">
+              </div>
+              <div class="form-group">
+                  <label for="kategori">Kategori</label>
+                  <input type="text" class="form-control" name="kategori" id="judul" placeholder="Kategori Berita">
+              </div>
+              <div class="form-group">
+                  <label for="description">Deskripsi Berita</label>
+                  <input type="text" class="form-control" name="description" id="deskripsi" placeholder="Deskripsi Berita">
+              </div>
+              <hr>
+              <div class="custom-file">
+                <label class="custom-file-label" for="foto_berita">Masukkan foto/gambar berita</label>
+                <br>
+                <input type="file" class="custom-file-input" id="foto_berita" name="foto_berita">
+              </div>
+              <hr>
+              <div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
         </form>
       </div>
     </section><!-- End F.A.Q Section -->

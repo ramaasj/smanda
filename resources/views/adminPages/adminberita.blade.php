@@ -60,19 +60,26 @@
             </div>
           </div>
 
+          @foreach ($listBerita as $berita)
           <div class="col-lg-4 col-md-6 portfolio-item filter-adiwiyata">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="{{asset($berita->foto_berita)}}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Adiwiyata 1</h4>
-                <p>Adiwiyata</p>
+                <h4>{{$berita->judul}}</h4>
+                <p>{{$berita->kategori}}</p>
                 <div class="portfolio-links">
-                  <a href="/updateberita" title="Edit Berita"><i class="bi bi-pencil-square"></i></a>
-                  <a href="/hapusberita" title="Hapus Berita"><i class="bi bi-trash3"></i></a>
+                  <a href="/updateberita/{{$berita->id}}" title="Edit Berita"><i class="bi bi-pencil-square"></i></a>
+                  <form action="/deleteBerita/{{$berita->id}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit"><i class="bi bi-trash3"></i></button>
+                    {{-- <a href="/deleteEkstrakurikuler/{{$ekskul->id}}" type="submit" data-gallery="portfolioGallery" title="Delete"><i class="bi bi-trash3"></i></a> --}}
+                  </form>
                 </div>
               </div>
             </div>
           </div>
+          @endforeach
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-informasi">
             <div class="portfolio-wrap">

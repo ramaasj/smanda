@@ -76,9 +76,16 @@ Route::put('/updatEkstrakurikuler/{id}/store', [EkstrakurikulerController::class
 Route::delete('/deleteEkstrakurikuler/{id}', [EkstrakurikulerController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-BERITA
-Route::view('/adminberita', 'adminPages/adminberita')->middleware('auth');
-Route::view('/addberita', 'adminPages/addberita')->middleware('auth');
-Route::view('/updateberita', 'adminPages/updateberita')->middleware('auth');
+Route::get('/adminberita', [BeritaController::class, 'admin'])->middleware('auth');
+Route::get('/addberita', [BeritaController::class, 'create'])->middleware('auth');
+Route::post('/addberita/store', [BeritaController::class, 'store'])->middleware('auth');
+Route::get('/updateberita/{id}', [BeritaController::class, 'edit'])->middleware('auth');
+Route::put('/updateberita/{id}/store', [BeritaController::class, 'update'])->middleware('auth');
+Route::delete('/deleteberita/{id}', [BeritaController::class, 'destroy'])->middleware('auth');
+
+// Route::view('/adminberita', 'adminPages/adminberita')->middleware('auth');
+// Route::view('/addberita', 'adminPages/addberita')->middleware('auth');
+// Route::view('/updateberita', 'adminPages/updateberita')->middleware('auth');
 
 //ADMIN-ALUMNI
 Route::get('/adminalumni', [AlumniController::class, 'admin'])->middleware('auth');
