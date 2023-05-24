@@ -51,7 +51,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::get('/home', [UserHomeController::class, 'index']);
 Route::get('/profil', [UserProfilController::class, 'index']);
 Route::get('/siswa', [SiswaController::class, 'index']);
-Route::view('/ekstrakurikuler', 'ekstrakurikuler');
+Route::get('/ekstrakurikuler', [EkstrakurikulerController::class, 'index']);
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::view('/detail-berita', 'detail-berita');
 Route::get('/alumni', [AlumniController::class, 'index']);
