@@ -24,7 +24,7 @@ class AuthController extends Controller
         {
             $request->session()->regenerate();
 
-            return redirect()->intended('/adminhome');
+            return redirect()->intended('/adminHome');
         }
 
         Session::flash('status', 'failed');
