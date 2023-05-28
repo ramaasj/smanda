@@ -3,37 +3,31 @@
 @section('title', 'Alumni')
 
 @section('style')
-<link href="assets/css/style_alumni.css" rel="stylesheet">
+<link href="{{asset('assets/css/style_alumni.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
 <main>
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Alumni</h2>
-          <ol>
-            <li><a href="/siswa">SNMPTN</a></li>
-            <li><a href="/siswa">SBMPTN</a></li>
-            <li><a href="/siswa">Mandiri</a></li>
-          </ol>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Alumni</h2>
+                <ol>
+                    <li><a href="/siswa">SNMPTN</a></li>
+                    <li><a href="/siswa">SBMPTN</a></li>
+                    <li><a href="/siswa">Mandiri</a></li>
+                </ol>
+            </div>
         </div>
-
-      </div>
-    </section><!-- Breadcrumbs Section -->
-
-
-    <!-- ======= F.A.Q Section ======= -->
+    </section>
     <section id="alumni" class="faq section-bg">
         <div class="container">
-
             <div class="section-title">
                 <h2 style="font-weight: bolder;">ALUMNI</h2>
                 <p>Daftar alumni yang diterima PTN per tanggal <span style="font-weight: bolder;">23-03-2018</span>
                     <span style="font-weight: bolder;">-</span>
-                    <span style="font-weight: bolder;">23-03-2023</span></p>
+                    <span style="font-weight: bolder;">23-03-2023</span>
+                </p>
             </div>
             <div class="tablesiswa">
                 <table class="table">
@@ -64,7 +58,6 @@
                 </table>
             </div>
         </div>
-    </section><!-- End F.A.Q Section -->
-
-    </main><!-- End #main -->
+    </section>
+</main>
 @endsection

@@ -3,7 +3,7 @@
 @section('title', 'Tambah Berita')
 
 @section('style')
-<link href="assets/css/style_addberita.css" rel="stylesheet">
+<link href="{{asset('assets/css/style_addberita.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
