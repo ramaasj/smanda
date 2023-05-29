@@ -3,7 +3,7 @@
 @section('title', 'Tambah Komite')
 
 @section('style')
-<link href="assets/css/style_addkomite.css" rel="stylesheet">
+<link href="{{asset("assets/css/style_addkomite.css")}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@
         <p>Daftar Komite Tahun Ajaran 2022/2023</p>
       </div>
       <div class="row justify-content-center">
-        <form action="/addkomite/store" method="POST" class="col-8">
+        <form action="/adminProfil/addkomite/store" method="POST" class="col-8">
           @csrf
           <div class="form-group">
             <label for="nama">Nama</label>

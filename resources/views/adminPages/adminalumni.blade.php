@@ -30,9 +30,7 @@
 
             <div class="section-title">
                 <h2 style="font-weight: bolder;">ALUMNI</h2>
-                <p>Daftar alumni yang diterima PTN per tanggal <span style="font-weight: bolder;">23-03-2018</span>
-                    <span style="font-weight: bolder;">-</span>
-                    <span style="font-weight: bolder;">23-03-2023</span></p>
+                <p>Daftar alumni yang diterima PTN per tanggal <span style="font-weight: bolder;">23-03-2018</span></p>
             </div>
             <div class= "row justify-content-center">
                 <div class="col-7">

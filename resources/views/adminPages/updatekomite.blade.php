@@ -34,7 +34,7 @@
         <p>Daftar Komite Sekolah Tahun Ajaran xxx</p>
       </div>
       <div class="row justify-content-center">
-        <form action="/updatekomite/{{$komite -> id}}/store" method="POST" class="col-8">
+        <form action="/adminProfil/updatekomite/{{$komite -> id}}/store" method="POST" class="col-8">
           @method('put')
           @csrf
           <div class="form-group">
