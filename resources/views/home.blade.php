@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('style')
-<link href="assets/css/style_index.css" rel="stylesheet">
+<link href="{{asset('assets/css/style_index.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -82,7 +82,7 @@
       </div>
       <div class="row">
         @foreach ($listPersentase as $persentase)
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+        <div id=kotak class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
           <div class="icon-box icon-box-pink">
             <div class="pie animate" style="--p:{{$persentase->percentage}};--c:#1677B4"> {{$persentase->percentage}}%</div>
             <h4 class="title" style="font-family: Montserrat;">{{$persentase->year}}</h4>
