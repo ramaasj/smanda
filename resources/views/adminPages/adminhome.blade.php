@@ -116,58 +116,59 @@
         <p>Tokoh-tokoh yang memimpin SMA Negeri 2 Sidoarjo pada saat ini.</p>
       </div>
 
-      <div class="row">
-        @php
-        $filteredTokoh = collect($listTokoh)->filter(function ($tokoh) {
-        return $tokoh->id == 1 || $tokoh->id == 2;
-        });
-        @endphp
-        <div class="col-xl-3 col-sm"></div>
-        @foreach ($filteredTokoh as $tokoh)
-        @if ($tokoh->id == 1)
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
+      <div id="kepsek_home" class="row">
+        <div id="kepsek" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member" style="background:white">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>{{$tokoh->nama_tokoh}}</h4>
+                <h4>paman</h4>
                 <span>Kepala Sekolah</span>
                 <div class="fungsi-pendidik">
-                  <a href="/adminHome/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <a href="/adminProfil/updatependidik/contoh/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deletependidik/contoh" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        @endif
-
-        @if ($tokoh->id == 2)
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+      </div>
+      <div class="edit-button d-flex justify-content-center">
+        <a href="/adminProfil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+      </div>
+      <div id="wakepsek_home" class="row">
+        <div id="wakil" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>{{$tokoh->nama_tokoh}}</h4>
-                <span>Wakil Kepala Sekolah</span>
+                <h4>paman</h4>
+                <span>Kepala Sekolah</span>
                 <div class="fungsi-pendidik">
-                  <a href="/adminHome/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <a href="/adminProfil/updatependidik/contoh/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deletependidik/contoh" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        @endif
-        @endforeach
-        <div class="col-xl-3 col-sm"></div>
+        <div class="edit-button d-flex justify-content-center">
+          <a href="/adminProfil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        </div>
+
+
 
 
 
       </div>
-
-
-
-
-    </div>
   </section>
 
 </main><!-- End #main -->

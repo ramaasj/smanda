@@ -460,7 +460,7 @@ section {
 
 .section-title h2 {
     font-size: 36px;
-    font-weight: 300;
+    font-weight: bolder;
     margin-bottom: 20px;
     padding-bottom: 0;
     color: #21413c;
@@ -530,7 +530,7 @@ section {
 }
 
 .about h3 {
-    font-weight: 400;
+    font-weight: bolder;
     font-size: 34px;
     color: #21413c;
 }
@@ -582,7 +582,7 @@ section {
 
 .steps .content-item h4 {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: bold;
     padding: 0;
     margin: 20px 0;
     color: #21413c;
@@ -590,10 +590,13 @@ section {
 
 .steps .content-item p {
     color: #aaaaaa;
-    font-size: 15px;
-    margin: 0;
+    font-size: 20px;
     padding: 0;
+    font-weight: 700;
 }
+
+
+
 
 @media (max-width: 768px) {
     .steps .content-item {
@@ -1070,6 +1073,18 @@ section {
     padding: 0;
 }
 
+.team .container #kepsek_home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team .container #wakepsek_home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .team .member {
     text-align: center;
     margin-bottom: 20px;
@@ -1152,6 +1167,11 @@ section {
     left: 0;
     transition: left ease-in-out 0.3s;
 }
+
+.team .container .row #kepsek {
+    width: 40%;
+}
+
 
 .faq .faq-list {
     padding: 0 100px;

@@ -571,7 +571,7 @@ section {
 }
 
 .edit-button {
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 .steps {
@@ -1087,6 +1087,19 @@ section {
     padding: 0;
 }
 
+.team .container #kepsek_home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team .container #wakepsek_home {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .team .member {
     text-align: center;
     margin-bottom: 20px;
@@ -1111,6 +1124,9 @@ section {
     right: 0;
     bottom: 0;
     transition: bottom 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .team .member .member-info-content h4 {
@@ -1573,4 +1589,11 @@ section {
     text-align: center;
     font-size: 13px;
     color: #fff;
+}
+
+.fungsi-pendidik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
 }

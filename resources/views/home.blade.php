@@ -62,6 +62,9 @@
           <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
           <h4>{{$points->title}}</h4>
           <p>{{$points->desc}}</p>
+          <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+            <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81rB8HWkCLCCQ59i_XDj3juq3aYSiZkdXGXAEs-1BpDCf4g8h1GXVW0zNdL_YkLekBs_DR0d56vAuS64slzi-Q5EDt-o=s1600" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          </div>
         </div>
         @if (($key + 1) % 2 == 0 && $key + 1 != count($listPoints))
         <div class="w-100"></div>
@@ -99,49 +102,67 @@
         <h2>Kepala dan Wakil Kepala Sekolah</h2>
         <p>Tokoh-tokoh yang memimpin SMA Negeri 2 Sidoarjo pada saat ini.</p>
       </div>
-      <div class="row">
-        @php
-        $filteredTokoh = collect($listTokoh)->filter(function ($tokoh) {
-        return $tokoh->id == 1 || $tokoh->id == 2;
-        });
-        @endphp
-        <div class="col-xl-3 col-sm"></div>
-        @foreach ($filteredTokoh as $tokoh)
-        @if ($tokoh->id == 1)
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
+
+      <div id="kepsek_home" class="row">
+        <div id="kepsek" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member" style="background:white">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>{{$tokoh->nama_tokoh}}</h4>
+                <h4>paman</h4>
                 <span>Kepala Sekolah</span>
-                <div class="fungsi-pendidik">
-                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                </div>
               </div>
             </div>
           </div>
         </div>
-        @endif
-        @if ($tokoh->id == 2)
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+      </div>
+      <div id="wakepsek_home" class="row">
+        <div id="wakil" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="{{asset($tokoh->foto_tokoh) }}" class="img-fluid" alt="">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>{{$tokoh->nama_tokoh}}</h4>
-                <span>Wakil Kepala Sekolah</span>
-                <div class="fungsi-pendidik">
-                  <a href="/updateTokoh/{{$tokoh->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                </div>
+                <h4>paman</h4>
+                <span>Kepala Sekolah</span>
               </div>
             </div>
           </div>
         </div>
-        @endif
-        @endforeach
-        <div class="col-xl-3 col-sm"></div>
+        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>paman</h4>
+                <span>Kepala Sekolah</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>paman</h4>
+                <span>Kepala Sekolah</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>sdasda</h4>
+                <span>Kepala Sekolah</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="section-title" data-aos="fade-in" data-aos-delay="300">
         <a class="btn btn-primary btn-sm" href="/profil#kepala-sekolah" role="button">Biografi Kepala Sekolah</a>
       </div>
