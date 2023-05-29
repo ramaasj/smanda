@@ -33,7 +33,7 @@
         <h2>Update Berita</h2>
         <p>Berita SMAN 2 Sidoarjo</p>
       </div>
-      <form action="/adminberita/updateberita/{{$berita -> id}}/store" method="POST" class="col-8" enctype="multipart/form-data">
+      <form action="/adminberita/updateberita/{{$berita -> id}}/store" method="POST" enctype="multipart/form-data">
         @method('put')
         @csrf
         <div class="card-body">
@@ -74,7 +74,7 @@
           </div>
           <div class="form-group">
             <label for="deskripsi">Deskripsi Berita</label>
-            <input type="text" class="form-control" name="description" id="deskripsi" value="{{$berita -> description}}">
+            <textarea class="form-control" name="description" id="deskripsi" rows="15"></textarea>
           </div>
           <hr>
           <div class="form-group">
@@ -91,4 +91,14 @@
   </section><!-- End F.A.Q Section -->
 
 </main><!-- End #main -->
+@endsection
+
+@section('scripts')
+<script>
+  ClassicEditor
+  .create( document.querySelector( '#deskripsi' ) )
+  .catch( error => {
+    console.error( error );
+  } );
+  </script>
 @endsection

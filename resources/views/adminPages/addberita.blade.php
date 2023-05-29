@@ -3,7 +3,7 @@
 @section('title', 'Tambah Berita')
 
 @section('style')
-<link href="assets/css/style_addberita.css" rel="stylesheet">
+<link href="{{asset('/assets/css/style_addberita.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -73,7 +73,7 @@
           </div>
           <div class="form-group">
             <label for="description">Deskripsi Berita</label>
-            <input type="text" class="form-control" name="description" id="deskripsi" placeholder="Deskripsi Berita">
+            <textarea class="form-control" name="description" id="deskripsi" rows="15"></textarea>
           </div>
           <hr>
           <div class="custom-file">
@@ -89,5 +89,7 @@
     </div>
   </section><!-- End F.A.Q Section -->
 
+  
 </main><!-- End #main -->
+
 @endsection

@@ -16,7 +16,7 @@ class StoreBeritaRequest extends FormRequest
         return [
             'judul' => ['required', 'max:100'],
             'kategori' => ['required', 'max:100'],
-            'description' => ['required', 'max:1000'],
+            'description' => ['required', 'max:100000'],
             'foto_berita' => 'required|image|mimes:jpeg,png,jpg|max:10240'
         ];
     }
