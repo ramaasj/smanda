@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tokoh_home');
+        Schema::dropIfExists('kepsek_home');
     }
 };

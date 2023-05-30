@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\PointsController;
 use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\GreetController;
-use App\Http\Controllers\TokohController;
+use App\Http\Controllers\KepsekHomeController;
 
 class AdminHomeController extends Controller
 {
@@ -15,14 +15,14 @@ class AdminHomeController extends Controller
         $pointsController = new PointsController();
         $persentaseController = new PersentaseController();
         $greetController = new GreetController();
-        $tokohController = new TokohController();
+        $kepsekController = new KepsekHomeController();
 
         $listPoints = PointsController::getAllPoints();
         $listPersentase = PersentaseController::getAllPersentase();
         $listGreet = GreetController::getAllGreet();
-        $listTokoh = TokohController::getAllTokoh();
+        $listKepsek = KepsekHomeController::getAllKepsek();
 
 
-        return view('adminPages.adminHome', compact('listGreet', 'listPoints', 'listPersentase', 'listTokoh'));
+        return view('adminPages.adminHome', compact('listGreet', 'listPoints', 'listPersentase', 'listKepsek'));
     }
 }

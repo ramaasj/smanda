@@ -117,16 +117,17 @@
       </div>
 
       <div id="kepsek_home" class="row">
+        @foreach ($listKepsek as $kepsek)
         <div id="kepsek" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member" style="background:white">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ $kepsek->foto_kepsek }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>paman</h4>
-                <span>Kepala Sekolah</span>
+                <h4>{{ $kepsek->nama_kepsek }}</h4>
+                <span>{{ $kepsek->jabatan }}</span>
                 <div class="fungsi-pendidik">
-                  <a href="/adminProfil/updatependidik/contoh/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/adminProfil/deletependidik/contoh" method="POST">
+                  <a href="/adminHome/updateKepsekHome/{{$kepsek->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminHome/deleteKepsek/{{$kepsek->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -136,9 +137,10 @@
             </div>
           </div>
         </div>
+        @endforeach
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminProfil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        <a href="/adminHome/addKepsekHome" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
       <div id="wakepsek_home" class="row">
         <div id="wakil" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">

@@ -18,6 +18,7 @@ use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\GreetController;
+use App\Http\Controllers\KepsekHomeController;
 use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\PointsController;
 use App\Http\Controllers\TokohController;
@@ -175,8 +176,9 @@ Route::post('/adminHome/addpersentase/store', [PersentaseController::class, 'sto
 Route::put('/adminHome/updatepersentase/{id}', [PersentaseController::class, 'update'])->middleware('auth');
 Route::get('/adminHome/updatepersentase/{id}/edit', [PersentaseController::class, 'edit'])->middleware('auth');
 
-//ADMIN-HOME-PERSENTASE
-Route::get('/adminHome/addtokoh', [TokohController::class, 'create'])->middleware('auth');
-Route::post('/adminHome/addtokoh/store', [TokohController::class, 'store'])->middleware('auth');
-Route::put('/adminHome/updateTokoh/{id}', [TokohController::class, 'update'])->middleware('auth');
-Route::get('/adminHome/updateTokoh/{id}/edit', [TokohController::class, 'edit'])->middleware('auth');
+//ADMIN-HOME-Kepsek
+Route::get('/adminHome/addKepsekHome', [KepsekHomeController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addKepsekHome/store', [KepsekHomeController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updateKepsekHome/{id}', [KepsekHomeController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updateKepsekHome/{id}/edit', [KepsekHomeController::class, 'edit'])->middleware('auth');
+Route::delete('/adminHome/deleteKepsek/{id}', [KepsekHomeController::class, 'destroy'])->middleware('auth');
