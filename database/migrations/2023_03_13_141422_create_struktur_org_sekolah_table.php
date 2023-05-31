@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('struktur_org_sekolah', function (Blueprint $table) {
             $table->id();
             $table->string('desc', 100);
-            $table->string('foto_org_sekolah', 100)->nullable();
+            $table->text('foto_org_sekolah');
             $table->timestamps();
         });
     }

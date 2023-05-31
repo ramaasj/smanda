@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 50);
             $table->text('desc');
+            $table->text('foto_point');
             $table->timestamps();
         });
     }

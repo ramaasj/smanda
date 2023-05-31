@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('judul', 100);
             $table->string('kategori', 100);
             $table->longText('description');
-            $table->string('foto_berita', 100);
+            $table->text('foto_berita');
             $table->timestamps();
         });
     }

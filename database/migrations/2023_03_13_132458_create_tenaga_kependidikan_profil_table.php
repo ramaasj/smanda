@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('tenaga_kependidikan_profil', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 100);
-            $table->string('jabatan', 100);
-            $table->string('foto_tenaga_kependidikan', 100);
+            $table->string('nama', 200);
+            $table->string('jabatan', 200);
+            $table->text('foto_tenaga_kependidikan');
             $table->timestamps();
         });
     }

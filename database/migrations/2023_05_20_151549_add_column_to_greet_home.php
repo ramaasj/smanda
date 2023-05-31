@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('greet_home', function (Blueprint $table) {
-            $table->string('gambar_greet', 200);
+            $table->text('gambar_greet');
             $table->string('tahun_greet', 100);
             $table->string('desc_tahun', 200);
             $table->string('siswa_greet', 100);

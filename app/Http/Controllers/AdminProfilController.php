@@ -10,6 +10,7 @@ use App\Http\Controllers\MotoController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\MisiController;
 use App\Http\Controllers\TenagaPendidikanController;
+use App\Http\Controllers\KepsekProfilController;
 
 class AdminProfilController extends Controller
 {
@@ -20,7 +21,7 @@ class AdminProfilController extends Controller
         $motoController = new MotoController();
         $visiController = new VisiController();
         $misiController = new MisiController();
-        $kepsekController = new KepsekController();
+        $kepsekprofilController = new KepsekProfilController();
         $pendidikController = new PendidikController();
         $tenagaController = new TenagaPendidikanController();
 
@@ -29,7 +30,7 @@ class AdminProfilController extends Controller
         $listMoto = MotoController::getAllMoto();
         $listVisi = VisiController::getAllVisi();
         $listMisi = MisiController::getAllMisi();
-        $listKepsek = KepsekController::getAllKepsek();
+        $listKepsek = KepsekProfilController::getAllKepsek();
         $listPendidik = PendidikController::getAllPendidik();
         $listTenagaPendidikan = TenagaPendidikanController::getAllTenagaPendidikan();
 

@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Edit Kepala Sekolah')
+@section('title', 'Edit Wakil Kepala Sekolah')
 
 @section('style')
 <link href="{{ asset('/assets/css/style_addkomite.css') }}" rel="stylesheet">;
@@ -12,11 +12,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Edit Kepala Sekolah</h2>
+                <h2>Edit Wakil Kepala Sekolah</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
                     <li><a href="/adminHome">Admin Home</a></li>
-                    <li><a href="#">Edit Kepala Sekolah</a></li>
+                    <li><a href="#">Edit Wakil Kepala Sekolah</a></li>
                 </ol>
             </div>
 
@@ -28,11 +28,11 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Edit Data Kepala Sekolah</h2>
-                <p>Kepala Sekolah Saat Ini</p>
+                <h2>Edit Data Wakil Kepala Sekolah</h2>
+                <p>Wakil Kepala Sekolah Saat Ini</p>
             </div>
             <div class="row justify-content-center">
-                <form action="/adminHome/updateKepsekHome/{{$kepsek -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminHome/updateWakepsekHome/{{$wakepsek -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">
@@ -59,16 +59,16 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="nama_kepsek">Nama Kepala Sekolah</label>
-                        <input type="text" class="form-control" id="nama_kepsek" name="nama_kepsek" required value="{{$kepsek -> nama_kepsek}}">
+                        <label for="nama_kepsek">Nama Wakil Kepala Sekolah</label>
+                        <input type="text" class="form-control" id="nama_kepsek" name="nama_kepsek" required value="{{$wakepsek -> nama}}">
                     </div>
                     <div class="form-group">
                         <label for="jabatan">Jabatan</label>
-                        <input type="text" class="form-control" id="jabatan" name="jabatan" required value="{{$kepsek -> jabatan}}">
+                        <input type="text" class="form-control" id="jabatan" name="jabatan" required value="{{$wakepsek -> jabatan}}">
                     </div>
                     <div class="form-group">
-                        <label for="foto_kepsek">Direct Link Foto Kepala Sekolah</label>
-                        <input type="url" class="form-control" id="foto_kepsek" name="foto_kepsek" required>
+                        <label for="foto_wakepsek">Direct Link Foto Wakil Kepala Sekolah</label>
+                        <input type="url" class="form-control" id="foto_wakepsek" name="foto_wakepsek" required>
                     </div>
                     <div class="form-group">
                         <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>

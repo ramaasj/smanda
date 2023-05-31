@@ -17,6 +17,6 @@ class Greet extends Model
         'siswa_greet',
         'desc_siswa',
         'pendidik_greet',
-        'desc_greet',
+        'desc_pendidik',
     ];
 }

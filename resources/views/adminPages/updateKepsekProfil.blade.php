@@ -33,7 +33,7 @@
         <h2>Update Bio Kepala Sekolah SMAN 2 Sidoarjo</h2>
       </div>
       <div class="row justify-content-center">
-        <form action="/adminProfil/updateKepsek/{{$kepsek -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+        <form action="/adminProfil/updateKepsekProfil/{{$kepsek -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
           @method('put')
           @csrf
           <div class="card-body">
@@ -60,7 +60,11 @@
           @endif
           <div class="form-group">
             <label for="foto_kepsek">Gambar Depan</label>
-            <input type="file" name="foto_kepsek" class="form-control" id="foto_kepsek" value="{{$kepsek -> foto_kepsek}}">
+            <input type="text" name="foto_kepsek" class="form-control" id="foto_kepsek" value="{{$kepsek -> foto_kepsek}}">
+          </div>
+          <div class="form-group">
+            <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+            <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
           </div>
           <div class="form-group">
             <label for="nama">Nama</label>

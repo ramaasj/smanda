@@ -16,13 +16,15 @@ class AdminHomeController extends Controller
         $persentaseController = new PersentaseController();
         $greetController = new GreetController();
         $kepsekController = new KepsekHomeController();
+        $wakepsekController = new WakepsekHomeController();
 
         $listPoints = PointsController::getAllPoints();
         $listPersentase = PersentaseController::getAllPersentase();
         $listGreet = GreetController::getAllGreet();
         $listKepsek = KepsekHomeController::getAllKepsek();
+        $listWakepsek = WakepsekHomeController::getAllWakepsek();
 
 
-        return view('adminPages.adminHome', compact('listGreet', 'listPoints', 'listPersentase', 'listKepsek'));
+        return view('adminPages.adminHome', compact('listGreet', 'listPoints', 'listPersentase', 'listKepsek', 'listWakepsek'));
     }
 }

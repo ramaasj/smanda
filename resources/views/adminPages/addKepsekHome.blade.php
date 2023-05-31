@@ -28,7 +28,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Tambah Kepala Sekolah Sekolah</h2>
+                <h2>Tambah Kepala Sekolah</h2>
                 <p>Kepala Sekolah Saat Ini</p>
             </div>
             <div class="row justify-content-center">
@@ -68,6 +68,10 @@
                     <div class="form-group">
                         <label for="foto_kepsek">Direct Link Foto Kepala Sekolah</label>
                         <input type="url" class="form-control" id="foto_kepsek" name="foto_kepsek" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+                        <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
                     </div>
                     <hr>
                     <div>

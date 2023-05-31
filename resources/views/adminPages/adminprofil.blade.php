@@ -109,7 +109,7 @@
           <h2>Biografi Kepala Sekolah</h2>
         </div>
         <div class="d-flex justify-content-center">
-          <img class="img-kepsek" src="{{asset($kepsek->foto_kepsek) }}" alt="Kepala Sekolah">
+          <img class="img-kepsek" src="{{$kepsek->foto_kepsek}}" alt="Kepala Sekolah">
         </div>
         <table class="table table-striped table-hover" data-aos="fade-up">
           <tbody>
@@ -138,7 +138,7 @@
         </table>
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminProfil/updateKepsek/{{$kepsek->id}}/edit"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
+        <a href="/adminProfil/updateKepsekProfil/{{$kepsek->id}}/edit"><button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Edit</button></a>
       </div>
 
 

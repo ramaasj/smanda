@@ -10,7 +10,7 @@ use App\Http\Controllers\VisiController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\KepsekController;
+use App\Http\Controllers\KepsekProfilController;
 use App\Http\Controllers\KomiteController;
 use App\Http\Controllers\PendidikController;
 use App\Http\Controllers\TenagaPendidikanController;
@@ -24,6 +24,7 @@ use App\Http\Controllers\PointsController;
 use App\Http\Controllers\TokohController;
 use App\Http\Controllers\userHomeController;
 use App\Http\Controllers\userProfilController;
+use App\Http\Controllers\WakepsekHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,8 +123,11 @@ Route::post('/adminProfil/updatemisi/{id}/store', [MisiController::class, 'updat
 Route::delete('/adminProfil/deletemisi/{id}', [MisiController::class, 'delete'])->middleware('auth');
 
 //ADMIN-BIO-KEPSEK
-Route::get('/adminProfil/updateKepsek/{id}/edit', [KepsekController::class, 'edit'])->middleware('auth');
-Route::put('/adminProfil/updateKepsek/{id}', [KepsekController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/addKepsekProfil', [KepsekProfilController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addKepsekProfil/store', [KepsekProfilController::class, 'store'])->middleware('auth');
+Route::put('/adminProfil/updateKepsekProfil/{id}', [KepsekProfilController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updateKepsekProfil/{id}/edit', [KepsekProfilController::class, 'edit'])->middleware('auth');
+Route::delete('/adminProfil/deleteKepsek/{id}', [KepsekProfilController::class, 'destroy'])->middleware('auth');
 
 
 //ADMIN-PROFIL-PENDIDIK
@@ -159,10 +163,10 @@ Route::post('/adminProfil/addkomite/store', [KomiteController::class, 'store'])-
 Route::get('/adminHome', [AdminHomeController::class, 'admin'])->middleware('auth')->middleware('auth');
 
 //ADMIN-HOME-GREET
-Route::get('/adminHome/addGreet', [GreetController::class, 'create'])->middleware('auth');
-Route::post('/adminHome/addGreet/store', [GreetController::class, 'store'])->middleware('auth');
-Route::put('/adminHome/updateGreet/{id}', [GreetController::class, 'update'])->middleware('auth');
-Route::get('/adminHome/updateGreet/{id}/edit', [GreetController::class, 'edit'])->middleware('auth');
+Route::get('/adminHome/addGreetHome', [GreetController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addGreetHome/store', [GreetController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updateGreetHome/{id}', [GreetController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updateGreetHome/{id}/edit', [GreetController::class, 'edit'])->middleware('auth');
 
 //ADMIN-HOME-POINTS
 Route::get('/adminHome/addPoints', [PointsController::class, 'create'])->middleware('auth');
@@ -182,3 +186,10 @@ Route::post('/adminHome/addKepsekHome/store', [KepsekHomeController::class, 'sto
 Route::put('/adminHome/updateKepsekHome/{id}', [KepsekHomeController::class, 'update'])->middleware('auth');
 Route::get('/adminHome/updateKepsekHome/{id}/edit', [KepsekHomeController::class, 'edit'])->middleware('auth');
 Route::delete('/adminHome/deleteKepsek/{id}', [KepsekHomeController::class, 'destroy'])->middleware('auth');
+
+//ADMIN-HOME-Kepsek
+Route::get('/adminHome/addWakepsekHome', [WakepsekHomeController::class, 'create'])->middleware('auth');
+Route::post('/adminHome/addWakepsekHome/store', [WakepsekHomeController::class, 'store'])->middleware('auth');
+Route::put('/adminHome/updateWakepsekHome/{id}', [WakepsekHomeController::class, 'update'])->middleware('auth');
+Route::get('/adminHome/updateWakepsekHome/{id}/edit', [WakepsekHomeController::class, 'edit'])->middleware('auth');
+Route::delete('/adminHome/deleteWakepsek/{id}', [WakepsekHomeController::class, 'destroy'])->middleware('auth');

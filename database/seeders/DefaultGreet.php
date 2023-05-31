@@ -18,7 +18,7 @@ class DefaultGreet extends Seeder
         if (Greet::count() === 0) {
             Greet::create([
                 'id' => '1',
-                'gambar_greet' => 'assets/img/greet.jpeg',
+                'gambar_greet' => 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rZqDCQ0JXTmDIxAeEfM5Yb3weXtxF6_Vc0zSTLzt61-u6CaXTAhVcSr_sPMFbN33p4-RFe-vHt2Se4uyKkOolpHEAF=s1600',
                 'tahun_greet' => '37 Tahun',
                 'desc_tahun' => 'SMA Negeri 2 Sidoarjo didirikan pada tahun 1986, tidak terasa sudah 37 tahun berlalu.',
                 'siswa_greet' => '1289 Siswa Aktif',

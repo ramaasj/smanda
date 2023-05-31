@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('pangkat', 200);
             $table->string('pendidikan', 200);
             $table->string('masa_kerja', 200);
-            $table->string('foto_kepsek', 200);
+            $table->text('foto_kepsek');
             $table->timestamps();
         });
     }

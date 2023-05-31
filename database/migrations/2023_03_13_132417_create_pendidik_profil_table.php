@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pendidik_profil', function (Blueprint $table) {
-            $table->string('nama', 100);
-            $table->string('jabatan', 100);
-            $table->string('foto_pendidik', 100);
+            $table->string('nama', 200);
+            $table->string('jabatan', 200);
+            $table->text('foto_pendidik');
         });
     }
 

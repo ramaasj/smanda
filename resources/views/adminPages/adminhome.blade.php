@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <a href="/adminHome/updateGreet/{{$greet->id}}/edit">
+        <a href="/adminHome/updateGreetHome/{{$greet->id}}/edit">
           <div class="edit-button d-flex justify-content-center">
             <div class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</div>
           </div>
@@ -143,16 +143,17 @@
         <a href="/adminHome/addKepsekHome" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
       <div id="wakepsek_home" class="row">
+        @foreach ($listWakepsek as $wakepsek)
         <div id="wakil" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
+            <img src="{{$wakepsek -> foto_wakepsek}}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>paman</h4>
-                <span>Kepala Sekolah</span>
+                <h4>{{$wakepsek -> nama}}</h4>
+                <span>{{$wakepsek -> jabatan}}</span>
                 <div class="fungsi-pendidik">
-                  <a href="/adminProfil/updatependidik/contoh/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/adminProfil/deletependidik/contoh" method="POST">
+                  <a href="/adminHome/updateWakepsekHome/{{$wakepsek->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminHome/deleteWakepsek/{{$wakepsek->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -162,14 +163,10 @@
             </div>
           </div>
         </div>
-        <div class="edit-button d-flex justify-content-center">
-          <a href="/adminProfil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
-        </div>
-
-
-
-
-
+        @endforeach
+      </div>
+      <div class="edit-button d-flex justify-content-center">
+        <a href="/adminHome/addWakepsekHome" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
   </section>
 
