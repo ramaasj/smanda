@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePendidikRequest;
-use App\Models\Pendidik;
 use Illuminate\Http\Request;
+use App\Models\Pendidik;
 
 class PendidikController extends Controller
 {
@@ -12,15 +11,17 @@ class PendidikController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     public static function getAllPendidik()
     {
         return Pendidik::all();
     }
+
     public function index()
     {
         $pendidik = Pendidik::all();
-        return view('profil', ['listPendidik' => $pendidik]);
+        return view('home', ['listPendidik' => $pendidik]);
     }
 
     public function admin()
@@ -36,7 +37,7 @@ class PendidikController extends Controller
      */
     public function create()
     {
-        return view('adminPages.addpendidik');
+        return view('adminPages.addPendidik');
     }
 
     /**
@@ -45,20 +46,21 @@ class PendidikController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePendidikRequest $request)
+    public function store(Request $request)
     {
-        $imageName = time() . '.' . $request->foto_pendidik->extension();
-        $uploadedImage = $request->foto_pendidik->move(public_path('assets/img/pendidik/'), $imageName);
-        $imagePath = 'assets/img/pendidik/' . $imageName;
+        $request->validate([
+            'nama' => 'required|max:200',
+            'jabatan' => 'required|max:200',
+            'foto_pendidik' => 'required|url',
+        ]);
 
-        $params = $request->validated();
+        $pendidik = new Pendidik;
+        $pendidik->nama = $request->nama;
+        $pendidik->jabatan = $request->jabatan;
+        $pendidik->foto_pendidik = $request->foto_pendidik;
+        $pendidik->save();
 
-        if ($pendidik = Pendidik::create($params)) {
-            $pendidik->foto_pendidik = $imagePath;
-            $pendidik->save();
-
-            return redirect('/adminProfil')->with('success', 'Added!');
-        }
+        return redirect('/adminProfil')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -69,7 +71,8 @@ class PendidikController extends Controller
      */
     public function show($id)
     {
-        //
+        $pendidik = Pendidik::findOrFail($id);
+        return view('pendidik.show', compact('pendidik'));
     }
 
     /**
@@ -81,7 +84,7 @@ class PendidikController extends Controller
     public function edit($id)
     {
         $pendidik = Pendidik::findOrFail($id);
-        return view('adminPages.updatependidik', ['pendidik' => $pendidik]);
+        return view('adminPages.updatePendidik', ['pendidik' => $pendidik]);
     }
 
     /**
@@ -91,22 +94,21 @@ class PendidikController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StorePendidikRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'nama' => 'required|max:200',
+            'jabatan' => 'required|max:200',
+            'foto_pendidik' => 'required|url',
+        ]);
+
         $pendidik = Pendidik::findOrFail($id);
+        $pendidik->nama = $request->nama;
+        $pendidik->jabatan = $request->jabatan;
+        $pendidik->foto_pendidik = $request->foto_pendidik;
+        $pendidik->save();
 
-        $params = $request->validated();
-
-        if ($request->hasFile('foto_pendidik')) {
-            $imageName = time() . '.' . $request->foto_pendidik->extension();
-            $uploadedImage = $request->foto_pendidik->move(public_path('assets/img/pendidik/'), $imageName);
-            $imagePath = 'assets/img/pendidik/' . $imageName;
-            $params['foto_pendidik'] = $imagePath;
-        }
-
-        $pendidik->update($params);
-
-        return redirect('/adminProfil')->with('success', 'Updated!');
+        return redirect('/adminProfil')->with('success', 'Data berhasil diperbarui');
     }
 
     /**
@@ -117,8 +119,8 @@ class PendidikController extends Controller
      */
     public function destroy($id)
     {
-        $pendidik = Pendidik::find($id);
+        $pendidik = Pendidik::findOrFail($id);
         $pendidik->delete();
-        return redirect('/adminProfil');
+        return redirect('/adminProfil')->with('success', 'Data berhasil dihapus');
     }
 }

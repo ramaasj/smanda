@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Edit Data Pendidik')
+@section('title', 'Edit Data Tenaga Kependidikan')
 
 @section('style')
 <link href="{{ asset('/assets/css/style_addkomite.css') }}" rel="stylesheet">
@@ -14,11 +14,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Edit Data Pendidik</h2>
+                <h2>Edit Data Tenaga Kependidikan</h2>
                 <ol>
                     <li><a href="/">Beranda</a></li>
                     <li><a href="/adminProfil">Admin Profil</a></li>
-                    <li><a href="#">Edit Data Pendidik </a></li>
+                    <li><a href="#">Edit Data Tenaga Kependidikan </a></li>
                 </ol>
             </div>
 
@@ -30,11 +30,11 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Update Data Pendidik</h2>
-                <p>Data Pendidik Sekolah Tahun Ajaran </p>
+                <h2>Edit Data Tenaga Kependidikan</h2>
+                <p>Data Tenaga Kependidikan Saat Ini </p>
             </div>
             <div class="row justify-content-center">
-                <form action="/adminProfil/updatetenagapendidik/{{$tenaga_pendidik -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminProfil/updateTenagaPendidik/{{$tenagaPendidikan -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">
@@ -51,25 +51,30 @@
                             </ul>
                         </div>
                         @endif
-                    </div>
-                    @if (session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
-                    @endif
 
-                    @if (session('error'))
-                    <div class="alert alert-danger">{{ session('error') }}</div>
-                    @endif
+                        @if (session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+
+                        @if (session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                        @endif
+                    </div>
                     <div class="form-group">
                         <label for="nama">Nama Tenaga Kependidikan</label>
-                        <input type="text" name="nama" class="form-control" id="nama" value="{{$tenaga_pendidik -> nama}}">
+                        <input type="text" name="nama" class="form-control" id="nama" value="{{$tenagaPendidikan -> nama}}">
                     </div>
                     <div class="form-group">
                         <label for="jabatan">Jabatan</label>
-                        <input type="text" name="jabatan" class="form-control" id="jabatan" value="{{$tenaga_pendidik -> jabatan}}">
+                        <input type="text" name="jabatan" class="form-control" id="jabatan" value="{{$tenagaPendidikan -> jabatan}}">
                     </div>
                     <div class="form-group">
                         <label for="foto_tenaga_kependidikan">Foto Pendidik</label>
-                        <input type="file" name="foto_tenaga_kependidikan" class="form-control" id="foto_tenaga_kependidikan" value="{{$tenaga_pendidik -> foto_tenaga_kependidikan}}">
+                        <input type="text" name="foto_tenaga_kependidikan" class="form-control" id="foto_tenaga_kependidikan" value="{{$tenagaPendidikan -> foto_tenaga_kependidikan}}">
+                    </div>
+                    <div class="form-group">
+                        <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+                        <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
                     </div>
                     <hr>
                     <div>

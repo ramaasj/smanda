@@ -34,7 +34,7 @@
                 <p>Data Pendidik Sekolah Tahun Ajaran </p>
             </div>
             <div class="row justify-content-center">
-                <form action="/adminProfil/updatependidik/{{$pendidik -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
+                <form action="/adminProfil/updatePendidik/{{$pendidik -> id}}" method="POST" class="col-8" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="card-body">
@@ -51,14 +51,15 @@
                             </ul>
                         </div>
                         @endif
-                    </div>
-                    @if (session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
-                    @endif
 
-                    @if (session('error'))
-                    <div class="alert alert-danger">{{ session('error') }}</div>
-                    @endif
+                        @if (session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+
+                        @if (session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                        @endif
+                    </div>
                     <div class="form-group">
                         <label for="nama">Nama Pendidik</label>
                         <input type="text" name="nama" class="form-control" id="nama" value="{{$pendidik -> nama}}">
@@ -68,8 +69,12 @@
                         <input type="text" name="jabatan" class="form-control" id="jabatan" value="{{$pendidik -> jabatan}}">
                     </div>
                     <div class="form-group">
-                        <label for="foto_pendidik">Foto Pendidik</label>
-                        <input type="file" name="foto_pendidik" class="form-control" id="foto_pendidik" value="{{$pendidik -> foto_pendidik}}">
+                        <label for="foto_pendidik">Direct Link Foto Pendidik</label>
+                        <input type="text" name="foto_pendidik" class="form-control" id="foto_pendidik" value="{{$pendidik -> foto_pendidik}}">
+                    </div>
+                    <div class="form-group">
+                        <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+                        <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
                     </div>
                     <hr>
                     <div>

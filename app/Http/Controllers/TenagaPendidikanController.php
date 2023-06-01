@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTenagaPendidikRequest;
-use App\Models\TenagaPendidikan;
 use Illuminate\Http\Request;
+use App\Models\TenagaPendidikan;
 
 class TenagaPendidikanController extends Controller
 {
@@ -12,21 +11,23 @@ class TenagaPendidikanController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     public static function getAllTenagaPendidikan()
     {
         return TenagaPendidikan::all();
     }
+
     public function index()
     {
-        $tenaga_pendidik = TenagaPendidikan::all();
-        return view('profil', ['listTenagaPendidikan' => $tenaga_pendidik]);
+        $tenagaPendidikan = TenagaPendidikan::all();
+        return view('home', ['listTenagaPendidikan' => $tenagaPendidikan]);
     }
 
     public function admin()
     {
-        $tenaga_pendidik = TenagaPendidikan::all();
-        return view('adminPages.adminProfil', ['listTenagaPendidikan' => $tenaga_pendidik]);
+        $tenagaPendidikan = TenagaPendidikan::all();
+        return view('adminPages.adminProfil', ['listTenagaPendidikan' => $tenagaPendidikan]);
     }
 
     /**
@@ -36,7 +37,7 @@ class TenagaPendidikanController extends Controller
      */
     public function create()
     {
-        return view('adminPages.addtenagapendidik');
+        return view('adminPages.addTenagaPendidik');
     }
 
     /**
@@ -45,20 +46,21 @@ class TenagaPendidikanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTenagaPendidikRequest $request)
+    public function store(Request $request)
     {
-        $imageName = time() . '.' . $request->foto_tenaga_kependidikan->extension();
-        $uploadedImage = $request->foto_tenaga_kependidikan->move(public_path('assets/img/tenagapendidikan/'), $imageName);
-        $imagePath = 'assets/img/tenagapendidikan/' . $imageName;
+        $request->validate([
+            'nama' => 'required|max:200',
+            'jabatan' => 'required|max:200',
+            'foto_tenaga_kependidikan' => 'required|url',
+        ]);
 
-        $params = $request->validated();
+        $tenagaPendidikan = new TenagaPendidikan;
+        $tenagaPendidikan->nama = $request->nama;
+        $tenagaPendidikan->jabatan = $request->jabatan;
+        $tenagaPendidikan->foto_tenaga_kependidikan = $request->foto_tenaga_kependidikan;
+        $tenagaPendidikan->save();
 
-        if ($tenaga_pendidik = TenagaPendidikan::create($params)) {
-            $tenaga_pendidik->foto_tenaga_kependidikan = $imagePath;
-            $tenaga_pendidik->save();
-
-            return redirect('/adminProfil')->with('success', 'Added!');
-        }
+        return redirect('/adminProfil')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -69,7 +71,8 @@ class TenagaPendidikanController extends Controller
      */
     public function show($id)
     {
-        //
+        $tenagaPendidikan = TenagaPendidikan::findOrFail($id);
+        return view('tenagaPendidikan.show', compact('tenagaPendidikan'));
     }
 
     /**
@@ -80,8 +83,8 @@ class TenagaPendidikanController extends Controller
      */
     public function edit($id)
     {
-        $tenaga_pendidik = TenagaPendidikan::findOrFail($id);
-        return view('adminPages.updatetenagapendidik', ['tenaga_pendidik' => $tenaga_pendidik]);
+        $tenagaPendidikan = TenagaPendidikan::findOrFail($id);
+        return view('adminPages.updateTenagaPendidik', ['tenagaPendidikan' => $tenagaPendidikan]);
     }
 
     /**
@@ -91,22 +94,21 @@ class TenagaPendidikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreTenagaPendidikRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $pendidik = TenagaPendidikan::findOrFail($id);
+        $request->validate([
+            'nama' => 'required|max:200',
+            'jabatan' => 'required|max:200',
+            'foto_tenaga_kependidikan' => 'required|url',
+        ]);
 
-        $params = $request->validated();
+        $tenagaPendidikan = TenagaPendidikan::findOrFail($id);
+        $tenagaPendidikan->nama = $request->nama;
+        $tenagaPendidikan->jabatan = $request->jabatan;
+        $tenagaPendidikan->foto_tenaga_kependidikan = $request->foto_tenaga_kependidikan;
+        $tenagaPendidikan->save();
 
-        if ($request->hasFile('foto_tenaga_kependidikan')) {
-            $imageName = time() . '.' . $request->foto_tenaga_kependidikan->extension();
-            $uploadedImage = $request->foto_tenaga_kependidikan->move(public_path('assets/img/tenagapendidikan/'), $imageName);
-            $imagePath = 'assets/img/tenagapendidikan/' . $imageName;
-            $params['foto_tenaga_kependidikan'] = $imagePath;
-        }
-
-        $pendidik->update($params);
-
-        return redirect('/adminProfil')->with('success', 'Updated!');
+        return redirect('/adminProfil')->with('success', 'Data berhasil diperbarui');
     }
 
     /**
@@ -117,8 +119,8 @@ class TenagaPendidikanController extends Controller
      */
     public function destroy($id)
     {
-        $tenaga_pendidik = TenagaPendidikan::find($id);
-        $tenaga_pendidik->delete();
-        return redirect('/adminProfil');
+        $tenagaPendidikan = TenagaPendidikan::findOrFail($id);
+        $tenagaPendidikan->delete();
+        return redirect('/adminProfil')->with('success', 'Data berhasil dihapus');
     }
 }

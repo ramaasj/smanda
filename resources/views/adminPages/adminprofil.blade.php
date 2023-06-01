@@ -155,14 +155,14 @@
         @foreach ($listPendidik as $pendidik)
         <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="{{asset($pendidik->foto_pendidik) }}" class="img-fluid" alt="">
+            <img src="{{$pendidik->foto_pendidik}}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content d-flex flex-column align-items-center justify-content-center">
                 <h4>{{$pendidik->nama}}</h4>
                 <span>{{$pendidik->jabatan}}</span>
                 <div class="fungsi-pendidik">
-                  <a href="/adminProfil/updatependidik/{{$pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/adminProfil/deletependidik/{{$pendidik->id}}" method="POST">
+                  <a href="/adminProfil/updatePendidik/{{$pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deletePendidik/{{$pendidik->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -175,24 +175,24 @@
         @endforeach
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminProfil/addpendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        <a href="/adminProfil/addPendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
 
       <div class="row">
         <div id="title-tenkep" class="section-title" data-aos="fade-in">
           <h2>Tenaga Kependidikan</h2>
         </div>
-        @foreach ($listTenagaPendidikan as $tenaga_pendidik)
+        @foreach ($listTenagaPendidikan as $tenagaPendidikan)
         <div class="col-xl-3 col-sm-4" data-aos="fade-in" data-aos-delay="100">
           <div class="member">
-            <img src="{{asset($tenaga_pendidik->foto_tenaga_kependidikan) }}" class="img-fluid" alt="">
+            <img src="{{$tenagaPendidikan->foto_tenaga_kependidikan }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content d-flex flex-column align-items-center justify-content-center">
-                <h4>{{$tenaga_pendidik->nama}}</h4>
-                <span>{{$tenaga_pendidik->jabatan}}</span>
+                <h4>{{$tenagaPendidikan->nama}}</h4>
+                <span>{{$tenagaPendidikan->jabatan}}</span>
                 <div class="fungsi-pendidik">
-                  <a href="/adminProfil/updatetenagapendidik/{{$tenaga_pendidik->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
-                  <form action="/adminProfil/deletetenagapendidik/{{$tenaga_pendidik->id}}" method="POST">
+                  <a href="/adminProfil/updateTenagaPendidik/{{$tenagaPendidikan->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
+                  <form action="/adminProfil/deleteTenagaPendidik/{{$tenagaPendidikan->id}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -205,7 +205,7 @@
         @endforeach
       </div>
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminProfil/addtenagapendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
+        <a href="/adminProfil/addTenagaPendidik" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">TAMBAH</a>
       </div>
 
 
