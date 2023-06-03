@@ -14,13 +14,12 @@ class MotoController extends Controller
     public function index()
     {
         $moto = Moto::all();
-        return view('profil', ['listmoto' => $moto]);
+        return view('profil', ['listMoto' => $moto]);
     }
-
     public function admin()
     {
         $moto = Moto::all();
-        return view('adminPages.adminProfil', ['listmoto' => $moto]);
+        return view('adminPages.adminProfil', ['listMoto' => $moto]);
     }
 
     public function create()

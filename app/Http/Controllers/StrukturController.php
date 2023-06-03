@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreStrukturRequest;
-use App\Models\Struktur;
 use Illuminate\Http\Request;
+use App\Models\Struktur;
 
 class StrukturController extends Controller
 {
@@ -12,11 +11,13 @@ class StrukturController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     public static function getAllStruktur()
     {
         return Struktur::all();
     }
+
     public function index()
     {
         $struktur = Struktur::all();
@@ -36,7 +37,7 @@ class StrukturController extends Controller
      */
     public function create()
     {
-        return view('adminPages.addstruktur');
+        return view('adminPages.addStruktur');
     }
 
     /**
@@ -45,20 +46,19 @@ class StrukturController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStrukturRequest $request)
+    public function store(Request $request)
     {
-        $imageName = time() . '.' . $request->foto_org_sekolah->extension();
-        $uploadedImage = $request->foto_org_sekolah->move(public_path('assets/img'), $imageName);
-        $imagePath = 'assets/img/' . $imageName;
+        $request->validate([
+            'desc' => 'required|max:200',
+            'foto_org_sekolah' => 'required|url',
+        ]);
 
-        $params = $request->validated();
+        $struktur = new Struktur;
+        $struktur->desc = $request->desc;
+        $struktur->foto_org_sekolah = $request->foto_org_sekolah;
+        $struktur->save();
 
-        if ($struktur = Struktur::create($params)) {
-            $struktur->foto_org_sekolah = $imagePath;
-            $struktur->save();
-
-            return redirect('/adminProfil')->with('success', 'Added!');
-        }
+        return redirect('/adminProfil')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -69,7 +69,8 @@ class StrukturController extends Controller
      */
     public function show($id)
     {
-        //
+        $struktur = Struktur::findOrFail($id);
+        return view('struktur.show', compact('struktur'));
     }
 
     /**
@@ -81,7 +82,7 @@ class StrukturController extends Controller
     public function edit($id)
     {
         $struktur = Struktur::findOrFail($id);
-        return view('adminPages.updatestruktur', ['struktur' => $struktur]);
+        return view('adminPages.updateStruktur', ['struktur' => $struktur]);
     }
 
     /**
@@ -91,22 +92,19 @@ class StrukturController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreStrukturRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'desc' => 'required|max:200',
+            'foto_org_sekolah' => 'required|url',
+        ]);
+
         $struktur = Struktur::findOrFail($id);
+        $struktur->desc = $request->desc;
+        $struktur->foto_org_sekolah = $request->foto_org_sekolah;
+        $struktur->save();
 
-        $params = $request->validated();
-
-        if ($request->hasFile('foto_org_sekolah')) {
-            $imageName = time() . '.' . $request->foto_org_sekolah->extension();
-            $uploadedImage = $request->foto_org_sekolah->move(public_path('assets/img'), $imageName);
-            $imagePath = 'assets/img/' . $imageName;
-            $params['foto_org_sekolah'] = $imagePath;
-        }
-
-        $struktur->update($params);
-
-        return redirect('/adminProfil')->with('success', 'Updated!');
+        return redirect('/adminProfil')->with('success', 'Data berhasil diperbarui');
     }
 
     /**
@@ -117,6 +115,8 @@ class StrukturController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $struktur = Struktur::findOrFail($id);
+        $struktur->delete();
+        return redirect('/adminProfil')->with('success', 'Data berhasil dihapus');
     }
 }

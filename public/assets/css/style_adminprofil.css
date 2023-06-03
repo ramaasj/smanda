@@ -1595,3 +1595,9 @@ section {
     justify-content: center;
     align-items: center;
 }
+
+#organisasi-sekolah {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

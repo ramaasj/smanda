@@ -21,7 +21,7 @@ class TenagaPendidikanController extends Controller
     public function index()
     {
         $tenagaPendidikan = TenagaPendidikan::all();
-        return view('home', ['listTenagaPendidikan' => $tenagaPendidikan]);
+        return view('profil', ['listTenagaPendidikan' => $tenagaPendidikan]);
     }
 
     public function admin()

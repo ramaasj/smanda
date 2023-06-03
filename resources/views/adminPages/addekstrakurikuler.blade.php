@@ -17,8 +17,8 @@
         <h2>Tambah Ekstrakurikuler</h2>
         <ol>
           <li><a href="/">Beranda</a></li>
-          <li><a href="/siswa">Ekstrakurikuler</a></li>
-          <li><a href="/ekstra">Add</a></li>
+          <li><a href="/adminEkstrakurikuler">Ekstrakurikuler</a></li>
+          <li><a href="#">Tambah Data Ekstrakurikuler</a></li>
         </ol>
       </div>
 
@@ -33,7 +33,7 @@
         <h2>Tambah Ekstrakurikuler</h2>
         <p>Ekstrakurikuler SMAN 2 Sidoarjo</p>
       </div>
-      <form action="/addekstrakurikuler/store" class="col-16" method="POST" enctype="multipart/form-data">
+      <form action="/addEkstrakurikuler/store" class="col-16" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card-body">
           @if ($errors->any())
@@ -57,20 +57,24 @@
           @if (session('error'))
           <div class="alert alert-danger">{{ session('error') }}</div>
           @endif
-          <div class="form-group">
-            <label for="naama_ekskul">Nama Ekstrakurikuler</label>
-            <input type="text" class="form-control" name="naama_ekskul" id="naama_ekskul" placeholder="Nama Ekstrakurikuler">
-          </div>
-          <hr>
-          <div class="custom-file">
-            <label class="custom-file-label" for="foto_ekskul">Masukkan logo/gambar ekstrakurikuler</label>
-            <br>
-            <input type="file" class="custom-file-input" id="foto_ekskul" name="foto_ekskul">
-          </div>
-          <hr>
-          <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+        </div>
+        <div class="form-group">
+          <label for="naama_ekskul">Nama Ekstrakurikuler</label>
+          <input type="text" class="form-control" name="naama_ekskul" id="naama_ekskul" placeholder="Nama Ekstrakurikuler">
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="foto_ekskul">Direct Link Gambar Ekstrakurikuler</label>
+          <input type="text" class="form-control" id="foto_ekskul" id="foto_ekskul" name="foto_ekskul">
+        </div>
+        <div class="form-group">
+          <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+          <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
+        </div>
+        <hr>
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   </section><!-- End F.A.Q Section -->

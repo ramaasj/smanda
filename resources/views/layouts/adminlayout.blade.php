@@ -57,7 +57,7 @@
           <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/adminsiswa">Daftar Siswa Aktif</a></li>
-              <li><a href="/adminekstrakurikuler">Kegiatan Ekstrakurikuler</a></li>
+              <li><a href="/adminEkstrakurikuler">Kegiatan Ekstrakurikuler</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/adminberita">Berita</a></li>

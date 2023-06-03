@@ -222,11 +222,9 @@
         <p>Struktur Organisasi Sekolah Tahun Pelajaran <span style="font-weight: bolder;">{{$struktur->desc}}</span>
         </p>
       </div>
-      <img style="max-width: 100%; 
-              display:block; 
-              height: auto;" class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
+      <img class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
       <div class="edit-button d-flex justify-content-center">
-        <a href="/adminProfil/updatestruktur/{{ $struktur->id }}/edit" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</a>
+        <a href="/adminProfil/updateStruktur/{{ $struktur->id }}/edit" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">EDIT</a>
       </div>
       @endforeach
     </div>

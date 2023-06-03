@@ -70,9 +70,9 @@ Route::delete('/deletesiswa/{id}', [SiswaController::class, 'delete'])->middlewa
 Route::post('/addsiswa/store', [SiswaController::class, 'store'])->middleware('auth');
 
 //ADMIN-EKSTRA
-Route::get('/adminekstrakurikuler', [EkstrakurikulerController::class, 'admin'])->middleware('auth');
-Route::get('/addekstrakurikuler', [EkstrakurikulerController::class, 'create'])->middleware('auth');
-Route::post('/addekstrakurikuler/store', [EkstrakurikulerController::class, 'store'])->middleware('auth');
+Route::get('/adminEkstrakurikuler', [EkstrakurikulerController::class, 'admin'])->middleware('auth');
+Route::get('/addEkstrakurikuler', [EkstrakurikulerController::class, 'create'])->middleware('auth');
+Route::post('/addEkstrakurikuler/store', [EkstrakurikulerController::class, 'store'])->middleware('auth');
 Route::get('/updateEkstrakurikuler/{id}', [EkstrakurikulerController::class, 'edit'])->middleware('auth');
 Route::put('/updatEkstrakurikuler/{id}/store', [EkstrakurikulerController::class, 'update'])->middleware('auth');
 Route::delete('/deleteEkstrakurikuler/{id}', [EkstrakurikulerController::class, 'destroy'])->middleware('auth');
@@ -145,10 +145,10 @@ Route::get('/adminProfil/updateTenagaPendidik/{id}/edit', [TenagaPendidikanContr
 Route::delete('/adminProfil/deleteTenagaPendidik/{id}', [TenagaPendidikanController::class, 'destroy'])->middleware('auth');
 
 //ADMIN-PROFIL-STRUKTUR-ORGANISASI
-Route::get('/adminProfil/addstruktur', [StrukturController::class, 'create'])->middleware('auth');
-Route::post('/adminProfil/addstruktur/store', [StrukturController::class, 'store'])->middleware('auth');
-Route::put('/adminProfil/updatestruktur/{id}', [StrukturController::class, 'update'])->middleware('auth');
-Route::get('/adminProfil/updatestruktur/{id}/edit', [StrukturController::class, 'edit'])->middleware('auth');
+Route::get('/adminProfil/addStruktur', [StrukturController::class, 'create'])->middleware('auth');
+Route::post('/adminProfil/addStruktur/store', [StrukturController::class, 'store'])->middleware('auth');
+Route::put('/adminProfil/updateStruktur/{id}', [StrukturController::class, 'update'])->middleware('auth');
+Route::get('/adminProfil/updateStruktur/{id}/edit', [StrukturController::class, 'edit'])->middleware('auth');
 
 
 //ADMIN-PROFIL-KOMITE-SEKOLAH

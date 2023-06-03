@@ -1501,3 +1501,7 @@ section {
     font-size: 13px;
     color: #fff;
 }
+
+.col-8 {
+    width: 100%;
+}

@@ -4,69 +4,119 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ekstrakurikuler;
-use App\Http\Requests\StoreEkstrakurikulerRequest;
 
 class EkstrakurikulerController extends Controller
 {
-    public function index()
-    {
-        $ekskul = Ekstrakurikuler::all();
-        return view('ekstrakurikuler', ['listEkskul' => $ekskul]);
-    }
-    public static function getAllEkskul()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * 
+     */
+    public static function getAllEkstrakurikuler()
     {
         return Ekstrakurikuler::all();
     }
+
+    public function index()
+    {
+        $ekskul = Ekstrakurikuler::all();
+        return view('Ekstrakurikuler', ['listEkskul' => $ekskul]);
+    }
+
     public function admin()
     {
         $ekskul = Ekstrakurikuler::all();
-        return view('adminPages.adminekstrakurikuler', ['listEkskul' => $ekskul]);
+        return view('adminPages.adminEkstrakurikuler', ['listEkskul' => $ekskul]);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('adminPages.addekstrakurikuler');
+        return view('adminPages.addEkstrakurikuler');
     }
-    public function store(StoreEkstrakurikulerRequest $request)
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $imageName = time() . '.' . $request->foto_ekskul->extension();
-        $uploadedImage = $request->foto_ekskul->move(public_path('assets/img/ekskul'), $imageName);
-        $imagePath = 'assets/img/ekskul/' . $imageName;
+        $request->validate([
+            'naama_ekskul' => 'required|max:200',
+            'foto_ekskul' => 'required|url',
+        ]);
 
-        $params = $request->validated();
+        $ekskul = new Ekstrakurikuler;
+        $ekskul->naama_ekskul = $request->naama_ekskul;
+        $ekskul->foto_ekskul = $request->foto_ekskul;
+        $ekskul->save();
 
-        if ($ekskul = Ekstrakurikuler::create($params)) {
-            $ekskul->foto_ekskul = $imagePath;
-            $ekskul->save();
-
-            return redirect('/adminekstrakurikuler')->with('success', 'Added!');
-        }
+        return redirect('/adminEkstrakurikuler')->with('success', 'Data berhasil ditambahkan');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $ekskul = Ekstrakurikuler::findOrFail($id);
+        return view('ekskul$ekskul.show', compact('ekskul'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
         $ekskul = Ekstrakurikuler::findOrFail($id);
-        return view('adminPages.updateekstrakurikuler', ['ekskul' => $ekskul]);
+        return view('adminPages.updateEkstrakurikuler', ['ekskul' => $ekskul]);
     }
-    public function update(StoreEkstrakurikulerRequest $request, $id)
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'naama_ekskul' => 'required|max:200',
+            'foto_ekskul' => 'required|url',
+        ]);
+
         $ekskul = Ekstrakurikuler::findOrFail($id);
+        $ekskul->naama_ekskul = $request->naama_ekskul;
+        $ekskul->foto_ekskul = $request->foto_ekskul;
+        $ekskul->save();
 
-        $params = $request->validated();
-
-        if ($request->hasFile('foto_ekskul')) {
-            $imageName = time() . '.' . $request->foto_ekskul->extension();
-            $uploadedImage = $request->foto_ekskul->move(public_path('assets/img/ekskul'), $imageName);
-            $imagePath = 'assets/img/ekskul/' . $imageName;
-            $params['foto_ekskul'] = $imagePath;
-        }
-
-        $ekskul->update($params);
-
-        return redirect('/adminekstrakurikuler')->with('success', 'Updated!');
+        return redirect('/adminEkstrakurikuler')->with('success', 'Data berhasil diperbarui');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        $ekskul = Ekstrakurikuler::find($id);
+        $ekskul = Ekstrakurikuler::findOrFail($id);
         $ekskul->delete();
-        return redirect('/adminekstrakurikuler');
+        return redirect('/adminEkstrakurikuler')->with('success', 'Data berhasil dihapus');
     }
 }

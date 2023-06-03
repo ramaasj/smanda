@@ -21,7 +21,7 @@ class PendidikController extends Controller
     public function index()
     {
         $pendidik = Pendidik::all();
-        return view('home', ['listPendidik' => $pendidik]);
+        return view('profil', ['listPendidik' => $pendidik]);
     }
 
     public function admin()
