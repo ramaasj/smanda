@@ -17,7 +17,7 @@
         <h2>Update Berita</h2>
         <ol>
           <li><a href="/">Beranda</a></li>
-          <li><a href="/adminberita">Berita</a></li>
+          <li><a href="/adminBerita">Berita</a></li>
           <li><a href="#">Update</a></li>
         </ol>
       </div>
@@ -33,7 +33,7 @@
         <h2>Update Berita</h2>
         <p>Berita SMAN 2 Sidoarjo</p>
       </div>
-      <form action="/adminberita/updateberita/{{$berita -> id}}/store" method="POST" enctype="multipart/form-data">
+      <form action="/adminBerita/updateBerita/{{$berita -> id}}/store" method="POST" enctype="multipart/form-data">
         @method('put')
         @csrf
         <div class="card-body">
@@ -58,34 +58,38 @@
           @if (session('error'))
           <div class="alert alert-danger">{{ session('error') }}</div>
           @endif
-          <div class="form-group">
-            <label for="judul">Judul Berita</label>
-            <input type="text" class="form-control" name="judul" id="judul" value="{{$berita -> judul}}">
-          </div>
-          <div class="form-group">
-            <label for="kategori">Kategori</label>
-            <select name="kategori" id="kategori" class="form-control">
-              <option value="Informasi" {{ old('name',$berita -> kategori)=='Informasi' ? 'selected' : ''  }}>Informasi</option>
-              <option value="Prestasi" {{ old('name',$berita -> kategori)=='Prestasi' ? 'selected' : ''  }}>Prestasi</option>
-              <option value="Kurikulum" {{ old('name',$berita->kategori)=='Kurikulum' ? 'selected' : ''  }}>Kurikulum</option>
-              <option value="Adiwiyata" {{ old('name',$berita -> kategori)=='Adiwiyata' ? 'selected' : ''  }}>Adiwiyata</option>
-              <option value="Lainnya" {{ old('name',$berita -> kategori)=='Lainnya' ? 'selected' : ''  }}>Lainnya</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="deskripsi">Deskripsi Berita</label>
-            <textarea class="form-control" name="description" id="deskripsi" rows="15"></textarea>
-          </div>
-          <hr>
-          <div class="form-group">
-            <label for="foto_berita">Masukkan foto/gambar berita</label>
-            <br>
-            <input type="file" class="form-control" name="foto_berita" id="foto_berita" value="{{$berita -> foto_berita}}">
-          </div>
-          <hr>
-          <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+        </div>
+        <div class="form-group">
+          <label for="judul">Judul Berita</label>
+          <input type="text" class="form-control" name="judul" id="judul" value="{{$berita -> judul}}">
+        </div>
+        <div class="form-group">
+          <label for="kategori">Kategori</label>
+          <select name="kategori" id="kategori" class="form-control">
+            <option value="Informasi" {{ old('name',$berita -> kategori)=='Informasi' ? 'selected' : ''  }}>Informasi</option>
+            <option value="Prestasi" {{ old('name',$berita -> kategori)=='Prestasi' ? 'selected' : ''  }}>Prestasi</option>
+            <option value="Kurikulum" {{ old('name',$berita->kategori)=='Kurikulum' ? 'selected' : ''  }}>Kurikulum</option>
+            <option value="Adiwiyata" {{ old('name',$berita -> kategori)=='Adiwiyata' ? 'selected' : ''  }}>Adiwiyata</option>
+            <option value="Lainnya" {{ old('name',$berita -> kategori)=='Lainnya' ? 'selected' : ''  }}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi Berita</label>
+          <textarea class="form-control" name="description" id="deskripsi" rows="15"></textarea>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="foto_berita">Direct Link Gambar Berita</label>
+          <input type="text" class="form-control" id="foto_berita" id="foto_berita" name="foto_berita">
+        </div>
+        <div class="form-group">
+          <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+          <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
+        </div>
+        <hr>
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   </section><!-- End F.A.Q Section -->
@@ -96,9 +100,9 @@
 @section('scripts')
 <script>
   ClassicEditor
-  .create( document.querySelector( '#deskripsi' ) )
-  .catch( error => {
-    console.error( error );
-  } );
-  </script>
+    .create(document.querySelector('#deskripsi'))
+    .catch(error => {
+      console.error(error);
+    });
+</script>
 @endsection

@@ -17,7 +17,7 @@
         <h2>Tambah Berita</h2>
         <ol>
           <li><a href="/">Beranda</a></li>
-          <li><a href="/adminberita">Berita</a></li>
+          <li><a href="/adminBerita">Berita</a></li>
           <li><a href="#">Tambah</a></li>
         </ol>
       </div>
@@ -33,7 +33,7 @@
         <h2>Tambah Berita</h2>
         <p>Berita SMAN 2 Sidoarjo</p>
       </div>
-      <form action="/adminberita/addberita/store" class="" method="POST" enctype="multipart/form-data">
+      <form action="/adminBerita/addBerita/store" class="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card-body">
           @if ($errors->any())
@@ -57,39 +57,43 @@
           @if (session('error'))
           <div class="alert alert-danger">{{ session('error') }}</div>
           @endif
-          <div class="form-group">
-            <label for="judul">Judul Berita</label>
-            <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul Berita">
-          </div>
-          <div class="form-group">
-            <label for="kategori">Kategori</label>
-            <select name="kategori" id="kategori" class="form-control">
-              <option value="Informasi">Informasi</option>
-              <option value="Prestasi">Prestasi</option>
-              <option value="Kurikulum">Kurikulum</option>
-              <option value="Adiwiyata">Adiwiyata</option>
-              <option value="Lainnya">Lainnya</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="description">Deskripsi Berita</label>
-            <textarea class="form-control" name="description" id="deskripsi" rows="15"></textarea>
-          </div>
-          <hr>
-          <div class="custom-file">
-            <label class="custom-file-label" for="foto_berita">Masukkan foto/gambar berita</label>
-            <br>
-            <input type="file" class="custom-file-input" id="foto_berita" name="foto_berita">
-          </div>
-          <hr>
-          <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+        </div>
+        <div class="form-group">
+          <label for="judul">Judul Berita</label>
+          <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul Berita">
+        </div>
+        <div class="form-group">
+          <label for="kategori">Kategori</label>
+          <select name="kategori" id="kategori" class="form-control">
+            <option value="Informasi">Informasi</option>
+            <option value="Prestasi">Prestasi</option>
+            <option value="Kurikulum">Kurikulum</option>
+            <option value="Adiwiyata">Adiwiyata</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Deskripsi Berita</label>
+          <textarea class="form-control" name="description" id="deskripsi" rows="15"></textarea>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="foto_berita">Direct Link Gambar Berita</label>
+          <input type="text" class="form-control" id="foto_berita" id="foto_berita" name="foto_berita">
+        </div>
+        <div class="form-group">
+          <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+          <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
+        </div>
+        <hr>
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   </section><!-- End F.A.Q Section -->
 
-  
+
 </main><!-- End #main -->
 
 @endsection

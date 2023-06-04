@@ -36,7 +36,7 @@
             <div class="swiper-wrapper align-items-center">
 
               <div class="swiper">
-                <img src="{{asset($berita -> foto_berita)}}" alt="">
+                <img src="{{$berita -> foto_berita}}" alt="">
               </div>
 
             </div>
@@ -54,8 +54,7 @@
           </div>
           <div class="portfolio-description">
             <h2>{{$berita -> judul}}</h2>
-            <p>
-            <p> {{$berita -> description}} </p>
+            <p> {!! nl2br($berita -> description) !!} </p>
             </p>
           </div>
         </div>

@@ -52,7 +52,7 @@
             <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <div class="portfolio-links">
-                <a href="/adminberita/addberita" title="Tambah Berita"><svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <a href="/adminBerita/addBerita" title="Tambah Berita"><svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
                   </svg></a>
               </div>
@@ -63,13 +63,13 @@
         @foreach ($listBerita as $berita)
         <div class="col-lg-4 col-md-6 portfolio-item filter-{{$berita->kategori}}">
           <div class="portfolio-wrap">
-            <img src="{{asset($berita->foto_berita)}}" class="img-fluid" alt="">
+            <img src="{{$berita->foto_berita}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>{{$berita->judul}}</h4>
               <p>{{$berita->kategori}}</p>
               <div class="portfolio-links">
-                <a href="/adminberita/updateberita/{{$berita->id}}" title="Edit Berita"><i class="bi bi-pencil-square"></i></a>
-                <form action="/adminberita/deleteberita/{{$berita->id}}" method="POST">
+                <a href="/adminBerita/updateBerita/{{$berita->id}}" title="Edit Berita"><i class="bi bi-pencil-square"></i></a>
+                <form action="/adminBerita/deleteBerita/{{$berita->id}}" method="POST">
                   @csrf
                   @method('delete')
                   <button type="submit"><i class="bi bi-trash3" data-gallery="portfolioGallery" title="Delete"></i></button>

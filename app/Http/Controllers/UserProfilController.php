@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\MisiController;
-use App\Http\Controllers\KepsekController;
+use App\Http\Controllers\KepsekProfilController;
 use App\Http\Controllers\PendidikController;
 use App\Http\Controllers\TenagaPendidikanController;
 use App\Http\Controllers\StrukturController;
@@ -19,7 +19,7 @@ class UserProfilController extends Controller
         $listMoto = MotoController::getAllMoto();
         $listVisi = VisiController::getAllVisi();
         $listMisi = MisiController::getAllMisi();
-        $listKepsek = KepsekController::getAllKepsek();
+        $listKepsek = KepsekProfilController::getAllKepsek();
         $listPendidik = PendidikController::getAllPendidik();
         $listTenagaPendidikan = TenagaPendidikanController::getAllTenagaPendidikan();
         $listStruktur = StrukturController::getAllStruktur();

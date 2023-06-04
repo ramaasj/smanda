@@ -221,9 +221,7 @@
         <p>Struktur Organisasi Sekolah Tahun Pelajaran <span style="font-weight: bolder;">{{$struktur->desc}}</span>
         </p>
       </div>
-      <img style="max-width: 100%; 
-              display:block; 
-              height: auto;" class="img-struktur" src="{{asset($struktur->foto_org_sekolah) }}" alt="">
+      <img class="img-struktur" src="{{$struktur->foto_org_sekolah}}" alt="">
       @endforeach
     </div>
   </section>

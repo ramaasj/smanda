@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\PersentaseController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\PointsController;
-use App\Http\Controllers\TokohController;
+use App\Http\Controllers\KepsekHomeController;
+use App\Http\Controllers\WakepsekHomeController;
 
 class UserHomeController extends Controller
 {
@@ -15,8 +16,9 @@ class UserHomeController extends Controller
         $listPersentase = PersentaseController::getAllPersentase();
         $listGreet = GreetController::getAllGreet();
         $listPoints = PointsController::getAllPoints();
-        $listTokoh = TokohController::getAllTokoh();
+        $listKepsek = KepsekHomeController::getAllKepsek();
+        $listWakepsek = WakepsekHomeController::getAllWakepsek();
 
-        return view('home', compact('listPersentase', 'listGreet', 'listPoints', 'listTokoh'));
+        return view('home', compact('listPersentase', 'listGreet', 'listPoints', 'listKepsek', 'listWakepsek'));
     }
 }

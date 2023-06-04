@@ -60,7 +60,7 @@
               <li><a href="/adminEkstrakurikuler">Kegiatan Ekstrakurikuler</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="/adminberita">Berita</a></li>
+          <li><a class="nav-link scrollto" href="/adminBerita">Berita</a></li>
           <li><a class="nav-link scrollto" href="/adminalumni">Alumni</a></li>
           <li><a class="nav-link scrollto" href="/logout">LOGOUT</a></li>
         </ul>
