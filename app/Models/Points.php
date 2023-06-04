@@ -15,5 +15,6 @@ class Points extends Model
     protected $fillable = [
         'title',
         'desc',
+        'foto_point',
     ];
 }

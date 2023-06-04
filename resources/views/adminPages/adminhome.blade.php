@@ -66,6 +66,11 @@
           <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
           <h4>{{$points->title}}</h4>
           <p>{{$points->desc}}</p>
+          <div class="image-container">
+            <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+              <img src="{{$points->foto_point}}" class="img-fluid rounded mx-auto d-block border border-dark" alt="SMAN 2 SIDOARJO">
+            </div>
+          </div>
           <a href=" /adminHome/updatePoints/{{$points->id}}/edit"><button type="submit" class="btn btn-primary">Edit</button></a>
         </div>
         @if (($key + 1) % 2 == 0 && $key + 1 != count($listPoints))

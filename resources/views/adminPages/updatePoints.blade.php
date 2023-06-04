@@ -43,6 +43,14 @@
                         <label for="desc">Deskripsi</label>
                         <input type="text" name="desc" class="form-control" id="desc" value="{{$points -> desc}}">
                     </div>
+                    <div class="form-group">
+                        <label for="foto_point">Direct Link Foto Pendidik</label>
+                        <input type="text" name="foto_point" class="form-control" id="foto_point" value="{{$points -> foto_point}}">
+                    </div>
+                    <div class="form-group">
+                        <label>Untuk Mengubah Link Gambar dari Google Drive Menjadi Direct Link</label>
+                        <label>Akses Website: <a href="https://www.labnol.org/embed/google/drive/">https://www.labnol.org/embed/google/drive/</a>atau Website lainnya </label>
+                    </div>
                     <hr>
                     <div>
                         <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>

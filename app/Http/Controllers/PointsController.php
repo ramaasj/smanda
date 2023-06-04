@@ -7,14 +7,21 @@ use App\Models\Points;
 
 class PointsController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * 
+     */
     public static function getAllPoints()
     {
         return Points::all();
     }
+
     public function index()
     {
         $points = Points::all();
-        return view('home', ['listPoints' => $points]);
+        return view('profil', ['listPoints' => $points]);
     }
 
     public function admin()
@@ -23,34 +30,97 @@ class PointsController extends Controller
         return view('adminPages.adminHome', ['listPoints' => $points]);
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('adminPages.addPoints');
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        Points::create($request->except('_token', 'submit'));
-        return redirect('/adminHome');
+        $request->validate([
+            'title' => 'required|max:200',
+            'desc' => 'required|max:200',
+            'foto_point' => 'required|url',
+        ]);
+
+        $points = new Points;
+        $points->title = $request->title;
+        $points->desc = $request->desc;
+        $points->foto_point = $request->foto_point;
+        $points->save();
+
+        return redirect('/adminHome')->with('success', 'Data berhasil ditambahkan');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $points = Points::findOrFail($id);
+        return view('points.show', compact('points'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
-        $points = Points::find($id);
-        return view('adminPages.updatePoints', compact(['points']));
+        $points = Points::findOrFail($id);
+        return view('adminPages.updatePoints', ['points' => $points]);
     }
 
-    public function update($id, Request $request)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
-        $points = Points::find($id);
-        $points->update($request->except(['_token', 'submit']));
-        return redirect('/adminHome');
+        $request->validate([
+            'title' => 'required|max:200',
+            'desc' => 'required|max:200',
+            'foto_point' => 'required|url',
+        ]);
+
+        $points = Points::findOrFail($id);
+        $points->title = $request->title;
+        $points->desc = $request->desc;
+        $points->foto_point = $request->foto_point;
+        $points->save();
+
+        return redirect('/adminHome')->with('success', 'Data berhasil diperbarui');
     }
 
-    public function delete($id)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
-        $points = Points::find($id);
+        $points = Points::findOrFail($id);
         $points->delete();
-        return redirect('/adminHome');
+        return redirect('/adminHome')->with('success', 'Data berhasil dihapus');
     }
 }

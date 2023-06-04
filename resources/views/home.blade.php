@@ -62,8 +62,10 @@
           <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
           <h4>{{$points->title}}</h4>
           <p>{{$points->desc}}</p>
-          <div class="col-xl-6 col-lg-7" data-aos="fade-right">
-            <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81rB8HWkCLCCQ59i_XDj3juq3aYSiZkdXGXAEs-1BpDCf4g8h1GXVW0zNdL_YkLekBs_DR0d56vAuS64slzi-Q5EDt-o=s1600" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+          <div class="image-container">
+            <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+              <img src="{{$points->foto_point}}" class="img-fluid rounded border border-dark" alt="SMAN 2 SIDOARJO">
+            </div>
           </div>
         </div>
         @if (($key + 1) % 2 == 0 && $key + 1 != count($listPoints))

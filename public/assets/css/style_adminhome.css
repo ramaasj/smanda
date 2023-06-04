@@ -1597,3 +1597,8 @@ section {
     align-items: center;
     width: 150px;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}

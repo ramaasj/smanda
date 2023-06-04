@@ -1681,3 +1681,8 @@ section {
         align-items: center !important;
     }
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
