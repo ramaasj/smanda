@@ -106,68 +106,40 @@
       </div>
 
       <div id="kepsek_home" class="row">
+        @foreach ($listKepsek as $kepsek)
         <div id="kepsek" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
           <div class="member" style="background:white">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ $kepsek->foto_kepsek }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>paman</h4>
-                <span>Kepala Sekolah</span>
+                <h4>{{ $kepsek->nama_kepsek }}</h4>
+                <span>{{ $kepsek->jabatan }}</span>
               </div>
             </div>
           </div>
         </div>
+        @endforeach
       </div>
-      <div id="wakepsek_home" class="row">
-        <div id="wakil" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>paman</h4>
-                <span>Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>paman</h4>
-                <span>Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>paman</h4>
-                <span>Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
-          <div class="member">
-            <img src="{{asset('assets/img/1.jpg') }}" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>sdasda</h4>
-                <span>Kepala Sekolah</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="section-title" data-aos="fade-in" data-aos-delay="300">
         <a class="btn btn-primary btn-sm" href="/profil#kepala-sekolah" role="button">Biografi Kepala Sekolah</a>
       </div>
+      <div id="wakepsek_home" class="row">
+        @foreach ($listWakepsek as $wakepsek)
+        <div id="wakil" class="col-xl-3 col-sm" data-aos="fade-in" data-aos-delay="100">
+          <div class="member">
+            <img src="{{$wakepsek->foto_wakepsek}}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>{{$wakepsek->nama}}</h4>
+                <span>{{$wakepsek->jabatan}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
+      </div>
+
+
     </div>
   </section>
   <!-- ======= Contact Section ======= -->
