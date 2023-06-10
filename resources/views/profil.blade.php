@@ -221,7 +221,7 @@
         <p>Struktur Organisasi Sekolah Tahun Pelajaran <span style="font-weight: bolder;">{{$struktur->desc}}</span>
         </p>
       </div>
-      <img class="img-struktur" src="{{$struktur->foto_org_sekolah}}" alt="">
+      <img style="width: 100%" class="img-struktur" src="{{$struktur->foto_org_sekolah}}" alt="">
       @endforeach
     </div>
   </section>
@@ -229,9 +229,7 @@
     <div class="container">
       <div class="section-title">
         <h2 style="font-weight: bolder;">KOMITE SEKOLAH</h2>
-        <p>Daftar Pengurus Komite Sekolah Periode <span style="font-weight: bolder;">20xx</span>
-          <span style="font-weight: bolder;">-</span>
-          <span style="font-weight: bolder;">20xx</span>
+        <p>Daftar Pengurus Komite Sekolah Terbaru
         </p>
       </div>
       <div class="tablesiswa">

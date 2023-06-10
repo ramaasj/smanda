@@ -24,7 +24,7 @@
     <div class="container">
       <div class="section-title">
         <h2>Daftar Siswa</h2>
-        <p>Daftar siswa tahun ajaran 2022/2023</p>
+        <p>Daftar Siswa Tahun Ajaran 2023/2024</p>
       </div>
       <div class="tablesiswa">
         <table class="table">

@@ -36,7 +36,10 @@
             <div class="swiper-wrapper align-items-center">
 
               <div class="swiper">
-                <img src="{{$berita -> foto_berita}}" alt="">
+
+                <h2 style="font-weight: bolder;">{{$berita -> judul}}</h2>
+                <img style="margin-top: 10px; border-radius: 10px" src="{{$berita -> foto_berita}}" alt="">
+                <p style="margin-top: 20px; font-weight:700;"> {!! nl2br($berita -> description) !!} </p>
               </div>
 
             </div>
@@ -53,8 +56,7 @@
             </ul>
           </div>
           <div class="portfolio-description">
-            <h2>{{$berita -> judul}}</h2>
-            <p> {!! nl2br($berita -> description) !!} </p>
+
             </p>
           </div>
         </div>

@@ -41,7 +41,7 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <img src="assets/img/tambah2.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <div class="portfolio-links">
                 <a href="/addEkstrakurikuler" title="Tambah Ekstrakurikuler"><svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
